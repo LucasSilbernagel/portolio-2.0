@@ -1,4 +1,5 @@
 import { HeadFC } from 'gatsby'
+import Header from '../components/Header/Header'
 
 export const Head: HeadFC = () => (
   <title>Lucas Silbernagel | Front-End Developer</title>
@@ -7,8 +8,8 @@ export const Head: HeadFC = () => (
 const Home = () => {
   return (
     <>
-      <header></header>
-      <main>
+      <Header />
+      <main className="min-h-[200vh]">
         <h1>Main</h1>
       </main>
       <footer></footer>
