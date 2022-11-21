@@ -7,6 +7,15 @@ html,
 body {
   @apply bg-navy-1 text-white-1;
   font-family: "Inter", sans-serif;
+  scrollbar-color: #233554 transparent;
+}
+
+body::-webkit-scrollbar {
+  @apply w-2 bg-transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-navy-3 rounded-md;
 }
 
 .AccentFont {

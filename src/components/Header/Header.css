@@ -6,6 +6,11 @@
   @apply w-12 h-12 rounded-full overflow-hidden border-2 border-accent-1 hover:scale-105 focus:scale-105 duration-300;
 }
 
+.Nav .IconButton img {
+  @apply h-full w-full;
+  border-radius: 50%;
+}
+
 .Nav .NavButtons {
   @apply w-[600px] flex justify-between items-center text-xs text-slate-3;
 }
