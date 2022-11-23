@@ -8,7 +8,7 @@ const Header = () => {
         <div>
           <button className="IconButton">
             <StaticImage
-              src="../images/profile-photo-wide.jpg"
+              src="../../images/profile-photo-wide.jpg"
               alt="Lucas Silbernagel"
               className="h-full w-full"
             />
@@ -22,6 +22,14 @@ const Header = () => {
           <a href="mailto:hello@lucassilbernagel.com" className="ContactButton">
             Say hello
           </a>
+        </div>
+        <div className="flex md:hidden">
+          <label className="MobileMenu__Button" htmlFor="mobile-menu-button">
+            <input type="checkbox" id="mobile-menu-button" />
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
         </div>
       </nav>
     </header>
