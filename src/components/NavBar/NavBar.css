@@ -12,15 +12,27 @@
 }
 
 .Nav .NavButtons {
-  @apply w-[600px] hidden md:flex justify-between items-center text-xs text-slate-3;
+  @apply text-sm md:text-xs text-slate-3;
+}
+
+.Nav .MobileMenu {
+  @apply fixed z-10 bg-navy-2 top-0 right-0 pt-[120px] w-9/12 h-full md:hidden;
+}
+
+.MobileMenu .NavButtons {
+  @apply flex flex-col gap-14 max-w-[180px] mx-auto text-center;
+}
+
+.Nav .NavButtons__Desktop {
+  @apply w-[600px] hidden md:flex justify-between items-center;
 }
 
 .Nav .NavButtons button {
-  @apply tracking-wide hover:text-accent-1 focus:text-accent-1 duration-300;
+  @apply tracking-wide hover:text-accent-1 focus:text-accent-1 duration-300 relative;
 }
 
 .Nav .NavButtons button:before {
-  @apply mr-1 text-accent-1;
+  @apply text-accent-1 absolute md:static -top-6 mx-auto left-0 right-0 md:mr-1;
 }
 
 .Nav .NavButtons button:nth-of-type(1):before {
@@ -40,7 +52,7 @@
 }
 
 .Nav .NavButtons .ContactButton {
-  @apply flex items-center border border-accent-1 rounded-sm h-10 px-4 text-accent-1 hover:bg-accent-1 focus:bg-accent-1 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 cursor-pointer;
+  @apply flex items-center justify-center md:justify-start border border-accent-1 rounded-sm h-10 px-4 text-accent-1 hover:bg-accent-1 focus:bg-accent-1 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 cursor-pointer;
 }
 
 .Nav .MobileMenu__Button {
@@ -60,22 +72,18 @@
   @apply w-9/12;
 }
 
-
 .Nav .MobileMenu__Button span:nth-of-type(3){
   @apply w-1/2;
 }
-
 
 .Nav .MobileMenu__Button input[type="checkbox"]{
   @apply hidden;
 }
 
-
 .Nav .MobileMenu__Button input[type="checkbox"]:checked ~ span:nth-of-type(1){
   transform-origin: bottom;
   transform: rotate(45deg) translate(8px,0px);
 }
-
 
 .Nav .MobileMenu__Button input[type="checkbox"]:checked ~ span:nth-of-type(2){
   @apply w-full;
@@ -83,7 +91,6 @@
   transform: rotate(-45deg);
   transform: translate(6px, -4px) rotate(-45deg);
 }
-
 
 .Nav .MobileMenu__Button input[type="checkbox"]:checked ~ span:nth-of-type(3){
   @apply w-1/2;

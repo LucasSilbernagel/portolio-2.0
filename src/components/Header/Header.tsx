@@ -1,37 +1,35 @@
-import { StaticImage } from 'gatsby-plugin-image'
-import './Header.css'
+import { useEffect, useState } from 'react'
+import NavBar from '../NavBar/NavBar'
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    /** Close menu when Escape key is pressed */
+    if (isMenuOpen) {
+      /** Close menu when Escape key is pressed */
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          setIsMenuOpen(false)
+        }
+      })
+      /** Prevent scrolling when the menu is open. */
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.removeEventListener('keydown', (e) => e.key === 'Escape')
+      document.body.style.overflow = 'scroll'
+    }
+  }, [isMenuOpen])
+
   return (
     <header>
-      <nav className="Nav">
-        <div>
-          <button className="IconButton">
-            <StaticImage
-              src="../../images/profile-photo-wide.jpg"
-              alt="Lucas Silbernagel"
-              className="h-full w-full"
-            />
-          </button>
-        </div>
-        <div className="AccentFont NavButtons">
-          <button>About</button>
-          <button>Tech Stack</button>
-          <button>Experience</button>
-          <button>Projects</button>
-          <a href="mailto:hello@lucassilbernagel.com" className="ContactButton">
-            Say hello
-          </a>
-        </div>
-        <div className="flex md:hidden">
-          <label className="MobileMenu__Button" htmlFor="mobile-menu-button">
-            <input type="checkbox" id="mobile-menu-button" />
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-        </div>
-      </nav>
+      <NavBar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      {isMenuOpen && (
+        <div
+          onClick={() => setIsMenuOpen(false)}
+          className="fixed md:hidden top-0 left-0 w-full h-full backdrop-blur-[3px]"
+        ></div>
+      )}
     </header>
   )
 }
