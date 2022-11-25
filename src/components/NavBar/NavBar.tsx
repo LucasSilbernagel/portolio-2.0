@@ -34,7 +34,7 @@ const NavBar = (props: NavBarProps) => {
           }`}
         >
           <div className="AccentFont NavButtons">
-            <NavButtons />
+            <NavButtons setIsMenuOpen={setIsMenuOpen} />
           </div>
         </div>
       </div>
