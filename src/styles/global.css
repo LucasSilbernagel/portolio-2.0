@@ -11,7 +11,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  @apply w-2 bg-transparent;
+  @apply w-2 bg-transparent h-full;
 }
 
 body::-webkit-scrollbar-thumb {

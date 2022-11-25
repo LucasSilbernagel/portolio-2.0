@@ -1,5 +1,5 @@
 import { StaticImage } from 'gatsby-plugin-image'
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import NavButtons from '../NavButtons/NavButtons'
 import './NavBar.css'
 
@@ -11,8 +11,29 @@ interface NavBarProps {
 const NavBar = (props: NavBarProps) => {
   const { isMenuOpen, setIsMenuOpen } = props
 
+  const [currentScrollPos, setCurrentScrollPos] = useState(0)
+  const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [isNavVisible, setIsNavVisible] = useState(true)
+
+  const handleScroll = () => {
+    setCurrentScrollPos(window.pageYOffset)
+    setPrevScrollPos(currentScrollPos)
+    setIsNavVisible(prevScrollPos > currentScrollPos || currentScrollPos < 70)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [prevScrollPos, isNavVisible, handleScroll])
+
   return (
-    <nav className="Nav">
+    <nav
+      className={`Nav ${
+        isNavVisible
+          ? 'top-0 bg-transparent backdrop-blur-[3px]'
+          : 'top-[-100px]'
+      } ${currentScrollPos > 80 ? 'shadow-lg pb-4' : ''}`}
+    >
       <div className="z-10">
         <button className="IconButton">
           <StaticImage

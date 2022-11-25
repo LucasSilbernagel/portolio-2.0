@@ -1,5 +1,5 @@
 .Nav {
-  @apply pt-6 px-4 md:px-12 mb-20 flex justify-between items-end;
+  @apply pt-6 px-4 md:px-12 flex justify-between items-end fixed w-full duration-300 z-20;
 }
 
 .Nav .IconButton {
@@ -16,7 +16,7 @@
 }
 
 .Nav .MobileMenu {
-  @apply fixed z-10 bg-navy-2 top-0 right-0 pt-[120px] w-9/12 h-full md:hidden;
+  @apply fixed z-10 bg-navy-2 top-0 right-0 pt-[120px] w-9/12 h-screen md:hidden;
 }
 
 .MobileMenu .NavButtons {

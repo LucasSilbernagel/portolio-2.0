@@ -9,8 +9,8 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main className="min-h-[200vh]">
-        <h1>Main</h1>
+      <main className="min-h-[200vh] mt-60">
+        <h1 className="text-center">Main</h1>
       </main>
       <footer></footer>
     </>
