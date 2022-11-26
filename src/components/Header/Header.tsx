@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import NavBar from '../NavBar/NavBar'
+import SideBars from '../SideBars/SideBars'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -30,6 +31,7 @@ const Header = () => {
           className="fixed md:hidden top-0 left-0 w-full h-full backdrop-blur-[3px]"
         ></div>
       )}
+      <SideBars />
     </header>
   )
 }
