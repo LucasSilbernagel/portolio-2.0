@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction } from 'react'
 
 interface NavButtonsProps {
-  setIsMenuOpen?: Dispatch<SetStateAction<boolean>>
+  setIsMenuOpening?: Dispatch<SetStateAction<boolean>>
 }
 
 const NavButtons = (props: NavButtonsProps) => {
-  const { setIsMenuOpen } = props
+  const { setIsMenuOpening } = props
 
   const buttons = [
     { label: 'About', selector: 'about-section' },
@@ -15,8 +15,8 @@ const NavButtons = (props: NavButtonsProps) => {
   ]
 
   const handleClick = (selector: string) => {
-    if (setIsMenuOpen) {
-      setIsMenuOpen(false)
+    if (setIsMenuOpening) {
+      setIsMenuOpening(false)
     }
     console.log(selector)
   }

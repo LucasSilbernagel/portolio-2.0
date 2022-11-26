@@ -4,12 +4,13 @@ import NavButtons from '../NavButtons/NavButtons'
 import './NavBar.css'
 
 interface NavBarProps {
+  isMenuOpening: boolean
   isMenuOpen: boolean
-  setIsMenuOpen: Dispatch<SetStateAction<boolean>>
+  setIsMenuOpening: Dispatch<SetStateAction<boolean>>
 }
 
 const NavBar = (props: NavBarProps) => {
-  const { isMenuOpen, setIsMenuOpen } = props
+  const { isMenuOpening, setIsMenuOpening, isMenuOpen } = props
 
   const [currentScrollPos, setCurrentScrollPos] = useState(0)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -49,28 +50,28 @@ const NavBar = (props: NavBarProps) => {
         </div>
         <div
           className={`MobileMenu ${
-            isMenuOpen
-              ? 'visible animate-slide-in'
-              : 'invisible animate-slide-out'
-          }`}
+            isMenuOpening
+              ? 'animate-slide-in right-0'
+              : 'animate-slide-out -right-[500px]'
+          } ${isMenuOpen ? 'visible' : 'invisible'}`}
         >
           <div className="AccentFont NavButtons">
-            <NavButtons setIsMenuOpen={setIsMenuOpen} />
+            <NavButtons setIsMenuOpening={setIsMenuOpening} />
           </div>
         </div>
       </div>
-      <div className="flex md:hidden z-10 self-end">
-        <label className="MobileMenu__Button" htmlFor="mobile-menu-button">
-          <input
-            type="checkbox"
-            id="mobile-menu-button"
-            checked={isMenuOpen}
-            onChange={() => setIsMenuOpen(!isMenuOpen)}
-          />
+      <div className={`flex md:hidden z-10 self-end`}>
+        <button
+          aria-label={isMenuOpening ? 'Close mobile menu' : 'Open mobile menu'}
+          onClick={() => setIsMenuOpening(!isMenuOpening)}
+          className={`MobileMenu__Button ${
+            isMenuOpening ? 'MobileMenu__Button--open' : ''
+          }`}
+        >
           <span></span>
           <span></span>
           <span></span>
-        </label>
+        </button>
       </div>
     </nav>
   )

@@ -36,8 +36,8 @@ module.exports = {
         },
       },
       animation: {
-        'slide-in': 'slideIn 500ms ease-in-out',
-        'slide-out': 'slideOut 500ms ease-in-out',
+        'slide-in': 'slideIn 300ms ease-in-out',
+        'slide-out': 'slideOut 300ms ease-in-out',
       },
     },
   },

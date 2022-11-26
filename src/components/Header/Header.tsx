@@ -5,28 +5,37 @@ import SideBars from '../SideBars/SideBars'
 import './Header.css'
 
 const Header = () => {
+  const [isMenuOpening, setIsMenuOpening] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     /** Close menu when Escape key is pressed */
-    if (isMenuOpen) {
+    if (isMenuOpening) {
       /** Close menu when Escape key is pressed */
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-          setIsMenuOpen(false)
+          setIsMenuOpening(false)
         }
       })
+      setIsMenuOpen(true)
       /** Prevent scrolling when the menu is open. */
       document.body.style.overflow = 'hidden'
     } else {
       document.removeEventListener('keydown', (e) => e.key === 'Escape')
       document.body.style.overflow = 'scroll'
+      setTimeout(() => {
+        setIsMenuOpen(false)
+      }, 500)
     }
-  }, [isMenuOpen])
+  }, [isMenuOpening])
 
   return (
     <header>
-      <NavBar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <NavBar
+        isMenuOpening={isMenuOpening}
+        setIsMenuOpening={setIsMenuOpening}
+        isMenuOpen={isMenuOpen}
+      />
       <div className="HeroText">
         <h1>Lucas Silbernagel</h1>
         <h2>Front-End Developer</h2>
@@ -42,9 +51,9 @@ const Header = () => {
           <StaticImage alt="" src="../../images/toronto.png" />
         </div>
       )}
-      {isMenuOpen && (
+      {isMenuOpening && (
         <div
-          onClick={() => setIsMenuOpen(false)}
+          onClick={() => setIsMenuOpening(false)}
           className="MobileMenu__Background"
         ></div>
       )}
