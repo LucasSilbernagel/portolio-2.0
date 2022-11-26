@@ -37,9 +37,11 @@ const Header = () => {
           Say hello
         </a>
       </div>
-      <div className="HeroImage">
-        <StaticImage alt="" src="../../images/toronto.png" />
-      </div>
+      {window.innerHeight >= 600 && (
+        <div className="HeroImage">
+          <StaticImage alt="" src="../../images/toronto.png" />
+        </div>
+      )}
       {isMenuOpen && (
         <div
           onClick={() => setIsMenuOpen(false)}

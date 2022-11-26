@@ -1,5 +1,5 @@
 header {
-  @apply relative h-[calc(100vh-130px)] md:h-[calc(100vh-145px)];
+  @apply pb-[calc(100vh-384px)] md:pb-[calc(100vh-340px)] lg:pb-[calc(100vh-399px)];
 }
 
 .HeroText {
