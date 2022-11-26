@@ -1,6 +1,8 @@
+import { StaticImage } from 'gatsby-plugin-image'
 import { useEffect, useState } from 'react'
 import NavBar from '../NavBar/NavBar'
 import SideBars from '../SideBars/SideBars'
+import './Header.css'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -25,10 +27,23 @@ const Header = () => {
   return (
     <header>
       <NavBar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <div className="HeroText">
+        <h1>Lucas Silbernagel</h1>
+        <h2>Front-End Developer</h2>
+        <a
+          href="mailto:hello@lucassilbernagel.com"
+          className="AccentFont ContactButton"
+        >
+          Say hello
+        </a>
+      </div>
+      <div className="HeroImage">
+        <StaticImage alt="" src="../../images/toronto.png" />
+      </div>
       {isMenuOpen && (
         <div
           onClick={() => setIsMenuOpen(false)}
-          className="fixed md:hidden top-0 left-0 w-full h-full backdrop-blur-[3px]"
+          className="MobileMenu__Background"
         ></div>
       )}
       <SideBars />
