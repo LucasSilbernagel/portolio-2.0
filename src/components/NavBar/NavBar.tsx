@@ -44,6 +44,19 @@ const NavBar = (props: NavBarProps) => {
           />
         </button>
       </div>
+      <div className={`flex md:hidden z-20 fixed right-4`}>
+        <button
+          aria-label={isMenuOpening ? 'Close mobile menu' : 'Open mobile menu'}
+          onClick={() => setIsMenuOpening(!isMenuOpening)}
+          className={`MobileMenu__Button ${
+            isMenuOpening ? 'MobileMenu__Button--open' : ''
+          }`}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
       <div>
         <div className="AccentFont NavButtons NavButtons__Desktop">
           <NavButtons />
@@ -59,19 +72,6 @@ const NavBar = (props: NavBarProps) => {
             <NavButtons setIsMenuOpening={setIsMenuOpening} />
           </div>
         </div>
-      </div>
-      <div className={`flex md:hidden z-10 self-end`}>
-        <button
-          aria-label={isMenuOpening ? 'Close mobile menu' : 'Open mobile menu'}
-          onClick={() => setIsMenuOpening(!isMenuOpening)}
-          className={`MobileMenu__Button ${
-            isMenuOpening ? 'MobileMenu__Button--open' : ''
-          }`}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
     </nav>
   )

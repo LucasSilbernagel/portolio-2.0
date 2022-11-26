@@ -46,7 +46,7 @@ const Header = () => {
           Say hello
         </a>
       </div>
-      {window.innerHeight >= 600 && (
+      {window.innerHeight >= 568 && (
         <div className="HeroImage">
           <StaticImage alt="" src="../../images/toronto.png" />
         </div>

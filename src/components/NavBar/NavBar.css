@@ -81,10 +81,6 @@
   transform: rotate(45deg) translate(8px,0px);
 }
 
-.Nav .MobileMenu__Button--open {
-  @apply mr-2;
-}
-
 .Nav .MobileMenu__Button--open span:nth-of-type(2){
   @apply w-full;
   transform-origin: top;
