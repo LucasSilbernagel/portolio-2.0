@@ -1,4 +1,5 @@
 import { HeadFC } from 'gatsby'
+import AboutSection from '../components/AboutSection/AboutSection'
 import Header from '../components/Header/Header'
 
 export const Head: HeadFC = () => (
@@ -9,8 +10,8 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main className="min-h-[200vh] mt-60">
-        <h1 className="text-center">Main</h1>
+      <main>
+        <AboutSection />
       </main>
       <footer></footer>
     </>

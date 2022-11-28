@@ -17,6 +17,26 @@ body::-webkit-scrollbar-thumb {
   @apply bg-navy-3 rounded-md;
 }
 
+main {
+  @apply mx-auto max-w-none sm:max-w-screen-lg md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg px-6 sm:px-12;
+}
+
 .AccentFont {
   font-family: "Fira Code", sans-serif;
+}
+
+.SectionHeader {
+  @apply font-bold text-2xl mb-10 text-slate-3 relative flex items-center gap-2;
+}
+
+.SectionHeader:before {
+  @apply text-accent-1 mr-1 font-fira-code text-xl;
+}
+
+.SectionHeader:after {
+  @apply content-[''] w-full h-[1px] bg-navy-3 absolute top-10 right-0 sm:-right-[180px] sm:top-1/2;
+}
+
+.SectionHeader:nth-of-type(1):before {
+  @apply content-['01.'];
 }

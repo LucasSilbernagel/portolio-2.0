@@ -25,6 +25,9 @@ module.exports = {
           3: '#233554',
         },
       },
+      fontFamily: {
+        'fira-code': ['Fira Code', 'sans-serif'],
+      },
       keyframes: {
         slideIn: {
           '0%': { right: '-500px' },
