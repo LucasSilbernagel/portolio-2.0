@@ -39,10 +39,7 @@ const Header = () => {
       <div className="HeroText">
         <h1>Lucas Silbernagel</h1>
         <h2>Front-End Developer</h2>
-        <a
-          href="mailto:hello@lucassilbernagel.com"
-          className="AccentFont ContactButton"
-        >
+        <a href="mailto:hello@lucassilbernagel.com" className="AccentButton">
           Say hello
         </a>
       </div>
