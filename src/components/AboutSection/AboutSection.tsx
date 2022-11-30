@@ -7,7 +7,7 @@ const AboutSection = () => {
   const [isShowingMore, setIsShowingMore] = useState(false)
 
   return (
-    <div className="AboutSection">
+    <div className="AboutSection" id="about-section">
       <h3 className="SectionHeader">About Me</h3>
       <div className="flex gap-12 flex-col xl:flex-row">
         <div>

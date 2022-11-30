@@ -7,6 +7,18 @@ import './Header.css'
 const Header = () => {
   const [isMenuOpening, setIsMenuOpening] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [windowHeight, setWindowHeight] = useState(0)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowHeight(window.innerHeight)
+    }
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [setWindowHeight])
 
   useEffect(() => {
     /** Close menu when Escape key is pressed */
@@ -30,7 +42,7 @@ const Header = () => {
   }, [isMenuOpening])
 
   return (
-    <header>
+    <header id="header">
       <NavBar
         isMenuOpening={isMenuOpening}
         setIsMenuOpening={setIsMenuOpening}
@@ -43,7 +55,7 @@ const Header = () => {
           Say hello
         </a>
       </div>
-      {window.innerHeight >= 568 && (
+      {windowHeight >= 568 && (
         <div className="HeroImage">
           <StaticImage alt="" src="../../images/toronto.png" />
         </div>

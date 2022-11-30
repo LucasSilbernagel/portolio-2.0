@@ -1,5 +1,5 @@
 .TechStack {
-  @apply mt-24;
+  @apply mt-24 pt-2;
 }
 
 .TechStack .SkillGrid {

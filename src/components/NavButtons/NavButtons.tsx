@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 interface NavButtonsProps {
   setIsMenuOpening?: Dispatch<SetStateAction<boolean>>
@@ -8,17 +9,17 @@ const NavButtons = (props: NavButtonsProps) => {
   const { setIsMenuOpening } = props
 
   const buttons = [
-    { label: 'About', selector: 'about-section' },
-    { label: 'Tech Stack', selector: 'tech-stack-section' },
-    { label: 'Experience', selector: 'experience-section' },
-    { label: 'Projects', selector: 'projects-section' },
+    { label: 'About', selector: '#about-section' },
+    { label: 'Tech Stack', selector: '#tech-stack-section' },
+    { label: 'Experience', selector: '#experience-section' },
+    { label: 'Projects', selector: '#projects-section' },
   ]
 
   const handleClick = (selector: string) => {
     if (setIsMenuOpening) {
       setIsMenuOpening(false)
     }
-    console.log(selector)
+    scrollTo(selector)
   }
 
   return (

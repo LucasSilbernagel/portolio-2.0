@@ -3,7 +3,7 @@ import './TechStack.css'
 
 const TechStack = () => {
   return (
-    <div className="TechStack">
+    <div className="TechStack" id="tech-stack-section">
       <h3 className="SectionHeader">Tech Stack</h3>
       <ul className="SkillGrid">
         {TECH_STACK.map((skillset, sectionIndex) => {

@@ -21,6 +21,7 @@
 
 .MobileMenu .NavButtons {
   @apply flex flex-col gap-14 max-w-[180px] mx-auto text-center;
+  counter-reset: NavButton;
 }
 
 .Nav .NavButtons__Desktop {
@@ -29,26 +30,12 @@
 
 .Nav .NavButtons button {
   @apply tracking-wide hover:text-accent-1 focus:text-accent-1 duration-300 relative;
+  counter-increment: NavButton;
 }
 
 .Nav .NavButtons button:before {
   @apply text-accent-1 absolute md:static -top-6 mx-auto left-0 right-0 md:mr-1;
-}
-
-.Nav .NavButtons button:nth-of-type(1):before {
-  @apply content-['01.']
-}
-
-.Nav .NavButtons button:nth-of-type(2):before {
-  @apply content-['02.']
-}
-
-.Nav .NavButtons button:nth-of-type(3):before {
-  @apply content-['03.']
-}
-
-.Nav .NavButtons button:nth-of-type(4):before {
-  @apply content-['04.']
+  content: "0" counter(NavButton) "."
 }
 
 .Nav .NavButtons .ContactButton {

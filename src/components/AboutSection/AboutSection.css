@@ -1,5 +1,5 @@
 .AboutSection {
-  @apply mt-24 flex flex-col items-start;
+  @apply mt-24 flex flex-col items-start pt-2;
 }
 
 .AboutSection p {

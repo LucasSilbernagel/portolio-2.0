@@ -2,6 +2,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import NavButtons from '../NavButtons/NavButtons'
 import './NavBar.css'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 
 interface NavBarProps {
   isMenuOpening: boolean
@@ -36,7 +37,7 @@ const NavBar = (props: NavBarProps) => {
       } ${currentScrollPos > 80 ? 'shadow-lg pb-4' : ''}`}
     >
       <div className="z-10">
-        <button className="IconButton">
+        <button className="IconButton" onClick={() => scrollTo('#header')}>
           <StaticImage
             src="../../images/profile-photo-wide.jpg"
             alt="Lucas Silbernagel"
