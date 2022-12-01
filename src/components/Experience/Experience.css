@@ -3,7 +3,7 @@
 }
 
 .Experience .Timeline {
-  @apply max-w-screen-sm mx-auto text-slate-3 pl-14;
+  @apply max-w-screen-sm mx-auto text-slate-3 pl-0 xl:pl-14;
 }
 
 .Experience .Timeline__container {
@@ -23,11 +23,15 @@
 }
 
 .Experience .Timeline__Horizontal-Line--left {
-  @apply bg-slate-1 h-1 w-7 absolute -left-7 top-1;
+  @apply hidden xl:flex bg-slate-1 h-1 w-7 absolute -left-7 top-1;
 }
 
-.Experience .Timeline__time {
-  @apply absolute bg-navy-3 min-w-max right-12 -top-3 px-3 py-1 rounded-lg;
+.Experience .Timeline__time--desktop {
+  @apply hidden xl:flex absolute bg-navy-3 min-w-max right-12 -top-3 px-3 py-1 rounded-lg;
+}
+
+.Experience .Timeline__time--mobile {
+  @apply bg-navy-3 max-w-max px-3 py-1 rounded-lg mb-4 flex xl:hidden;
 }
 
 .Experience .Timeline__accomplishment {

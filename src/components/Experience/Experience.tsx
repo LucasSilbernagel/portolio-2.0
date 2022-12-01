@@ -17,12 +17,15 @@ const Experience = () => {
                     <div className="Timeline__circle">
                       <div className="Timeline__Horizontal-Line--right"></div>
                       <div className="Timeline__Horizontal-Line--left"></div>
-                      <div className="Timeline__time">
+                      <div className="Timeline__time--desktop">
                         <span>{experience.timeframe}</span>
                       </div>
                     </div>
                     <div className="flex-1 ml-4">
                       <div className="w-full px-6 pb-4 -mt-1">
+                        <div className="Timeline__time--mobile">
+                          <span>{experience.timeframe}</span>
+                        </div>
                         <h4 className="mb-3 text-2xl font-fira-code text-accent-1">
                           {experience.title}
                         </h4>
