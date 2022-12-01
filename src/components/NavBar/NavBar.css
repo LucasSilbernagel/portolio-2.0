@@ -1,5 +1,5 @@
 .Nav {
-  @apply pt-6 px-4 md:px-12 flex justify-between items-end fixed w-full duration-300 z-20;
+  @apply pt-6 px-4 md:px-12 flex justify-between items-end fixed w-full duration-300 z-30;
 }
 
 .Nav .IconButton {

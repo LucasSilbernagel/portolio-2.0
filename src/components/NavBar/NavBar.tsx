@@ -32,7 +32,7 @@ const NavBar = (props: NavBarProps) => {
     <nav
       className={`Nav ${
         isNavVisible
-          ? 'top-0 bg-transparent backdrop-blur-[3px]'
+          ? 'top-0 backdrop-blur-[3px] bg-[rgba(11,25,46,0.9)]'
           : 'top-[-100px]'
       } ${currentScrollPos > 80 ? 'shadow-lg pb-4' : ''}`}
     >
