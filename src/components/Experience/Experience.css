@@ -1,0 +1,39 @@
+.Experience {
+  @apply mt-24 pt-2;
+}
+
+.Experience .Timeline {
+  @apply max-w-screen-sm mx-auto text-slate-3 pl-14;
+}
+
+.Experience .Timeline__container {
+  @apply relative;
+}
+
+.Experience .Timeline__Vertical-Line {
+  @apply border-r-4 border-slate-1 absolute h-full top-0 left-[9px];
+}
+
+.Experience .Timeline__circle {
+  @apply bg-navy-1 z-10 rounded-full border-4 border-slate-1 h-5 w-5 relative;
+}
+
+.Experience .Timeline__Horizontal-Line--right {
+  @apply bg-slate-1 h-1 w-7 absolute -right-7 top-1;
+}
+
+.Experience .Timeline__Horizontal-Line--left {
+  @apply bg-slate-1 h-1 w-7 absolute -left-7 top-1;
+}
+
+.Experience .Timeline__time {
+  @apply absolute bg-navy-3 min-w-max right-12 -top-3 px-3 py-1 rounded-lg;
+}
+
+.Experience .Timeline__accomplishment {
+  @apply mb-2;
+}
+
+.Experience .Timeline__accomplishment:before {
+  @apply content-['\203A'] text-accent-1 text-lg font-bold mr-2 -ml-4;
+}
