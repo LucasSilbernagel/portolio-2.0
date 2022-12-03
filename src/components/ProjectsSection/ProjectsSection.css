@@ -15,7 +15,7 @@
 }
 
 .ProjectsSection .ProjectText {
-  @apply absolute top-14 -right-10 w-[500px] text-right;
+  @apply absolute top-14 w-[500px];
 }
 
 .ProjectsSection .ProjectName {

@@ -27,8 +27,11 @@ const ProjectsSection = () => {
         {PROJECTS.map((project, index) => {
           const isEven = index % 2 === 0
           return (
-            <li key={project.github} className="mb-24 relative">
-              <div>
+            <li
+              key={project.github}
+              className="mb-24 relative h-[363px] hidden xl:flex"
+            >
+              <div className={isEven ? '' : 'absolute right-0'}>
                 <a
                   href={project.liveLink}
                   target="_blank"
@@ -50,7 +53,11 @@ const ProjectsSection = () => {
                   <div className="Overlay2"></div>
                 </a>
               </div>
-              <div className="ProjectText">
+              <div
+                className={`ProjectText ${
+                  isEven ? '-right-10 text-right' : '-left-10 text-left'
+                }`}
+              >
                 <h4 className="ProjectName">
                   <a
                     href={project.liveLink}
@@ -65,13 +72,21 @@ const ProjectsSection = () => {
                   <p>{project.description}</p>
                 </div>
                 <div className="text-slate-2 text-sm font-fira-code mt-6">
-                  <ul className="flex flex-wrap gap-x-4 gap-y-2 justify-end pl-32">
+                  <ul
+                    className={`flex flex-wrap gap-x-4 gap-y-2 ${
+                      isEven ? 'justify-end pl-32' : 'justify-start pr-32'
+                    }`}
+                  >
                     {project.techStack.map((skill) => {
                       return <li key={index}>{skill}</li>
                     })}
                   </ul>
                 </div>
-                <div className="flex justify-end gap-6 mt-6 text-lg">
+                <div
+                  className={`flex gap-6 mt-6 text-lg ${
+                    isEven ? 'justify-end' : 'justify-start'
+                  }`}
+                >
                   <div>
                     <a
                       href={project.github}
