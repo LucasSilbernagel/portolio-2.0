@@ -9,6 +9,8 @@ module.exports = {
       colors: {
         accent: {
           1: '#64ffda',
+          2: '#85d6ab',
+          3: '#77c099',
         },
         white: {
           1: '#e6f1ff',

@@ -79,3 +79,5 @@ export const PROJECTS = [
     imageFileName: 'bestFlix',
   },
 ]
+
+// Project screenshots: 1470px x 900px

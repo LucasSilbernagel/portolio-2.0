@@ -2,6 +2,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { PROJECTS } from '../../content/projects'
 import './ProjectsSection.css'
 import { graphql, useStaticQuery } from 'gatsby'
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 const ProjectsSection = () => {
   const projectImageNames = PROJECTS.map((project) => project.imageFileName)
@@ -23,11 +24,18 @@ const ProjectsSection = () => {
     <div className="ProjectsSection" id="projects-section">
       <h3 className="SectionHeader">Projects</h3>
       <ul>
-        {PROJECTS.map((project) => {
+        {PROJECTS.map((project, index) => {
+          const isEven = index % 2 === 0
           return (
-            <li key={project.github}>
+            <li key={project.github} className="mb-24 relative">
               <div>
-                <div className="w-[580px] h-[363px]">
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`live link for ${project.name}`}
+                  className="ImageLink"
+                >
                   <GatsbyImage
                     image={
                       projectImages.filter(
@@ -35,9 +43,57 @@ const ProjectsSection = () => {
                           projectImage.imageName === project.imageFileName
                       )[0].gatsbyImageData
                     }
-                    alt={project.name}
-                    className="w-full h-full object-contain"
+                    alt=""
+                    className="w-full h-full object-contain rounded-sm"
                   />
+                  <div className="Overlay"></div>
+                  <div className="Overlay2"></div>
+                </a>
+              </div>
+              <div className="ProjectText">
+                <h4 className="ProjectName">
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`live link for ${project.name}`}
+                  >
+                    {project.name}
+                  </a>
+                </h4>
+                <div className="ProjectDescription">
+                  <p>{project.description}</p>
+                </div>
+                <div className="text-slate-2 text-sm font-fira-code mt-6">
+                  <ul className="flex flex-wrap gap-x-4 gap-y-2 justify-end pl-32">
+                    {project.techStack.map((skill) => {
+                      return <li key={index}>{skill}</li>
+                    })}
+                  </ul>
+                </div>
+                <div className="flex justify-end gap-6 mt-6 text-lg">
+                  <div>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`GitHub repository for ${project.name}`}
+                      className="IconLink"
+                    >
+                      <FaGithub />
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`live link for ${project.name}`}
+                      className="IconLink"
+                    >
+                      <FaExternalLinkAlt />
+                    </a>
+                  </div>
                 </div>
               </div>
             </li>
