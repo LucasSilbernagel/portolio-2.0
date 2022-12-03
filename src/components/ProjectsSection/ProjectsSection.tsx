@@ -27,90 +27,101 @@ const ProjectsSection = () => {
         {PROJECTS.map((project, index) => {
           const isEven = index % 2 === 0
           return (
-            <li
-              key={project.github}
-              className="mb-24 relative h-[363px] hidden xl:flex"
-            >
-              <div className={isEven ? '' : 'absolute right-0'}>
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`live link for ${project.name}`}
-                  className="ImageLink"
-                >
-                  <GatsbyImage
-                    image={
-                      projectImages.filter(
-                        (projectImage: { imageName: string }) =>
-                          projectImage.imageName === project.imageFileName
-                      )[0].gatsbyImageData
-                    }
-                    alt=""
-                    className="w-full h-full object-contain rounded-sm"
-                  />
-                  <div className="Overlay"></div>
-                  <div className="Overlay2"></div>
-                </a>
-              </div>
-              <div
-                className={`ProjectText ${
-                  isEven ? '-right-10 text-right' : '-left-10 text-left'
-                }`}
-              >
-                <h4 className="ProjectName">
+            <li key={`${project.github}`}>
+              {/* Desktop */}
+              <div className="mb-24 relative h-[363px] hidden xl:flex">
+                <div className={isEven ? '' : 'absolute right-0'}>
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`live link for ${project.name}`}
+                    className="ImageLink"
                   >
-                    {project.name}
+                    <GatsbyImage
+                      image={
+                        projectImages.filter(
+                          (projectImage: { imageName: string }) =>
+                            projectImage.imageName === project.imageFileName
+                        )[0].gatsbyImageData
+                      }
+                      alt=""
+                      className="w-full h-full object-contain rounded-sm"
+                    />
+                    <div className="Overlay"></div>
+                    <div className="Overlay2"></div>
                   </a>
-                </h4>
-                <div className="ProjectDescription">
-                  <p>{project.description}</p>
-                </div>
-                <div className="text-slate-2 text-sm font-fira-code mt-6">
-                  <ul
-                    className={`flex flex-wrap gap-x-4 gap-y-2 ${
-                      isEven ? 'justify-end pl-32' : 'justify-start pr-32'
-                    }`}
-                  >
-                    {project.techStack.map((skill) => {
-                      return <li key={index}>{skill}</li>
-                    })}
-                  </ul>
                 </div>
                 <div
-                  className={`flex gap-6 mt-6 text-lg ${
-                    isEven ? 'justify-end' : 'justify-start'
+                  className={`ProjectText ${
+                    isEven ? '-right-10 text-right' : '-left-10 text-left'
                   }`}
                 >
-                  <div>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`GitHub repository for ${project.name}`}
-                      className="IconLink"
-                    >
-                      <FaGithub />
-                    </a>
-                  </div>
-                  <div>
+                  <h4 className="ProjectName">
                     <a
                       href={project.liveLink}
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`live link for ${project.name}`}
-                      className="IconLink"
                     >
-                      <FaExternalLinkAlt />
+                      {project.name}
                     </a>
+                  </h4>
+                  <div className="ProjectDescription">
+                    <p>{project.description}</p>
+                  </div>
+                  <div className="text-slate-2 text-sm font-fira-code mt-6">
+                    <ul
+                      className={`flex flex-wrap gap-x-4 gap-y-2 ${
+                        isEven ? 'justify-end pl-32' : 'justify-start pr-32'
+                      }`}
+                    >
+                      {project.techStack.map((skill, skillIndex) => {
+                        return (
+                          <li
+                            key={`${project.github}-${skill.replace(
+                              / /g,
+                              ''
+                            )}-${skillIndex}`}
+                          >
+                            {skill}
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </div>
+                  <div
+                    className={`flex gap-6 mt-6 text-lg ${
+                      isEven ? 'justify-end' : 'justify-start'
+                    }`}
+                  >
+                    <div>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`GitHub repository for ${project.name}`}
+                        className="IconLink"
+                      >
+                        <FaGithub />
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`live link for ${project.name}`}
+                        className="IconLink"
+                      >
+                        <FaExternalLinkAlt />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
+              {/* Mobile */}
+              <div></div>
             </li>
           )
         })}
