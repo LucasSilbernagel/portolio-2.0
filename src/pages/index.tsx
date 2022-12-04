@@ -18,6 +18,11 @@ const Home = () => {
         <TechStack />
         <Experience />
         <ProjectsSection />
+        <div className="flex justify-center mb-6">
+          <a href="mailto:hello@lucassilbernagel.com" className="AccentButton">
+            Say hello
+          </a>
+        </div>
       </main>
       <footer></footer>
     </>
