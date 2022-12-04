@@ -29,7 +29,7 @@ const ProjectsSection = () => {
           return (
             <li key={`${project.github}`}>
               {/* Desktop */}
-              <div className="mb-24 relative h-[363px] hidden xl:flex">
+              <div className="Project--desktop">
                 <div className={isEven ? '' : 'absolute right-0'}>
                   <a
                     href={project.liveLink}
@@ -48,8 +48,8 @@ const ProjectsSection = () => {
                       alt=""
                       className="w-full h-full object-contain rounded-sm"
                     />
-                    <div className="Overlay"></div>
-                    <div className="Overlay2"></div>
+                    <div className="Overlay--desktop"></div>
+                    <div className="Overlay2--desktop"></div>
                   </a>
                 </div>
                 <div
@@ -82,7 +82,7 @@ const ProjectsSection = () => {
                             key={`${project.github}-${skill.replace(
                               / /g,
                               ''
-                            )}-${skillIndex}`}
+                            )}-${skillIndex}-desktop`}
                           >
                             {skill}
                           </li>
@@ -121,7 +121,75 @@ const ProjectsSection = () => {
                 </div>
               </div>
               {/* Mobile */}
-              <div></div>
+              <div className="Project--mobile">
+                <GatsbyImage
+                  className="rounded-sm absolute w-full h-full opacity-50"
+                  alt=""
+                  image={
+                    projectImages.filter(
+                      (projectImage: { imageName: string }) =>
+                        projectImage.imageName === project.imageFileName
+                    )[0].gatsbyImageData
+                  }
+                />
+                <div className="Overlay--mobile"></div>
+                <div className="Overlay2--mobile"></div>
+                <div className="z-20 px-6 py-8 rounded-sm">
+                  <h4 className="ProjectName">
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`live link for ${project.name}`}
+                    >
+                      {project.name}
+                    </a>
+                  </h4>
+                  <div className=" text-sm text-slate-2 tracking-wide my-6">
+                    <p>{project.description}</p>
+                  </div>
+                  <div className="text-slate-2 text-sm font-fira-code mb-6">
+                    <ul className="flex flex-wrap gap-x-4 gap-y-2">
+                      {project.techStack.map((skill, skillIndex) => {
+                        return (
+                          <li
+                            key={`${project.github}-${skill.replace(
+                              / /g,
+                              ''
+                            )}-${skillIndex}-mobile`}
+                          >
+                            {skill}
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </div>
+                  <div className="flex gap-6 text-lg">
+                    <div>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`GitHub repository for ${project.name}`}
+                        className="IconLink"
+                      >
+                        <FaGithub />
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`live link for ${project.name}`}
+                        className="IconLink"
+                      >
+                        <FaExternalLinkAlt />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
           )
         })}
