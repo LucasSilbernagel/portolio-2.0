@@ -23,11 +23,11 @@
 }
 
 .ProjectsSection .ImageLink .Overlay--desktop {
-  @apply absolute bg-accent-3 top-0 left-0 w-full h-full opacity-50 hover:opacity-0 focus:opacity-0 duration-300 rounded-sm;
+  @apply absolute bg-accent-3 top-0 left-0 w-full h-full opacity-50 hover:opacity-25 focus:opacity-25 duration-300 rounded-sm;
 }
 
 .ProjectsSection .ImageLink .Overlay2--desktop {
-  @apply absolute bg-black top-0 left-0 w-full h-full opacity-50 hover:opacity-0 focus:opacity-0 duration-300 rounded-sm;
+  @apply absolute bg-black top-0 left-0 w-full h-full opacity-50 hover:opacity-25 focus:opacity-25 duration-300 rounded-sm;
 }
 
 .ProjectsSection .ProjectText {
@@ -39,7 +39,7 @@
 }
 
 .ProjectsSection .ProjectDescription {
-  @apply bg-navy-2 px-4 py-6 text-sm text-slate-2 tracking-wide mt-6;
+  @apply bg-navy-2 px-4 py-6 text-sm text-slate-2 tracking-wide mt-6 rounded-sm;
 }
 
 .ProjectsSection .IconLink {

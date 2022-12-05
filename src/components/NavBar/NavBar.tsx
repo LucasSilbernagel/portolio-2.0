@@ -37,7 +37,13 @@ const NavBar = (props: NavBarProps) => {
       } ${currentScrollPos > 80 ? 'shadow-lg pb-4' : ''}`}
     >
       <div className="z-10">
-        <button className="IconButton" onClick={() => scrollTo('#header')}>
+        <button
+          className="IconButton"
+          onClick={() => {
+            scrollTo('#header')
+            setIsMenuOpening(false)
+          }}
+        >
           <StaticImage
             src="../../images/profile-photo-wide.jpg"
             alt="Lucas Silbernagel"
