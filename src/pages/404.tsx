@@ -1,27 +1,23 @@
 import { Link, HeadFC } from 'gatsby'
+import { FaArrowLeft } from 'react-icons/fa'
 
 export const Head: HeadFC = () => <title>Lucas Silbernagel | Not found</title>
 
 const NotFoundPage = () => {
   return (
-    <>
-      <header></header>
-      <main>
-        <h1 className="font-black text-4xl mt-20 mb-8">
-          Oops! We don&apos;t have the page you&apos;re looking for.
-        </h1>
+    <main className="text-center min-h-[70vh] mt-36">
+      <h1 className="font-black text-4xl mb-8">
+        Sorry, that page doesn&apos;t exist!
+      </h1>
+      <div className="flex justify-center items-center gap-4 hover:text-accent-1 focus:text-accent-1 duration-300">
+        <FaArrowLeft />
         <p className="text-xl">
-          <Link
-            className="underline underline-offset-4 duration-300 hover:text-blue-1 focus:text-blue-1"
-            to="/"
-          >
-            Return to the homepage
+          <Link className="underline underline-offset-8" to="/">
+            Go back
           </Link>
-          .
         </p>
-      </main>
-      <footer></footer>
-    </>
+      </div>
+    </main>
   )
 }
 
