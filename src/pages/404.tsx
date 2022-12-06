@@ -2,12 +2,7 @@ import { Link, HeadFC } from 'gatsby'
 import { FaArrowLeft } from 'react-icons/fa'
 import { SEO } from '../components/Seo'
 
-export const Head: HeadFC = () => (
-  <SEO
-    title="Lucas Silbernagel | Not found"
-    description="Personal website and web development portfolio for Lucas Silbernagel"
-  />
-)
+export const Head: HeadFC = () => <SEO title="Not found" />
 
 const NotFoundPage = () => {
   return (

@@ -9,12 +9,7 @@ import { AnimationOnScroll } from 'react-animation-on-scroll'
 import 'animate.css/animate.min.css'
 import { SEO } from '../components/Seo'
 
-export const Head: HeadFC = () => (
-  <SEO
-    title="Lucas Silbernagel | Front-End Developer"
-    description="Personal website and web development portfolio for Lucas Silbernagel"
-  />
-)
+export const Head: HeadFC = () => <SEO />
 
 const Home = () => {
   return (
