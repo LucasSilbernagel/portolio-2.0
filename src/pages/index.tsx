@@ -9,7 +9,16 @@ import { AnimationOnScroll } from 'react-animation-on-scroll'
 import 'animate.css/animate.min.css'
 
 export const Head: HeadFC = () => (
-  <title>Lucas Silbernagel | Front-End Developer</title>
+  <>
+    <title>Lucas Silbernagel | Front-End Developer</title>
+    <meta property="og:title" content="Lucas Silbernagel" />
+    <meta property="og:url" content="https://lucassilbernagel.com/" />
+    <meta
+      property="og:description"
+      content="Web development portfolio for Lucas Silbernagel"
+    />
+    <meta property="og:image" content="../images/portfolio.png" />
+  </>
 )
 
 const Home = () => {

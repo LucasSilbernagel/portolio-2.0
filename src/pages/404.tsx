@@ -1,7 +1,18 @@
 import { Link, HeadFC } from 'gatsby'
 import { FaArrowLeft } from 'react-icons/fa'
 
-export const Head: HeadFC = () => <title>Lucas Silbernagel | Not found</title>
+export const Head: HeadFC = () => (
+  <>
+    <title>Lucas Silbernagel | Not found</title>
+    <meta property="og:title" content="Lucas Silbernagel" />
+    <meta property="og:url" content="https://lucassilbernagel.com/" />
+    <meta
+      property="og:description"
+      content="Web development portfolio for Lucas Silbernagel"
+    />
+    <meta property="og:image" content="../images/portfolio.png" />
+  </>
+)
 
 const NotFoundPage = () => {
   return (
