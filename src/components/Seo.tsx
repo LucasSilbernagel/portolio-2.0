@@ -1,4 +1,5 @@
 import { useSiteMetadata } from '../hooks/use-site-metadata'
+import seoImage from '../static/portfolio.png'
 
 interface SEOProps {
   title?: string
@@ -19,7 +20,7 @@ export const SEO = ({ title, description, pathname, children }: SEOProps) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: `${siteUrl}${image}`,
+    image: `${siteUrl}${seoImage}`,
     url: `${siteUrl}${pathname || ``}`,
     twitterUsername,
   }
