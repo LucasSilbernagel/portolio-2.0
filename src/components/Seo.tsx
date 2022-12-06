@@ -1,5 +1,5 @@
 import { useSiteMetadata } from '../hooks/use-site-metadata'
-import seoImage from '../static/portfolio.png'
+import seoImage from '../images/portfolio.png'
 
 interface SEOProps {
   title?: string
