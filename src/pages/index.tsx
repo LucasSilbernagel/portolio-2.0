@@ -20,7 +20,10 @@ export const Head: HeadFC = () => (
       property="og:description"
       content="Personal website and web development portfolio for Lucas Silbernagel"
     />
-    <meta property="og:image" content="/static/portfolio.png" />
+    <meta
+      property="og:image:secure"
+      content="https://meek-cannoli-5408ac.netlify.app/static/portfolio.png"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@LucasCodePro" />
     <meta name="twitter:creator" content="@LucasCodePro" />
