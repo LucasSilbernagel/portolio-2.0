@@ -7,36 +7,13 @@ import ProjectsSection from '../components/ProjectsSection/ProjectsSection'
 import Footer from '../components/Footer/Footer'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import 'animate.css/animate.min.css'
+import { SEO } from '../components/Seo'
 
 export const Head: HeadFC = () => (
-  <>
-    <title>Lucas Silbernagel | Front-End Developer</title>
-    <meta
-      property="og:title"
-      content="Lucas Silbernagel | Front-End Developer"
-    />
-    <meta property="og:url" content="https://lucassilbernagel.com/" />
-    <meta
-      property="og:description"
-      content="Personal website and web development portfolio for Lucas Silbernagel"
-    />
-    <meta
-      property="og:image:secure"
-      content="https://meek-cannoli-5408ac.netlify.app/static/portfolio.png"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@LucasCodePro" />
-    <meta name="twitter:creator" content="@LucasCodePro" />
-    <meta
-      name="twitter:title"
-      content="Lucas Silbernagel | Front-End Developer"
-    />
-    <meta
-      name="twitter:description"
-      content="Personal website and web development portfolio for Lucas Silbernagel"
-    />
-    <meta name="twitter:image" content="/static/portfolio.png" />
-  </>
+  <SEO
+    title="Lucas Silbernagel | Front-End Developer"
+    description="Personal website and web development portfolio for Lucas Silbernagel"
+  />
 )
 
 const Home = () => {

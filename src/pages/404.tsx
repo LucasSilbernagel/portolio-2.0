@@ -1,35 +1,12 @@
 import { Link, HeadFC } from 'gatsby'
 import { FaArrowLeft } from 'react-icons/fa'
+import { SEO } from '../components/Seo'
 
 export const Head: HeadFC = () => (
-  <>
-    <title>Lucas Silbernagel | Not found</title>
-    <meta
-      property="og:title"
-      content="Lucas Silbernagel | Front-End Developer"
-    />
-    <meta property="og:url" content="https://lucassilbernagel.com/" />
-    <meta
-      property="og:description"
-      content="Personal website and web development portfolio for Lucas Silbernagel"
-    />
-    <meta
-      property="og:image:secure"
-      content="https://meek-cannoli-5408ac.netlify.app/static/portfolio.png"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@LucasCodePro" />
-    <meta name="twitter:creator" content="@LucasCodePro" />
-    <meta
-      name="twitter:title"
-      content="Lucas Silbernagel | Front-End Developer"
-    />
-    <meta
-      name="twitter:description"
-      content="Personal website and web development portfolio for Lucas Silbernagel"
-    />
-    <meta name="twitter:image" content="/static/portfolio.png" />
-  </>
+  <SEO
+    title="Lucas Silbernagel | Not found"
+    description="Personal website and web development portfolio for Lucas Silbernagel"
+  />
 )
 
 const NotFoundPage = () => {
