@@ -3,12 +3,15 @@ import { FaArrowLeft } from 'react-icons/fa'
 
 export const Head: HeadFC = () => (
   <>
-    <title>Lucas Silbernagel | Not found</title>
-    <meta property="og:title" content="Lucas Silbernagel" />
+    <title>Lucas Silbernagel | Front-End Developer</title>
+    <meta
+      property="og:title"
+      content="Lucas Silbernagel | Front-End Developer"
+    />
     <meta property="og:url" content="https://lucassilbernagel.com/" />
     <meta
       property="og:description"
-      content="Web development portfolio for Lucas Silbernagel"
+      content="Personal website and web development portfolio for Lucas Silbernagel"
     />
     <meta property="og:image" content="../images/portfolio.png" />
   </>
