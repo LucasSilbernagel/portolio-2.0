@@ -6,6 +6,10 @@
   @apply mb-12 flex flex-col xl:hidden relative rounded-sm overflow-hidden;
 }
 
+.ProjectsSection .Project--mobile .gatsby-image-wrapper {
+  @apply absolute;
+}
+
 .ProjectsSection .Project--desktop {
   @apply mb-24 relative h-[363px] hidden xl:flex;
 }
@@ -19,7 +23,7 @@
 }
 
 .ProjectsSection .Overlay2--mobile {
-  @apply absolute bg-navy-1 top-0 left-0 w-full h-full opacity-90 rounded-sm;
+  @apply absolute bg-navy-1 top-0 left-0 w-full h-full opacity-75 rounded-sm;
 }
 
 .ProjectsSection .ImageLink .Overlay--desktop {
