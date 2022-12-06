@@ -20,7 +20,19 @@ export const Head: HeadFC = () => (
       property="og:description"
       content="Personal website and web development portfolio for Lucas Silbernagel"
     />
-    <meta property="og:image" content="../images/portfolio.png" />
+    <meta property="og:image" content="/static/portfolio.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@LucasCodePro" />
+    <meta name="twitter:creator" content="@LucasCodePro" />
+    <meta
+      name="twitter:title"
+      content="Lucas Silbernagel | Front-End Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Personal website and web development portfolio for Lucas Silbernagel"
+    />
+    <meta name="twitter:image" content="/static/portfolio.png" />
   </>
 )
 
