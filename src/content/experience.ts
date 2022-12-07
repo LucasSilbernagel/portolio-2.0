@@ -4,6 +4,7 @@ export const EXPERIENCE = [
     company: 'Xanadu',
     website: 'https://xanadu.ai/',
     timeframe: '2022-04 — present',
+    timeframeLong: 'April 2022 to present',
     accomplishments: [
       `Led a company-wide accessibility audit and advocated for compliance with web accessibility best practices.`,
       `Added key features to a reusable component library built with React, TypeScript, Tailwind, and Storybook.`,
@@ -17,6 +18,7 @@ export const EXPERIENCE = [
     company: 'CarbonCure Technologies',
     website: 'https://www.carboncure.com/',
     timeframe: '2021-03 — 2022-04',
+    timeframeLong: 'March 2021 to April 2022',
     accomplishments: [
       `Responsible for planning, building, testing, and improving CarbonCure's internal suite of software applications.`,
       `Lead developer of two key projects built with React, TypeScript, and MUI incorporating map layers, tables, and other data visualizations.`,
@@ -28,6 +30,7 @@ export const EXPERIENCE = [
     company: 'Greenpeace Canada',
     website: 'https://www.greenpeace.org/canada/en/',
     timeframe: '2020-07 — 2021-02',
+    timeframeLong: 'July 2020 to February 2021',
     accomplishments: [
       `Maintained and improved the Greenpeace Canada website using WordPress, HTML, CSS, and JavaScript.`,
       `Developed petition pages, donation pages, and emails using Greenpeace Canada's advocacy tools.`,

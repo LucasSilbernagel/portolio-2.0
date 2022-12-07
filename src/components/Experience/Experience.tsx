@@ -20,13 +20,21 @@ const Experience = () => {
                         <div className="Timeline__Horizontal-Line--right"></div>
                         <div className="Timeline__Horizontal-Line--left"></div>
                         <div className="Timeline__time--desktop">
-                          <span>{experience.timeframe}</span>
+                          <span aria-hidden="true">{experience.timeframe}</span>
+                          <span className="sr-only">
+                            {experience.timeframeLong}
+                          </span>
                         </div>
                       </div>
                       <div className="flex-1 ml-4">
                         <div className="w-full px-6 pb-4 -mt-1">
                           <div className="Timeline__time--mobile">
-                            <span>{experience.timeframe}</span>
+                            <span aria-hidden="true">
+                              {experience.timeframe}
+                            </span>
+                            <span className="sr-only">
+                              {experience.timeframeLong}
+                            </span>
                           </div>
                           <h4 className="mb-3 text-2xl font-fira-code text-accent-1">
                             {experience.title}
@@ -39,7 +47,7 @@ const Experience = () => {
                               className="flex items-center"
                             >
                               {experience.company}{' '}
-                              <FaExternalLinkAlt className="ml-2 text-xs" />
+                              <FaExternalLinkAlt className="ml-2 text-xs hidden md:flex" />
                             </a>
                           </h5>
                           <ul>
