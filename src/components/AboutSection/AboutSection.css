@@ -11,7 +11,7 @@
 }
 
 .AboutSection .PhotoContainer img {
-  @apply z-20 rounded-sm;
+  @apply z-20 rounded-sm min-w-[272px] min-h-[217px] sm:min-w-[300px] sm:min-h-[242px];
 }
 
 .AboutSection .PhotoContainer:after {
