@@ -45,7 +45,7 @@ const NavBar = (props: NavBarProps) => {
           }}
         >
           <StaticImage
-            src="../../images/profile-photo-wide.jpg"
+            src="../../images/profile-photo.jpg"
             alt="Lucas Silbernagel"
             className="h-full w-full"
           />

@@ -6,7 +6,7 @@ const config: GatsbyConfig = {
     description: `Personal website and web development portfolio for Lucas Silbernagel`,
     twitterUsername: `@LucasCodePro`,
     image: '/portfolio.png',
-    siteUrl: `https://meek-cannoli-5408ac.netlify.app/`,
+    siteUrl: `https://lucassilbernagel.com/`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

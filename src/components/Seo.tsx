@@ -12,7 +12,6 @@ export const SEO = ({ title, description, pathname, children }: SEOProps) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
-    image,
     siteUrl,
     twitterUsername,
   } = useSiteMetadata()

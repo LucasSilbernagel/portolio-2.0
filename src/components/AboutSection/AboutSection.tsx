@@ -66,7 +66,7 @@ const AboutSection = () => {
           <div className="PhotoContainer">
             <StaticImage
               alt="Lucas Silbernagel"
-              src="../../images/profile-photo-wide.jpg"
+              src="../../images/profile-photo.jpg"
             />
           </div>
         </div>

@@ -21,7 +21,6 @@ const Header = () => {
   }, [setWindowHeight])
 
   useEffect(() => {
-    /** Close menu when Escape key is pressed */
     if (isMenuOpening) {
       /** Close menu when Escape key is pressed */
       document.addEventListener('keydown', (e) => {
