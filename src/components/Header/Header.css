@@ -19,5 +19,5 @@ header {
 }
 
 .MobileMenu__Background {
-  @apply fixed lg:hidden top-0 left-0 w-full h-full backdrop-blur-[3px];
+  @apply fixed lg:hidden top-0 left-0 w-full h-full backdrop-blur-[3px] z-20;
 }
