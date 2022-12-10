@@ -3,15 +3,17 @@ import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import NavButtons from '../NavButtons/NavButtons'
 import './NavBar.css'
 import scrollTo from 'gatsby-plugin-smoothscroll'
+import { navigate } from 'gatsby'
 
 interface NavBarProps {
   isMenuOpening: boolean
   isMenuOpen: boolean
   setIsMenuOpening: Dispatch<SetStateAction<boolean>>
+  isHomepage: boolean
 }
 
 const NavBar = (props: NavBarProps) => {
-  const { isMenuOpening, setIsMenuOpening, isMenuOpen } = props
+  const { isMenuOpening, setIsMenuOpening, isMenuOpen, isHomepage } = props
 
   const [currentScrollPos, setCurrentScrollPos] = useState(0)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -21,6 +23,19 @@ const NavBar = (props: NavBarProps) => {
     setCurrentScrollPos(window.pageYOffset)
     setPrevScrollPos(currentScrollPos)
     setIsNavVisible(prevScrollPos > currentScrollPos || currentScrollPos < 70)
+  }
+
+  const handleIconButtonClick = () => {
+    setIsMenuOpening(false)
+    if (isHomepage) {
+      scrollTo('#header')
+    }
+    if (!isHomepage) {
+      navigate('/')
+      setTimeout(() => {
+        scrollTo('#header')
+      }, 100)
+    }
   }
 
   useEffect(() => {
@@ -37,13 +52,7 @@ const NavBar = (props: NavBarProps) => {
       } ${currentScrollPos > 80 ? 'shadow-lg pb-4' : ''}`}
     >
       <div className="z-10">
-        <button
-          className="IconButton"
-          onClick={() => {
-            scrollTo('#header')
-            setIsMenuOpening(false)
-          }}
-        >
+        <button className="IconButton" onClick={handleIconButtonClick}>
           <StaticImage
             src="../../images/profile-photo.jpg"
             alt="Lucas Silbernagel"
@@ -66,7 +75,7 @@ const NavBar = (props: NavBarProps) => {
       </div>
       <div>
         <div className="AccentFont NavButtons NavButtons__Desktop">
-          <NavButtons />
+          <NavButtons isHomepage={isHomepage} />
         </div>
         <div
           className={`MobileMenu ${
@@ -76,7 +85,10 @@ const NavBar = (props: NavBarProps) => {
           } ${isMenuOpen ? 'visible' : 'invisible'}`}
         >
           <div className="AccentFont NavButtons">
-            <NavButtons setIsMenuOpening={setIsMenuOpening} />
+            <NavButtons
+              setIsMenuOpening={setIsMenuOpening}
+              isHomepage={isHomepage}
+            />
           </div>
         </div>
       </div>

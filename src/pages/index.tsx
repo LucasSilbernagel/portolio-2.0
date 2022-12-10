@@ -14,7 +14,7 @@ export const Head: HeadFC = () => <SEO />
 const Home = () => {
   return (
     <>
-      <Header />
+      <Header isHomepage={true} />
       <main>
         <AboutSection />
         <TechStack />
@@ -24,6 +24,8 @@ const Home = () => {
           <div className="flex justify-center my-36">
             <a
               href="mailto:hello@lucassilbernagel.com"
+              target="_blank"
+              rel="noreferrer"
               className="AccentButton"
             >
               Say hello

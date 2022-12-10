@@ -1,12 +1,14 @@
 import { Dispatch, SetStateAction } from 'react'
 import scrollTo from 'gatsby-plugin-smoothscroll'
+import { navigate } from 'gatsby'
 
 interface NavButtonsProps {
+  isHomepage: boolean
   setIsMenuOpening?: Dispatch<SetStateAction<boolean>>
 }
 
 const NavButtons = (props: NavButtonsProps) => {
-  const { setIsMenuOpening } = props
+  const { setIsMenuOpening, isHomepage } = props
 
   const buttons = [
     { label: 'About', selector: '#about-section' },
@@ -19,7 +21,15 @@ const NavButtons = (props: NavButtonsProps) => {
     if (setIsMenuOpening) {
       setIsMenuOpening(false)
     }
-    scrollTo(selector)
+    if (isHomepage) {
+      scrollTo(selector)
+    }
+    if (!isHomepage) {
+      navigate('/')
+      setTimeout(() => {
+        scrollTo(selector)
+      }, 100)
+    }
   }
 
   return (
@@ -34,7 +44,12 @@ const NavButtons = (props: NavButtonsProps) => {
           </button>
         )
       })}
-      <a href="mailto:hello@lucassilbernagel.com" className="ContactButton">
+      <a
+        href="mailto:hello@lucassilbernagel.com"
+        target="_blank"
+        rel="noreferrer"
+        className="ContactButton"
+      >
         Say hello
       </a>
     </>
