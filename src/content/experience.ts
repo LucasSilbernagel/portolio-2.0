@@ -1,10 +1,18 @@
 export const EXPERIENCE = [
   {
+    title: 'Front-End Developer II',
+    company: 'Xanadu',
+    website: 'https://xanadu.ai/',
+    timeframe: '2023-01 — present',
+    timeframeLong: 'January 2023 to present',
+    accomplishments: [],
+  },
+  {
     title: 'Front-End Developer',
     company: 'Xanadu',
     website: 'https://xanadu.ai/',
-    timeframe: '2022-04 — present',
-    timeframeLong: 'April 2022 to present',
+    timeframe: '2022-04 — 2022-12',
+    timeframeLong: 'April 2022 to December 2022',
     accomplishments: [
       `Led a company-wide accessibility audit and advocated for compliance with web accessibility best practices.`,
       `Added key features to a reusable component library built with React, TypeScript, Tailwind, and Storybook.`,

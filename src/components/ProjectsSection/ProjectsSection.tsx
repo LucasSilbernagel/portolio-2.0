@@ -166,7 +166,7 @@ const ProjectsSection = () => {
                         })}
                       </ul>
                     </div>
-                    <div className="flex gap-6 text-lg">
+                    <div className="flex gap-12 text-lg">
                       <div>
                         <a
                           href={project.github}

@@ -12,9 +12,9 @@ const Experience = () => {
           <div className="Timeline__container">
             <div className="Timeline__Vertical-Line"></div>
             <ol>
-              {EXPERIENCE.map((experience) => {
+              {EXPERIENCE.map((experience, index) => {
                 return (
-                  <li key={experience.website} className="mb-5">
+                  <li key={`${experience.website}-${index}`} className="mb-5">
                     <div className="flex items-start pt-8">
                       <div className="Timeline__circle">
                         <div className="Timeline__Horizontal-Line--right"></div>
