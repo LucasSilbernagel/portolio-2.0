@@ -24,7 +24,9 @@ const ProjectsSection = () => {
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
       <div className="ProjectsSection" id="projects-section">
-        <h3 className="SectionHeader">Projects</h3>
+        <h3 className="SectionHeader after:w-7 after:sm:w-[30vw]">
+          Latest Projects
+        </h3>
         <ul>
           {PROJECTS.map((project, index) => {
             const isEven = index % 2 === 0

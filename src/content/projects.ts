@@ -1,5 +1,14 @@
 export const PROJECTS = [
   {
+    name: 'Quinn Bonnett, RMT',
+    description:
+      'Freelance business website built for Quinn Bonnett, a Registered Massage Therapist.',
+    techStack: ['Gatsby', 'React', 'TypeScript', 'Tailwind'],
+    github: 'https://github.com/LucasSilbernagel/quinn-rmt',
+    liveLink: 'https://quinnbonnettrmt.com/',
+    imageFileName: 'quinnBonnettRMT',
+  },
+  {
     name: 'Tasty',
     description:
       'A multi-page website of tasty recipes, inspired by Delish.com. Content is saved and provided by Strapi CMS, with images and video hosted in Cloudinary.',
@@ -68,15 +77,6 @@ export const PROJECTS = [
     github: 'https://github.com/LucasSilbernagel/wordGameDB',
     liveLink: 'https://www.wordgamedb.com/',
     imageFileName: 'wordGameDB',
-  },
-  {
-    name: 'bestFlix',
-    description:
-      'The best movies of all time, as voted by you! Search for and nominate up to four movies, and vote for your favourites on the list of nominees.',
-    techStack: ['React', 'Firebase', 'REST API', 'SCSS'],
-    github: 'https://github.com/LucasSilbernagel/bestFlix',
-    liveLink: 'https://lucassilbernagel.github.io/bestFlix/',
-    imageFileName: 'bestFlix',
   },
 ]
 
