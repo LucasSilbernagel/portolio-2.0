@@ -63,7 +63,7 @@ const AboutSection = () => {
               </button>
             </div>
           </div>
-          <div className="max-w-[300px] mx-auto xl:ml-0">
+          <div className="max-w-[300px] w-auto xl:w-max mx-auto xl:ml-0">
             <div className="PhotoContainer">
               <StaticImage
                 alt="Lucas Silbernagel"

@@ -7,7 +7,7 @@
 }
 
 .AboutSection .PhotoContainer {
-  @apply relative;
+  @apply relative w-full;
 }
 
 .AboutSection .PhotoContainer img {
