@@ -63,11 +63,13 @@ const AboutSection = () => {
               </button>
             </div>
           </div>
-          <div className="PhotoContainer">
-            <StaticImage
-              alt="Lucas Silbernagel"
-              src="../../images/profile-photo.jpg"
-            />
+          <div className="max-w-[300px] mx-auto xl:ml-0">
+            <div className="PhotoContainer">
+              <StaticImage
+                alt="Lucas Silbernagel"
+                src="../../images/profile-photo.jpg"
+              />
+            </div>
           </div>
         </div>
       </div>

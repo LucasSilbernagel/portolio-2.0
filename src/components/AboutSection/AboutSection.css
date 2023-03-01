@@ -7,11 +7,11 @@
 }
 
 .AboutSection .PhotoContainer {
-  @apply max-w-[300px] max-h-[242px] relative mx-auto xl:ml-0;
+  @apply relative;
 }
 
 .AboutSection .PhotoContainer img {
-  @apply z-20 rounded-sm min-w-[272px] min-h-[217px] sm:min-w-[300px] sm:min-h-[242px];
+  @apply z-20 rounded-sm;
 }
 
 .AboutSection .PhotoContainer:after {
