@@ -2,7 +2,7 @@ export const TECH_STACK = [
   {
     id: 1,
     section: 'JavaScript',
-    skills: ['ES6+', 'TypeScript', 'Create React App', 'Gatsby', 'jQuery'],
+    skills: ['ES6+', 'TypeScript', 'React', 'Gatsby', 'jQuery'],
   },
   {
     id: 2,
