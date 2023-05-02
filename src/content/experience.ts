@@ -5,7 +5,13 @@ export const EXPERIENCE = [
     website: 'https://xanadu.ai/',
     timeframe: '2023-01 — present',
     timeframeLong: 'January 2023 to present',
-    accomplishments: [],
+    accomplishments: [
+      `Built key features of Xanadu’s quantum hackathon software with React, TypeScript, Tailwind, and GraphQL.`,
+      `Converted the PennyLane.ai website from a legacy codebase to Gatsby, React, TypeScript, and Tailwind.`,
+      `Added new pages and features to the Xanadu corporate website, including the ability to write unit tests.`,
+      `Delivered a presentation about Progressive Web Apps at a company-wide software meeting.`,
+      `Attended an accessibility conference and trained the front-end team on how to use screen reader software.`,
+    ],
   },
   {
     title: 'Front-End Developer',
