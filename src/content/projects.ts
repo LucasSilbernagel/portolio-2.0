@@ -1,5 +1,14 @@
 export const PROJECTS = [
   {
+    name: 'ReykrMusic.com',
+    description:
+      'A website for Reykr, an electronic music producer and DJ. Includes unit tests and a three.js background animation.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
+    github: 'https://github.com/ReykrMusic/reykr-music-v3',
+    liveLink: 'https://www.reykrmusic.com/',
+    imageFileName: 'reykrMusic',
+  },
+  {
     name: 'Quinn Bonnett, RMT',
     description:
       'Freelance business website built for Quinn Bonnett, a Registered Massage Therapist.',
@@ -68,15 +77,6 @@ export const PROJECTS = [
     github: 'https://github.com/LucasSilbernagel/weather-dash',
     liveLink: 'https://lucassilbernagel.github.io/weather-dash/',
     imageFileName: 'weatherDash',
-  },
-  {
-    name: 'Word Game DB',
-    description:
-      'A REST API that is intended to be used by anyone who would like to practice their coding skills by building a word game with an API.',
-    techStack: ['MongoDB', 'Express', 'React', 'Node.js', 'Styled Components'],
-    github: 'https://github.com/LucasSilbernagel/wordGameDB',
-    liveLink: 'https://www.wordgamedb.com/',
-    imageFileName: 'wordGameDB',
   },
 ]
 
