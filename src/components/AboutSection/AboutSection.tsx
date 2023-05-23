@@ -62,6 +62,7 @@ const AboutSection = () => {
               <button
                 className="AccentButton"
                 onClick={() => setIsShowingMore(!isShowingMore)}
+                data-testid="read-more-button"
               >
                 {isShowingMore ? 'Read less' : 'Read more'}
               </button>
