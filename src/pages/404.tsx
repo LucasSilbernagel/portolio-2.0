@@ -1,17 +1,10 @@
-import { Link, HeadFC } from 'gatsby'
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
-import { SEO } from '../components/Seo'
-
-export const Head: HeadFC = () => (
-  <SEO title="Page Not Found | Lucas Silbernagel" />
-)
+import { Link } from 'gatsby'
+import Layout from '../components/Layout'
 
 const NotFoundPage = () => {
   return (
-    <>
-      <Header isHomepage={false} />
-      <main className="text-center -mt-36 mb-36">
+    <Layout isHomePage={false} pageTitle="404" pageRoute="/404">
+      <div className="text-center -mt-36 mb-36">
         <h1 className="font-fira-code text-9xl font-black text-accent-1 mb-4">
           404
         </h1>
@@ -21,9 +14,8 @@ const NotFoundPage = () => {
             Go back
           </Link>
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
+    </Layout>
   )
 }
 

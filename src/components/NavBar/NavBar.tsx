@@ -9,11 +9,11 @@ interface NavBarProps {
   isMenuOpening: boolean
   isMenuOpen: boolean
   setIsMenuOpening: Dispatch<SetStateAction<boolean>>
-  isHomepage: boolean
+  isHomePage: boolean
 }
 
 const NavBar = (props: NavBarProps) => {
-  const { isMenuOpening, setIsMenuOpening, isMenuOpen, isHomepage } = props
+  const { isMenuOpening, setIsMenuOpening, isMenuOpen, isHomePage } = props
 
   const [currentScrollPos, setCurrentScrollPos] = useState(0)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -27,10 +27,10 @@ const NavBar = (props: NavBarProps) => {
 
   const handleIconButtonClick = () => {
     setIsMenuOpening(false)
-    if (isHomepage) {
+    if (isHomePage) {
       scrollTo('#header')
     }
-    if (!isHomepage) {
+    if (!isHomePage) {
       navigate('/')
       setTimeout(() => {
         scrollTo('#header')
@@ -75,7 +75,7 @@ const NavBar = (props: NavBarProps) => {
       </div>
       <div>
         <div className="AccentFont NavButtons NavButtons__Desktop">
-          <NavButtons isHomepage={isHomepage} />
+          <NavButtons isHomePage={isHomePage} />
         </div>
         <div
           className={`MobileMenu ${
@@ -87,7 +87,7 @@ const NavBar = (props: NavBarProps) => {
           <div className="AccentFont NavButtons">
             <NavButtons
               setIsMenuOpening={setIsMenuOpening}
-              isHomepage={isHomepage}
+              isHomePage={isHomePage}
             />
           </div>
         </div>

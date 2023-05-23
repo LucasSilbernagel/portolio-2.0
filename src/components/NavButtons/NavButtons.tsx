@@ -3,12 +3,12 @@ import scrollTo from 'gatsby-plugin-smoothscroll'
 import { navigate } from 'gatsby'
 
 interface NavButtonsProps {
-  isHomepage: boolean
+  isHomePage: boolean
   setIsMenuOpening?: Dispatch<SetStateAction<boolean>>
 }
 
 const NavButtons = (props: NavButtonsProps) => {
-  const { setIsMenuOpening, isHomepage } = props
+  const { setIsMenuOpening, isHomePage } = props
 
   const buttons = [
     { label: 'About', selector: '#about-section' },
@@ -21,10 +21,10 @@ const NavButtons = (props: NavButtonsProps) => {
     if (setIsMenuOpening) {
       setIsMenuOpening(false)
     }
-    if (isHomepage) {
+    if (isHomePage) {
       scrollTo(selector)
     }
-    if (!isHomepage) {
+    if (!isHomePage) {
       navigate('/')
       setTimeout(() => {
         scrollTo(selector)

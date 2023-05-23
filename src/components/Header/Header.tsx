@@ -5,10 +5,10 @@ import SideBars from '../SideBars/SideBars'
 import './Header.css'
 
 interface HeaderProps {
-  isHomepage: boolean
+  isHomePage: boolean
 }
 
-const Header = ({ isHomepage }: HeaderProps) => {
+const Header = ({ isHomePage }: HeaderProps) => {
   const [isMenuOpening, setIsMenuOpening] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [windowHeight, setWindowHeight] = useState(0)
@@ -50,9 +50,9 @@ const Header = ({ isHomepage }: HeaderProps) => {
         isMenuOpening={isMenuOpening}
         setIsMenuOpening={setIsMenuOpening}
         isMenuOpen={isMenuOpen}
-        isHomepage={isHomepage}
+        isHomePage={isHomePage}
       />
-      {isHomepage && (
+      {isHomePage && (
         <>
           <div className="HeroText">
             <h1>Lucas Silbernagel</h1>

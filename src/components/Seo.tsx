@@ -1,46 +1,48 @@
-import { useSiteMetadata } from '../hooks/use-site-metadata'
-import seoImage from '../images/portfolio.png'
+import { Helmet } from 'react-helmet'
 
-interface SEOProps {
-  title?: string
-  description?: string
-  pathname?: string
-  children?: JSX.Element
+interface ISeoProps {
+  pageTitle: string
+  pageRoute: string
+  pageDescription?: string
+  pageImage?: string
 }
 
-export const SEO = ({ title, description, pathname, children }: SEOProps) => {
-  const {
-    title: defaultTitle,
-    description: defaultDescription,
-    siteUrl,
-    twitterUsername,
-  } = useSiteMetadata()
-
-  const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    image: `${siteUrl}${seoImage}`,
-    url: `${siteUrl}${pathname || ``}`,
-    twitterUsername,
-  }
+const Seo = ({
+  pageTitle,
+  pageRoute,
+  pageDescription = `Personal website and web development portfolio for Lucas Silbernagel`,
+  pageImage = '/portfolio.png',
+}: ISeoProps) => {
+  const getPageTitle = () => `Lucas Silbernagel | ${pageTitle}`
+  const getPageRoute = () => `https://lucassilbernagel.com${pageRoute}`
 
   return (
-    <>
-      <title>{seo.title}</title>
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:url" content={seo.url} />
-      <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
-      <meta name="twitter:creator" content={seo.twitterUsername} />
-      <meta property="og:url" content={seo.url} />
+    <Helmet>
+      <title key="title">{getPageTitle()}</title>
+      {/* Primary Meta Tags */}
+      <meta name="title" content={getPageTitle()} />
+      <meta name="description" content={pageDescription} />
+      <meta name="image" content={pageImage} />
+      {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:image" content={seo.image} />
-      {children}
-    </>
+      <meta property="og:url" content={getPageRoute()} />
+      <meta property="og:title" content={getPageTitle()} />
+      <meta property="og:description" content={pageDescription} />
+      <meta property="og:image" content={pageImage} />
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:site_name"
+        content="Lucas Silbernagel | Front-End Developer"
+      />
+      {/* Twitter */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={getPageRoute()} />
+      <meta property="twitter:title" content={getPageTitle()} />
+      <meta property="twitter:description" content={pageDescription} />
+      <meta property="twitter:image" content={pageImage} />
+    </Helmet>
   )
 }
+
+export default Seo
