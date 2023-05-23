@@ -9,7 +9,11 @@ const AboutSection = () => {
 
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
-      <div className="AboutSection" id="about-section">
+      <div
+        className="AboutSection"
+        id="about-section"
+        data-testid="about-section"
+      >
         <h3 className="SectionHeader">About Me</h3>
         <div className="flex gap-12 flex-col xl:flex-row">
           <div>
