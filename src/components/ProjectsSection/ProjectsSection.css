@@ -18,6 +18,13 @@
   @apply inline-block relative w-[580px] h-[363px];
 }
 
+.ProjectsSection .ImageLink:hover .Overlay--desktop,
+.ProjectsSection .ImageLink:hover .Overlay2--desktop,
+.ProjectsSection .ImageLink:focus .Overlay--desktop,
+.ProjectsSection .ImageLink:focus .Overlay2--desktop {
+  @apply opacity-0;
+}
+
 .ProjectsSection .Overlay--mobile {
   @apply absolute bg-accent-3 top-0 left-0 w-full h-full opacity-25 rounded-sm;
 }
@@ -27,11 +34,11 @@
 }
 
 .ProjectsSection .ImageLink .Overlay--desktop {
-  @apply absolute bg-accent-3 top-0 left-0 w-full h-full opacity-50 hover:opacity-25 focus:opacity-25 duration-300 rounded-sm;
+  @apply absolute bg-accent-3 top-0 left-0 w-full h-full opacity-30 duration-300 rounded-sm;
 }
 
 .ProjectsSection .ImageLink .Overlay2--desktop {
-  @apply absolute bg-black top-0 left-0 w-full h-full opacity-50 hover:opacity-25 focus:opacity-25 duration-300 rounded-sm;
+  @apply absolute bg-black top-0 left-0 w-full h-full opacity-30 duration-300 rounded-sm;
 }
 
 .ProjectsSection .ProjectText {
