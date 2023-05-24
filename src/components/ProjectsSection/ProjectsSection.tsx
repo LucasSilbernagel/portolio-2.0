@@ -6,20 +6,26 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const ProjectsSection = () => {
-  const projectImageNames = PROJECTS.map((project) => project.imageFileName)
-
-  const imageQuery = useStaticQuery(query)
-
-  const projectImages = imageQuery.allImageSharp.nodes
-    .filter((node: { original: { src: string } }) =>
-      projectImageNames.includes(node.original.src.split('/')[2].split('-')[0])
-    )
-    .map((node: { gatsbyImageData: string; original: { src: string } }) => {
-      return {
-        gatsbyImageData: node.gatsbyImageData,
-        imageName: node.original.src.split('/')[2].split('-')[0],
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(filter: { extension: { regex: "/(jpg|png|jpeg)/" } }) {
+        nodes {
+          relativePath
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+          }
+        }
       }
-    })
+    }
+  `)
+
+  const getProjectImage = (imageFileName: string) => {
+    const image = data.allFile.nodes.find(
+      (node: { relativePath: string | string[] }) =>
+        node.relativePath.includes(imageFileName)
+    )
+    return image.childImageSharp.gatsbyImageData
+  }
 
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
@@ -48,12 +54,7 @@ const ProjectsSection = () => {
                       data-testid={`project-link-${index}`}
                     >
                       <GatsbyImage
-                        image={
-                          projectImages.filter(
-                            (projectImage: { imageName: string }) =>
-                              projectImage.imageName === project.imageFileName
-                          )[0].gatsbyImageData
-                        }
+                        image={getProjectImage(project.imageFileName)}
                         alt=""
                         className="w-full h-full object-contain rounded-sm"
                       />
@@ -134,12 +135,7 @@ const ProjectsSection = () => {
                   <GatsbyImage
                     className="rounded-sm absolute w-full h-full opacity-50"
                     alt=""
-                    image={
-                      projectImages.filter(
-                        (projectImage: { imageName: string }) =>
-                          projectImage.imageName === project.imageFileName
-                      )[0].gatsbyImageData
-                    }
+                    image={getProjectImage(project.imageFileName)}
                   />
                   <div className="Overlay--mobile"></div>
                   <div className="Overlay2--mobile"></div>
@@ -207,18 +203,5 @@ const ProjectsSection = () => {
     </AnimationOnScroll>
   )
 }
-
-export const query = graphql`
-  query Images {
-    allImageSharp {
-      nodes {
-        gatsbyImageData
-        original {
-          src
-        }
-      }
-    }
-  }
-`
 
 export default ProjectsSection

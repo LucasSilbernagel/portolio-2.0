@@ -6,7 +6,7 @@ export const PROJECTS = [
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
     github: 'https://github.com/ReykrMusic/reykr-music-v3',
     liveLink: 'https://www.reykrmusic.com/',
-    imageFileName: 'reykrMusic',
+    imageFileName: 'reykrMusic.png',
   },
   {
     name: 'Quinn Bonnett, RMT',
@@ -15,7 +15,7 @@ export const PROJECTS = [
     techStack: ['Gatsby', 'React', 'TypeScript', 'Tailwind'],
     github: 'https://github.com/LucasSilbernagel/quinn-rmt',
     liveLink: 'https://quinnbonnettrmt.com/',
-    imageFileName: 'quinnBonnettRMT',
+    imageFileName: 'quinnBonnettRMT.png',
   },
   {
     name: 'Tasty',
@@ -24,7 +24,7 @@ export const PROJECTS = [
     techStack: ['Gatsby', 'React', 'TypeScript', 'Strapi', 'Tailwind'],
     github: 'https://github.com/LucasSilbernagel/tasty',
     liveLink: 'https://symphonious-croquembouche-c45916.netlify.app/',
-    imageFileName: 'tasty',
+    imageFileName: 'tasty.png',
   },
   {
     name: 'Been There, Done That',
@@ -42,7 +42,7 @@ export const PROJECTS = [
     ],
     github: 'https://github.com/LucasSilbernagel/bt-dt',
     liveLink: 'https://shiny-gecko-cc92d2.netlify.app/',
-    imageFileName: 'btdt',
+    imageFileName: 'btdt.png',
   },
   {
     name: 'Keep Clone',
@@ -59,7 +59,7 @@ export const PROJECTS = [
     ],
     github: 'https://github.com/LucasSilbernagel/keep-clone',
     liveLink: 'https://glowing-moonbeam-f2cd62.netlify.app/',
-    imageFileName: 'keepClone',
+    imageFileName: 'keepClone.png',
   },
   {
     name: 'Weather Dash',
@@ -76,7 +76,7 @@ export const PROJECTS = [
     ],
     github: 'https://github.com/LucasSilbernagel/weather-dash',
     liveLink: 'https://lucassilbernagel.github.io/weather-dash/',
-    imageFileName: 'weatherDash',
+    imageFileName: 'weatherDash.png',
   },
 ]
 
