@@ -50,9 +50,14 @@ const NavBar = (props: NavBarProps) => {
           ? 'top-0 backdrop-blur-[3px] bg-[rgba(11,25,46,0.9)]'
           : 'top-[-100px]'
       } ${currentScrollPos > 80 ? 'shadow-lg pb-4' : ''}`}
+      data-testid="nav-bar"
     >
       <div className="z-10">
-        <button className="IconButton" onClick={handleIconButtonClick}>
+        <button
+          className="IconButton"
+          onClick={handleIconButtonClick}
+          data-testid="icon-button"
+        >
           <StaticImage
             src="../../images/profile-photo.jpg"
             alt="Lucas Silbernagel"
@@ -67,6 +72,7 @@ const NavBar = (props: NavBarProps) => {
           className={`MobileMenu__Button ${
             isMenuOpening ? 'MobileMenu__Button--open' : ''
           }`}
+          data-testid="mobile-menu-button"
         >
           <span></span>
           <span></span>
@@ -74,7 +80,10 @@ const NavBar = (props: NavBarProps) => {
         </button>
       </div>
       <div>
-        <div className="AccentFont NavButtons NavButtons__Desktop">
+        <div
+          className="AccentFont NavButtons NavButtons__Desktop"
+          data-testid="nav-buttons-desktop"
+        >
           <NavButtons isHomePage={isHomePage} />
         </div>
         <div
@@ -83,8 +92,12 @@ const NavBar = (props: NavBarProps) => {
               ? 'animate-slide-in right-0'
               : 'animate-slide-out -right-[500px]'
           } ${isMenuOpen ? 'visible' : 'invisible'}`}
+          data-testid="mobile-menu"
         >
-          <div className="AccentFont NavButtons">
+          <div
+            className="AccentFont NavButtons"
+            data-testid="nav-buttons-mobile"
+          >
             <NavButtons
               setIsMenuOpening={setIsMenuOpening}
               isHomePage={isHomePage}

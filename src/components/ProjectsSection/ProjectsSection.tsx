@@ -23,7 +23,11 @@ const ProjectsSection = () => {
 
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
-      <div className="ProjectsSection" id="projects-section">
+      <div
+        className="ProjectsSection"
+        id="projects-section"
+        data-testid="projects-section"
+      >
         <h3 className="SectionHeader after:w-7 after:sm:w-[30vw]">
           Latest Projects
         </h3>
@@ -41,6 +45,7 @@ const ProjectsSection = () => {
                       rel="noreferrer"
                       aria-label={`live link for ${project.name}`}
                       className="ImageLink"
+                      data-testid={`project-link-${index}`}
                     >
                       <GatsbyImage
                         image={

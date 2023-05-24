@@ -3,8 +3,8 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer className="mt-12 mb-6">
-      <div className="IconLinks">
+    <footer className="mt-12 mb-6" data-testid="footer">
+      <div className="IconLinks" data-testid="social-links">
         <SocialLinks />
       </div>
       <div className="TextLinks">

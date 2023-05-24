@@ -6,7 +6,11 @@ import { AnimationOnScroll } from 'react-animation-on-scroll'
 const Experience = () => {
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
-      <div className="Experience" id="experience-section">
+      <div
+        className="Experience"
+        id="experience-section"
+        data-testid="experience-section"
+      >
         <h3 className="SectionHeader">Experience</h3>
         <div className="Timeline">
           <div className="Timeline__container">
@@ -45,6 +49,7 @@ const Experience = () => {
                               target="_blank"
                               rel="noreferrer"
                               className="flex items-center"
+                              data-testid={experience.website}
                             >
                               {experience.company}{' '}
                               <FaExternalLinkAlt className="ml-2 text-xs hidden md:flex" />
@@ -57,6 +62,10 @@ const Experience = () => {
                                   <li
                                     className="Timeline__accomplishment"
                                     key={index}
+                                    data-testid={`${accomplishment.replace(
+                                      ' ',
+                                      ''
+                                    )}-${String(index)}`}
                                   >
                                     {accomplishment}
                                   </li>
