@@ -24,7 +24,10 @@ const ProjectsSection = () => {
       (node: { relativePath: string | string[] }) =>
         node.relativePath.includes(imageFileName)
     )
-    return image.childImageSharp.gatsbyImageData
+    if (image) {
+      return image.childImageSharp.gatsbyImageData
+    }
+    return null
   }
 
   return (
