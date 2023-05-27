@@ -1,7 +1,7 @@
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { PROJECTS } from '../../content/projects'
 import './ProjectsSection.css'
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 
@@ -210,6 +210,14 @@ const ProjectsSection = () => {
             )
           })}
         </ul>
+        <div className="text-center mt-24">
+          <h3 className="text-2xl font-bold mb-2">
+            Want to see more of my work?
+          </h3>
+          <Link className="AccentFont ArchiveLink" to="/project-archive">
+            View the archive
+          </Link>
+        </div>
       </div>
     </AnimationOnScroll>
   )
