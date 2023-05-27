@@ -41,31 +41,33 @@ const ProjectsSection = () => {
           Latest Projects
         </h3>
         <ul>
-          {PROJECTS.map((project, index) => {
+          {PROJECTS.slice(0, 6).map((project, index) => {
             const isEven = index % 2 === 0
             return (
               <li key={`${project.github}`}>
                 {/* Desktop */}
                 <div className="Project--desktop">
-                  <div className={isEven ? '' : 'absolute right-0'}>
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`live link for ${project.name}`}
-                      className="ImageLink"
-                      data-testid={`project-link-${index}`}
-                    >
-                      <GatsbyImage
-                        image={getProjectImage(project.imageFileName)}
-                        alt=""
-                        className="w-full h-full object-contain rounded-sm"
-                        data-testid={`project-image-${index}`}
-                      />
-                      <div className="Overlay--desktop"></div>
-                      <div className="Overlay2--desktop"></div>
-                    </a>
-                  </div>
+                  {project.imageFileName && (
+                    <div className={isEven ? '' : 'absolute right-0'}>
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`live link for ${project.name}`}
+                        className="ImageLink"
+                        data-testid={`project-link-${index}`}
+                      >
+                        <GatsbyImage
+                          image={getProjectImage(project.imageFileName)}
+                          alt=""
+                          className="w-full h-full object-contain rounded-sm"
+                          data-testid={`project-image-${index}`}
+                        />
+                        <div className="Overlay--desktop"></div>
+                        <div className="Overlay2--desktop"></div>
+                      </a>
+                    </div>
+                  )}
                   <div
                     className={`ProjectText ${
                       isEven ? '-right-10 text-right' : '-left-10 text-left'
@@ -137,11 +139,13 @@ const ProjectsSection = () => {
                 </div>
                 {/* Mobile */}
                 <div className="Project--mobile">
-                  <GatsbyImage
-                    className="rounded-sm absolute w-full h-full opacity-50"
-                    alt=""
-                    image={getProjectImage(project.imageFileName)}
-                  />
+                  {project.imageFileName && (
+                    <GatsbyImage
+                      className="rounded-sm absolute w-full h-full opacity-50"
+                      alt=""
+                      image={getProjectImage(project.imageFileName)}
+                    />
+                  )}
                   <div className="Overlay--mobile"></div>
                   <div className="Overlay2--mobile"></div>
                   <div className="z-20 px-6 py-8 rounded-sm">
