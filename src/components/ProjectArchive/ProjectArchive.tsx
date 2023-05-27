@@ -13,7 +13,8 @@ const ProjectArchive = () => {
       >
         <h1>Project Archive</h1>
         <h2 className="AccentFont">
-          Educational and side projects I&apos;ve completed over the years
+          Educational, freelance, and side projects I&apos;ve completed over the
+          years
         </h2>
         <ul>
           {PROJECTS.map((project, index) => {
