@@ -22,7 +22,10 @@ const ProjectArchive = () => {
                 <div className="Project">
                   <div className="flex justify-between mb-4">
                     <div>
-                      <h3 className="AccentFont text-accent-1">
+                      <h3
+                        className="AccentFont text-accent-1"
+                        data-testid={`project-year-${index}`}
+                      >
                         {project.year}
                       </h3>
                     </div>
