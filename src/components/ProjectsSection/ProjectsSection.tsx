@@ -6,24 +6,37 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const ProjectsSection = () => {
-  const projectImageNames = PROJECTS.map((project) => project.imageFileName)
-
-  const imageQuery = useStaticQuery(query)
-
-  const projectImages = imageQuery.allImageSharp.nodes
-    .filter((node: { original: { src: string } }) =>
-      projectImageNames.includes(node.original.src.split('/')[2].split('-')[0])
-    )
-    .map((node: { gatsbyImageData: string; original: { src: string } }) => {
-      return {
-        gatsbyImageData: node.gatsbyImageData,
-        imageName: node.original.src.split('/')[2].split('-')[0],
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(filter: { extension: { regex: "/(jpg|png|jpeg)/" } }) {
+        nodes {
+          relativePath
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+          }
+        }
       }
-    })
+    }
+  `)
+
+  const getProjectImage = (imageFileName: string) => {
+    const image = data.allFile.nodes.find(
+      (node: { relativePath: string | string[] }) =>
+        node.relativePath.includes(imageFileName)
+    )
+    if (image) {
+      return image.childImageSharp.gatsbyImageData
+    }
+    return null
+  }
 
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
-      <div className="ProjectsSection" id="projects-section">
+      <div
+        className="ProjectsSection"
+        id="projects-section"
+        data-testid="projects-section"
+      >
         <h3 className="SectionHeader after:w-7 after:sm:w-[30vw]">
           Latest Projects
         </h3>
@@ -41,16 +54,13 @@ const ProjectsSection = () => {
                       rel="noreferrer"
                       aria-label={`live link for ${project.name}`}
                       className="ImageLink"
+                      data-testid={`project-link-${index}`}
                     >
                       <GatsbyImage
-                        image={
-                          projectImages.filter(
-                            (projectImage: { imageName: string }) =>
-                              projectImage.imageName === project.imageFileName
-                          )[0].gatsbyImageData
-                        }
+                        image={getProjectImage(project.imageFileName)}
                         alt=""
                         className="w-full h-full object-contain rounded-sm"
+                        data-testid={`project-image-${index}`}
                       />
                       <div className="Overlay--desktop"></div>
                       <div className="Overlay2--desktop"></div>
@@ -67,6 +77,7 @@ const ProjectsSection = () => {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={`live link for ${project.name}`}
+                        data-testid={`project-title-${index}`}
                       >
                         {project.name}
                       </a>
@@ -129,12 +140,7 @@ const ProjectsSection = () => {
                   <GatsbyImage
                     className="rounded-sm absolute w-full h-full opacity-50"
                     alt=""
-                    image={
-                      projectImages.filter(
-                        (projectImage: { imageName: string }) =>
-                          projectImage.imageName === project.imageFileName
-                      )[0].gatsbyImageData
-                    }
+                    image={getProjectImage(project.imageFileName)}
                   />
                   <div className="Overlay--mobile"></div>
                   <div className="Overlay2--mobile"></div>
@@ -176,6 +182,7 @@ const ProjectsSection = () => {
                           rel="noreferrer"
                           aria-label={`GitHub repository for ${project.name}`}
                           className="IconLink"
+                          data-testid={`github-project-link-${index}`}
                         >
                           <FaGithub />
                         </a>
@@ -187,6 +194,7 @@ const ProjectsSection = () => {
                           rel="noreferrer"
                           aria-label={`live link for ${project.name}`}
                           className="IconLink"
+                          data-testid={`external-project-link-${index}`}
                         >
                           <FaExternalLinkAlt />
                         </a>
@@ -202,18 +210,5 @@ const ProjectsSection = () => {
     </AnimationOnScroll>
   )
 }
-
-export const query = graphql`
-  query Images {
-    allImageSharp {
-      nodes {
-        gatsbyImageData
-        original {
-          src
-        }
-      }
-    }
-  }
-`
 
 export default ProjectsSection

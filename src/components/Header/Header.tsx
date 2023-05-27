@@ -45,7 +45,7 @@ const Header = ({ isHomePage }: HeaderProps) => {
   }, [isMenuOpening])
 
   return (
-    <header className="scroll-mt-72" id="header">
+    <header className="scroll-mt-72" id="header" data-testid="header">
       <NavBar
         isMenuOpening={isMenuOpening}
         setIsMenuOpening={setIsMenuOpening}
@@ -62,12 +62,13 @@ const Header = ({ isHomePage }: HeaderProps) => {
               target="_blank"
               rel="noreferrer"
               className="AccentButton relative z-10"
+              data-testid="hero-contact-link"
             >
               Say hello
             </a>
           </div>
           {windowHeight >= 568 && (
-            <div className="HeroImage">
+            <div className="HeroImage" data-testid="hero-image">
               <StaticImage alt="" src="../../images/toronto.png" />
             </div>
           )}
