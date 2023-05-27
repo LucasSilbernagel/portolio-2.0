@@ -60,6 +60,7 @@ const ProjectsSection = () => {
                         image={getProjectImage(project.imageFileName)}
                         alt=""
                         className="w-full h-full object-contain rounded-sm"
+                        data-testid={`project-image-${index}`}
                       />
                       <div className="Overlay--desktop"></div>
                       <div className="Overlay2--desktop"></div>
@@ -76,6 +77,7 @@ const ProjectsSection = () => {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={`live link for ${project.name}`}
+                        data-testid={`project-title-${index}`}
                       >
                         {project.name}
                       </a>
@@ -180,6 +182,7 @@ const ProjectsSection = () => {
                           rel="noreferrer"
                           aria-label={`GitHub repository for ${project.name}`}
                           className="IconLink"
+                          data-testid={`github-project-link-${index}`}
                         >
                           <FaGithub />
                         </a>
@@ -191,6 +194,7 @@ const ProjectsSection = () => {
                           rel="noreferrer"
                           aria-label={`live link for ${project.name}`}
                           className="IconLink"
+                          data-testid={`external-project-link-${index}`}
                         >
                           <FaExternalLinkAlt />
                         </a>

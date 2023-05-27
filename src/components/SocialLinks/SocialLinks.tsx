@@ -8,6 +8,7 @@ const SocialLinks = () => {
         target="_blank"
         rel="noreferrer"
         aria-label="GitHub"
+        data-testid="github-link"
       >
         <FaGithub size="1.2rem" />
       </a>
@@ -16,6 +17,7 @@ const SocialLinks = () => {
         target="_blank"
         rel="noreferrer"
         aria-label="LinkedIn"
+        data-testid="linkedin-link"
       >
         <FaLinkedin size="1.2rem" />
       </a>
@@ -24,6 +26,7 @@ const SocialLinks = () => {
         target="_blank"
         rel="noreferrer"
         aria-label="Twitter"
+        data-testid="twitter-link"
       >
         <FaTwitter size="1.2rem" />
       </a>

@@ -5,7 +5,11 @@ import { AnimationOnScroll } from 'react-animation-on-scroll'
 const TechStack = () => {
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
-      <div className="TechStack" id="tech-stack-section">
+      <div
+        className="TechStack"
+        id="tech-stack-section"
+        data-testid="tech-stack-section"
+      >
         <h3 className="SectionHeader">Tech Stack</h3>
         <ul className="SkillGrid">
           {TECH_STACK.map((skillset) => {

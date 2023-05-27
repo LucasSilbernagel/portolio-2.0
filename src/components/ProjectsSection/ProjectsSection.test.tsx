@@ -118,6 +118,35 @@ describe('ProjectsSection', () => {
         'href',
         project.liveLink
       )
+      expect(screen.getByTestId(`project-image-${index}`)).toBeInTheDocument()
+      expect(screen.getByTestId(`project-image-${index}`)).toHaveAttribute(
+        'image',
+        'mocked-image-data'
+      )
+      expect(screen.getByTestId(`project-title-${index}`)).toBeInTheDocument()
+      expect(screen.getByTestId(`project-title-${index}`)).toHaveAttribute(
+        'href',
+        project.liveLink
+      )
+      expect(screen.getByTestId(`project-title-${index}`)).toHaveTextContent(
+        project.name
+      )
+      expect(screen.getAllByText(project.description)[0]).toBeInTheDocument()
+      project.techStack.forEach((skill) => {
+        expect(screen.getAllByText(skill)[0]).toBeInTheDocument()
+      })
+      expect(
+        screen.getByTestId(`github-project-link-${index}`)
+      ).toBeInTheDocument()
+      expect(
+        screen.getByTestId(`github-project-link-${index}`)
+      ).toHaveAttribute('href', project.github)
+      expect(
+        screen.getByTestId(`external-project-link-${index}`)
+      ).toBeInTheDocument()
+      expect(
+        screen.getByTestId(`external-project-link-${index}`)
+      ).toHaveAttribute('href', project.liveLink)
     })
   })
 })
