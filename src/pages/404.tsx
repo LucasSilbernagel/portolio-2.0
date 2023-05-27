@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 const NotFoundPage = () => {
   return (
     <Layout isHomePage={false} pageTitle="404" pageRoute="/404">
-      <div className="text-center -mt-36 mb-36">
+      <div className="text-center my-36">
         <h1 className="font-fira-code text-9xl font-black text-accent-1 mb-4">
           404
         </h1>

@@ -56,3 +56,20 @@
 .ProjectsSection .IconLink {
   @apply hover:text-accent-1 focus:text-accent-1 duration-300;
 }
+
+.ProjectsSection .ArchiveLink {
+  @apply text-accent-1 inline-block relative;
+}
+
+.ProjectsSection .ArchiveLink::after {
+  @apply content-[''] absolute w-full h-[1px] bottom-0 left-0 bg-accent-1;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.ProjectsSection .ArchiveLink:hover::after,
+.ProjectsSection .ArchiveLink:focus::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
