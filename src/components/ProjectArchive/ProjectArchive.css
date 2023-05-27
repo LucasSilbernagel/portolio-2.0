@@ -1,0 +1,23 @@
+.ProjectArchive {
+  @apply mt-36;
+}
+
+.ProjectArchive h1 {
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-slate-3 mb-10 md:mb-6 text-center md:text-left;
+}
+
+.ProjectArchive h2 {
+  @apply text-accent-1 mb-24;
+}
+
+.ProjectArchive .Project {
+  @apply mb-12 flex flex-col rounded-sm bg-navy-2 p-6;
+}
+
+.ProjectArchive .ProjectName {
+  @apply text-2xl font-bold tracking-wide text-slate-3 hover:text-accent-1 focus:text-accent-1 duration-300;
+}
+
+.ProjectArchive .IconLink {
+  @apply hover:text-accent-1 focus:text-accent-1 duration-300;
+}

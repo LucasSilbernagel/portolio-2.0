@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import ProjectArchive from '../components/ProjectArchive/ProjectArchive'
 
 const ProjectArchivePage = () => {
   return (
@@ -7,9 +8,7 @@ const ProjectArchivePage = () => {
       pageTitle="Project Archive"
       pageRoute="/project-archive"
     >
-      <div>
-        <h1>Project Archive</h1>
-      </div>
+      <ProjectArchive />
     </Layout>
   )
 }
