@@ -24,12 +24,12 @@ const AboutSection = () => {
             </p>
             <p>
               I&apos;ve been working in the industry since 2020, when I
-              graduated from web development bootcamp at Juno College. The
-              logical side of my brain loves solving tricky coding problems and
-              software architecture challenges, while the creative side of my
-              brain loves converting designs into beautiful and functional web
-              pages that people use every day. I&apos;m also passionate about
-              making the web a more accessible place, one page at a time.
+              graduated from web development bootcamp. The logical side of my
+              brain loves solving tricky coding problems and software
+              architecture challenges, while the creative side of my brain loves
+              converting designs into beautiful and functional web pages that
+              people use every day. I&apos;m also passionate about making the
+              web a more accessible place, one page at a time.
             </p>
             <SmoothCollapse expanded={isShowingMore}>
               <p>
@@ -43,12 +43,11 @@ const AboutSection = () => {
               </p>
               <p>
                 While working at the call center, I enrolled in a part-time
-                introduction to web development course at Juno College in
-                October 2019. I had dabbled in building websites in the past,
-                and I wanted to see if a career change into web development was
-                the right move for me. I really enjoyed the course, so after
-                much deliberation I quit my job to begin full-time bootcamp in
-                February 2020.
+                introduction to web development course in October 2019. I had
+                dabbled in building websites in the past, and I wanted to see if
+                a career change into web development was the right move for me.
+                I really enjoyed the course, so after much deliberation I quit
+                my job to begin full-time bootcamp in February 2020.
               </p>
               <p>
                 Finding a job after bootcamp was challenging, since I graduated

@@ -20,6 +20,15 @@ export const PROJECTS = [
     imageFileName: 'quinnBonnettRMT.png',
   },
   {
+    name: 'Portfolio 2.0',
+    year: '2022',
+    description: 'The second iteration of my web development portfolio.',
+    techStack: ['Gatsby', 'React', 'TypeScript', 'Tailwind'],
+    github: 'https://github.com/LucasSilbernagel/portolio-2.0',
+    liveLink: 'https://lucassilbernagel.com/',
+    imageFileName: '',
+  },
+  {
     name: 'Tasty',
     year: '2022',
     description:
@@ -125,6 +134,15 @@ export const PROJECTS = [
     imageFileName: '',
   },
   {
+    name: 'Portfolio 1.0',
+    year: '2020',
+    description: 'The first iteration of my web development portfolio.',
+    techStack: ['JavaScript', 'HTML5', 'SCSS'],
+    github: 'https://github.com/LucasSilbernagel/portolio-1.0',
+    liveLink: 'https://lucassilbernagel.github.io/portolio-1.0/',
+    imageFileName: '',
+  },
+  {
     name: 'Battle Rockets!',
     year: '2020',
     description:
@@ -191,6 +209,16 @@ export const PROJECTS = [
     techStack: ['jQuery', 'HTML5', 'CSS3', 'REST API'],
     github: 'https://github.com/LucasSilbernagel/currency',
     liveLink: 'https://lucassilbernagel.github.io/currency/',
+    imageFileName: '',
+  },
+  {
+    name: 'ice-cream',
+    year: '2020',
+    description:
+      'A simple website for an ice cream parlour. This was my very first programming app! I used jQuery to program the newsletter signup features.',
+    techStack: ['jQuery', 'HTML5', 'CSS3'],
+    github: 'https://github.com/LucasSilbernagel/ice-cream',
+    liveLink: 'https://lucassilbernagel.github.io/ice-cream/',
     imageFileName: '',
   },
   {
