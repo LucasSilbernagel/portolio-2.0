@@ -1,0 +1,31 @@
+.ExperienceItem {
+  @apply mb-5;
+}
+
+.ExperienceItem .Timeline__circle {
+  @apply bg-navy-1 z-10 rounded-full border-4 border-slate-1 h-5 w-5 relative;
+}
+
+.ExperienceItem .Timeline__Horizontal-Line--right {
+  @apply bg-slate-1 h-1 w-7 absolute -right-7 top-1;
+}
+
+.ExperienceItem .Timeline__Horizontal-Line--left {
+  @apply hidden xl:flex bg-slate-1 h-1 w-7 absolute -left-7 top-1;
+}
+
+.ExperienceItem .Timeline__time--desktop {
+  @apply hidden xl:flex absolute bg-navy-3 min-w-max right-12 -top-3 px-3 py-1 rounded-lg;
+}
+
+.ExperienceItem .Timeline__time--mobile {
+  @apply bg-navy-3 max-w-max px-3 py-1 rounded-lg mb-4 flex xl:hidden;
+}
+
+.ExperienceItem .Timeline__accomplishment {
+  @apply mb-2;
+}
+
+.ExperienceItem .Timeline__accomplishment:before {
+  @apply content-['\203A'] text-accent-1 text-lg font-bold mr-2 -ml-4;
+}

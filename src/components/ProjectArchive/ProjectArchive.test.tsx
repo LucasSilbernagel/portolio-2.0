@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import ProjectArchive from './ProjectArchive'
-import mockProjects from './MockProjects'
+import { PROJECTS } from '../../content/projects'
 
 describe('ProjectArchive', () => {
   test('renders correctly', () => {
@@ -9,10 +9,10 @@ describe('ProjectArchive', () => {
     expect(screen.getByText('Project Archive')).toBeInTheDocument()
     expect(
       screen.getByText(
-        `Educational and side projects I've completed over the years`
+        `Educational, freelance, and side projects I've completed over the years`
       )
     ).toBeInTheDocument()
-    mockProjects.forEach((project, index) => {
+    PROJECTS.forEach((project, index) => {
       expect(screen.getByTestId(`project-year-${index}`)).toBeInTheDocument()
       expect(screen.getByTestId(`project-year-${index}`)).toHaveTextContent(
         project.year

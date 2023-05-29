@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import ProjectsSection from './ProjectsSection'
-import mockProjects from '../ProjectArchive/MockProjects'
+import mockProjects from './MockProjects'
 
 const mockImageData = 'mocked-image-data'
 

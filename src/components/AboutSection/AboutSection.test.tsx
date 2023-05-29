@@ -13,7 +13,7 @@ describe('AboutSection', () => {
     ).toBeInTheDocument()
     expect(
       screen.getByText(
-        `I've been working in the industry since 2020, when I graduated from web development bootcamp at Juno College. The logical side of my brain loves solving tricky coding problems and software architecture challenges, while the creative side of my brain loves converting designs into beautiful and functional web pages that people use every day. I'm also passionate about making the web a more accessible place, one page at a time.`
+        `I've been working in the industry since 2020, when I graduated from web development bootcamp. The logical side of my brain loves solving tricky coding problems and software architecture challenges, while the creative side of my brain loves converting designs into beautiful and functional web pages that people use every day. I'm also passionate about making the web a more accessible place, one page at a time.`
       )
     ).toBeInTheDocument()
     expect(
@@ -23,7 +23,7 @@ describe('AboutSection', () => {
     ).toBeNull()
     expect(
       screen.queryByText(
-        `While working at the call center, I enrolled in a part-time introduction to web development course at Juno College in October 2019. I had dabbled in building websites in the past, and I wanted to see if a career change into web development was the right move for me. I really enjoyed the course, so after much deliberation I quit my job to begin full-time bootcamp in February 2020.`
+        `While working at the call center, I enrolled in a part-time introduction to web development course in October 2019. I had dabbled in building websites in the past, and I wanted to see if a career change into web development was the right move for me. I really enjoyed the course, so after much deliberation I quit my job to begin full-time bootcamp in February 2020.`
       )
     ).toBeNull()
     expect(
@@ -43,7 +43,7 @@ describe('AboutSection', () => {
     ).toBeInTheDocument()
     expect(
       screen.getByText(
-        `While working at the call center, I enrolled in a part-time introduction to web development course at Juno College in October 2019. I had dabbled in building websites in the past, and I wanted to see if a career change into web development was the right move for me. I really enjoyed the course, so after much deliberation I quit my job to begin full-time bootcamp in February 2020.`
+        `While working at the call center, I enrolled in a part-time introduction to web development course in October 2019. I had dabbled in building websites in the past, and I wanted to see if a career change into web development was the right move for me. I really enjoyed the course, so after much deliberation I quit my job to begin full-time bootcamp in February 2020.`
       )
     ).toBeInTheDocument()
     expect(
