@@ -36,6 +36,7 @@
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.6.0",
+    "react-infinite-scroller": "^1.2.6",
     "react-smooth-collapse": "^2.1.2"
   },
   "devDependencies": {
@@ -48,6 +49,7 @@
     "@types/react-collapse": "^5.0.1",
     "@types/react-dom": "^18.0.6",
     "@types/react-helmet": "^6.1.6",
+    "@types/react-infinite-scroller": "^1.2.3",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "autoprefixer": "^10.4.12",
