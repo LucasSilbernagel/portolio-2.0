@@ -20,6 +20,7 @@ https://lucassilbernagel.com/
 - [react-animation-on-scroll](https://www.npmjs.com/package/react-animation-on-scroll)
 - [react-icons](https://www.npmjs.com/package/react-icons)
 - [react-smooth-collapse](https://www.npmjs.com/package/react-smooth-collapse)
+- [react-infinite-scroller](https://www.npmjs.com/package/react-infinite-scroller)
 
 ### Linting & Formatting
 
