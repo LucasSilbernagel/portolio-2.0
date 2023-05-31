@@ -3,7 +3,7 @@ import './ProjectArchive.css'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import InfiniteScroll from 'react-infinite-scroller'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface IProject {
   name: string
@@ -12,114 +12,120 @@ interface IProject {
   techStack: string[]
   github: string
   liveLink: string
-  imageFileName?: string
 }
 
 const ProjectArchive = () => {
-  const getItemsPerPage = (number: number) => {
-    const divisors: number[] = []
-    for (let divisor = 1; divisor <= number; divisor++) {
-      if (number % divisor === 0) {
-        divisors.push(divisor)
-      }
-    }
-    const idealDivisors = divisors.filter(
-      (divisor) => divisor > 2 && divisor < 13
-    )
-    if (idealDivisors.length > 0) {
-      return idealDivisors[0]
-    } else return divisors.sort((a, b) => a - b)[0]
-  }
-
-  const itemsPerPage = getItemsPerPage(PROJECTS.length)
+  const itemsPerPage = 4
+  const [filteredProjects, setFilteredProjects] = useState<IProject[]>(PROJECTS)
+  const [searchValue, setSearchValue] = useState<string>('')
   const [hasMore, setHasMore] = useState<boolean>(true)
   const [records, setRecords] = useState<number>(itemsPerPage)
 
+  useEffect(() => {
+    if (searchValue.length > 0) {
+      setTimeout(() => {
+        setFilteredProjects(
+          PROJECTS.filter((project) =>
+            JSON.stringify(project)
+              .toLowerCase()
+              .includes(searchValue.toLowerCase())
+          )
+        )
+      }, 2000)
+    } else setFilteredProjects(PROJECTS)
+  }, [searchValue])
+
   const loadMore = () => {
-    if (records === PROJECTS.length) {
+    if (records === filteredProjects.length) {
       setHasMore(false)
     } else {
       setTimeout(() => {
-        setRecords(records + itemsPerPage)
+        if (records + itemsPerPage > filteredProjects.length) {
+          setRecords(filteredProjects.length)
+        } else setRecords(records + itemsPerPage)
       }, 1000)
     }
+  }
+
+  const renderArchiveProject = (project: IProject, index: number) => {
+    return (
+      <li key={`${project.github}`}>
+        <div className="Project">
+          <div className="flex justify-between mb-4">
+            <div>
+              <h3
+                className="AccentFont text-accent-1"
+                data-testid={`project-year-${index}`}
+              >
+                {project.year}
+              </h3>
+            </div>
+            <div className="flex gap-8 text-lg justify-end">
+              <div>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`GitHub repository for ${project.name}`}
+                  className="IconLink"
+                  data-testid={`github-project-link-${index}`}
+                >
+                  <FaGithub />
+                </a>
+              </div>
+              <div>
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`live link for ${project.name}`}
+                  className="IconLink"
+                  data-testid={`external-project-link-${index}`}
+                >
+                  <FaExternalLinkAlt />
+                </a>
+              </div>
+            </div>
+          </div>
+          <h4>
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`live link for ${project.name}`}
+              className="ProjectName"
+            >
+              {project.name}
+            </a>
+          </h4>
+          <div className=" text-sm text-slate-2 tracking-wide my-6">
+            <p>{project.description}</p>
+          </div>
+          <div className="text-slate-2 text-sm font-fira-code mb-6">
+            <ul className="flex flex-wrap gap-x-4 gap-y-2">
+              {project.techStack.map((skill, skillIndex) => {
+                return (
+                  <li
+                    key={`${project.github}-${skill.replace(
+                      / /g,
+                      ''
+                    )}-${skillIndex}-mobile`}
+                  >
+                    {skill}
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </div>
+      </li>
+    )
   }
 
   const showProjects = (projects: IProject[]) => {
     const items = []
     for (let i = 0; i < records; i++) {
-      items.push(
-        <li key={`${projects[i].github}`}>
-          <div className="Project">
-            <div className="flex justify-between mb-4">
-              <div>
-                <h3
-                  className="AccentFont text-accent-1"
-                  data-testid={`project-year-${i}`}
-                >
-                  {projects[i].year}
-                </h3>
-              </div>
-              <div className="flex gap-8 text-lg justify-end">
-                <div>
-                  <a
-                    href={projects[i].github}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`GitHub repository for ${projects[i].name}`}
-                    className="IconLink"
-                    data-testid={`github-project-link-${i}`}
-                  >
-                    <FaGithub />
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href={projects[i].liveLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`live link for ${projects[i].name}`}
-                    className="IconLink"
-                    data-testid={`external-project-link-${i}`}
-                  >
-                    <FaExternalLinkAlt />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <h4>
-              <a
-                href={projects[i].liveLink}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`live link for ${projects[i].name}`}
-                className="ProjectName"
-              >
-                {projects[i].name}
-              </a>
-            </h4>
-            <div className=" text-sm text-slate-2 tracking-wide my-6">
-              <p>{projects[i].description}</p>
-            </div>
-            <div className="text-slate-2 text-sm font-fira-code mb-6">
-              <ul className="flex flex-wrap gap-x-4 gap-y-2">
-                {projects[i].techStack.map((skill, skillIndex) => {
-                  return (
-                    <li
-                      key={`${projects[i].github}-${skill.replace(
-                        / /g,
-                        ''
-                      )}-${skillIndex}-mobile`}
-                    >
-                      {skill}
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          </div>
-        </li>
-      )
+      items.push(renderArchiveProject(projects[i], i))
     }
     return items
   }
@@ -136,24 +142,45 @@ const ProjectArchive = () => {
           Educational, freelance, and side projects I&apos;ve completed over the
           years
         </h2>
-        <InfiniteScroll
-          element="ul"
-          pageStart={0}
-          loadMore={loadMore}
-          hasMore={hasMore}
-          loader={
-            <div className="w-full flex justify-center" key="loader">
-              <div className="Loader">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-          }
-        >
-          {showProjects(PROJECTS)}
-        </InfiniteScroll>
+        <div className="w-full flex justify-center mb-8">
+          <input
+            type="text"
+            className="text-black bg-white-1 w-[300px] py-2 px-3 rounded-sm"
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+        </div>
+        {filteredProjects.length > 0 ? (
+          filteredProjects.length > itemsPerPage ? (
+            <InfiniteScroll
+              element="ul"
+              pageStart={0}
+              loadMore={loadMore}
+              hasMore={hasMore}
+              loader={
+                <div className="w-full flex justify-center" key="loader">
+                  <div className="Loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              }
+            >
+              {showProjects(filteredProjects)}
+            </InfiniteScroll>
+          ) : (
+            <ul>
+              {filteredProjects.map((project, index) => {
+                return renderArchiveProject(project, index)
+              })}
+            </ul>
+          )
+        ) : (
+          <div>
+            <p>No results found</p>
+          </div>
+        )}
       </div>
     </AnimationOnScroll>
   )
