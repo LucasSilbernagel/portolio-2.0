@@ -28,7 +28,7 @@ const ProjectArchive = () => {
     )
     if (idealDivisors.length > 0) {
       return idealDivisors[0]
-    } else return divisors.sort((a, b) => b - a)[0]
+    } else return divisors.sort((a, b) => a - b)[0]
   }
 
   const itemsPerPage = getItemsPerPage(PROJECTS.length)
