@@ -20,10 +20,12 @@ const ProjectArchive = () => {
   const [searchValue, setSearchValue] = useState<string>('')
   const [hasMore, setHasMore] = useState<boolean>(true)
   const [records, setRecords] = useState<number>(itemsPerPage)
+  const [isLoadingSearch, setIsLoadingSearch] = useState<boolean>(false)
 
   useEffect(() => {
     if (searchValue.length > 0) {
-      setTimeout(() => {
+      setIsLoadingSearch(true)
+      const delayFn = setTimeout(() => {
         setFilteredProjects(
           PROJECTS.filter((project) =>
             JSON.stringify(project)
@@ -31,8 +33,17 @@ const ProjectArchive = () => {
               .includes(searchValue.toLowerCase())
           )
         )
-      }, 2000)
-    } else setFilteredProjects(PROJECTS)
+        setIsLoadingSearch(false)
+      }, 1000)
+      return () => clearTimeout(delayFn)
+    } else {
+      setIsLoadingSearch(true)
+      const delayFn = setTimeout(() => {
+        setFilteredProjects(PROJECTS)
+        setIsLoadingSearch(false)
+      }, 1000)
+      return () => clearTimeout(delayFn)
+    }
   }, [searchValue])
 
   const loadMore = () => {
@@ -143,12 +154,37 @@ const ProjectArchive = () => {
           years
         </h2>
         <div className="w-full flex justify-center mb-8">
-          <input
-            type="text"
-            className="text-black bg-white-1 w-[300px] py-2 px-3 rounded-sm"
-            onChange={(e) => setSearchValue(e.target.value)}
-          />
+          <form>
+            <label htmlFor="searchInput" className="sr-only">
+              Filter projects by keyword
+            </label>
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Filter projects by keyword..."
+              className="text-black bg-white-1 w-[300px] py-2 px-3 rounded-sm"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+          </form>
         </div>
+        {isLoadingSearch ? (
+          <div className="w-full flex justify-center" key="loader">
+            <div className="Loader">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        ) : (
+          <div className="mt-12 mb-10">
+            <p className="AccentFont text-center text-accent-1">
+              Showing {filteredProjects.length} of {PROJECTS.length} projects
+            </p>
+          </div>
+        )}
+
         {filteredProjects.length > 0 ? (
           filteredProjects.length > itemsPerPage ? (
             <InfiniteScroll
@@ -177,8 +213,8 @@ const ProjectArchive = () => {
             </ul>
           )
         ) : (
-          <div>
-            <p>No results found</p>
+          <div className="mt-12 mb-24">
+            <p className="text-center text-2xl">No matching projects found!</p>
           </div>
         )}
       </div>
