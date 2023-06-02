@@ -1,18 +1,10 @@
 import { PROJECTS } from '../../content/projects'
 import './ProjectArchive.css'
-import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import InfiniteScroll from 'react-infinite-scroller'
 import { useEffect, useState } from 'react'
-
-interface IProject {
-  name: string
-  year: string
-  description: string
-  techStack: string[]
-  github: string
-  liveLink: string
-}
+import ArchiveProject, { IProject } from '../ArchiveProject/ArchiveProject'
 
 const ProjectArchive = () => {
   const itemsPerPage = 4
@@ -58,85 +50,16 @@ const ProjectArchive = () => {
     }
   }
 
-  const renderArchiveProject = (project: IProject, index: number) => {
-    return (
-      <li key={`${project.github}`}>
-        <div className="Project">
-          <div className="flex justify-between mb-4">
-            <div>
-              <h3
-                className="AccentFont text-accent-1"
-                data-testid={`project-year-${index}`}
-              >
-                {project.year}
-              </h3>
-            </div>
-            <div className="flex gap-8 text-lg justify-end">
-              <div>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`GitHub repository for ${project.name}`}
-                  className="IconLink"
-                  data-testid={`github-project-link-${index}`}
-                >
-                  <FaGithub />
-                </a>
-              </div>
-              <div>
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`live link for ${project.name}`}
-                  className="IconLink"
-                  data-testid={`external-project-link-${index}`}
-                >
-                  <FaExternalLinkAlt />
-                </a>
-              </div>
-            </div>
-          </div>
-          <h4>
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`live link for ${project.name}`}
-              className="ProjectName"
-            >
-              {project.name}
-            </a>
-          </h4>
-          <div className=" text-sm text-slate-2 tracking-wide my-6">
-            <p>{project.description}</p>
-          </div>
-          <div className="text-slate-2 text-sm font-fira-code mb-6">
-            <ul className="flex flex-wrap gap-x-4 gap-y-2">
-              {project.techStack.map((skill, skillIndex) => {
-                return (
-                  <li
-                    key={`${project.github}-${skill.replace(
-                      / /g,
-                      ''
-                    )}-${skillIndex}-mobile`}
-                  >
-                    {skill}
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-        </div>
-      </li>
-    )
-  }
-
   const showProjects = (projects: IProject[]) => {
     const items = []
     for (let i = 0; i < records; i++) {
-      items.push(renderArchiveProject(projects[i], i))
+      items.push(
+        <ArchiveProject
+          key={projects[i].github}
+          project={projects[i]}
+          index={i}
+        />
+      )
     }
     return items
   }
@@ -220,7 +143,13 @@ const ProjectArchive = () => {
           ) : (
             <ul>
               {filteredProjects.map((project, index) => {
-                return renderArchiveProject(project, index)
+                return (
+                  <ArchiveProject
+                    key={project.github}
+                    project={project}
+                    index={index}
+                  />
+                )
               })}
             </ul>
           )
