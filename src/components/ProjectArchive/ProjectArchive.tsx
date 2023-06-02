@@ -1,6 +1,6 @@
 import { PROJECTS } from '../../content/projects'
 import './ProjectArchive.css'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import InfiniteScroll from 'react-infinite-scroller'
 import { useEffect, useState } from 'react'
@@ -158,14 +158,26 @@ const ProjectArchive = () => {
             <label htmlFor="searchInput" className="sr-only">
               Filter projects by keyword
             </label>
-            <input
-              id="searchInput"
-              type="text"
-              placeholder="Filter projects by keyword..."
-              className="text-black bg-white-1 w-[300px] py-2 px-3 rounded-sm"
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
-            />
+            <div className="relative">
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Filter projects by keyword..."
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+              />
+              {searchValue.length > 0 && (
+                <div className="absolute text-gray-600 top-2.5 right-3">
+                  <button
+                    onClick={() => setSearchValue('')}
+                    aria-label="clear input"
+                    className="hover:contrast-75"
+                  >
+                    <FaTimes />
+                  </button>
+                </div>
+              )}
+            </div>
           </form>
         </div>
         {isLoadingSearch ? (

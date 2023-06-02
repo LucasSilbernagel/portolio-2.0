@@ -22,6 +22,14 @@
   @apply hover:text-accent-1 focus:text-accent-1 duration-300;
 }
 
+.ProjectArchive input {
+  @apply text-black bg-white-1 w-[300px] py-2 pl-3 pr-10 rounded-sm;
+}
+
+.ProjectArchive input::placeholder {
+  @apply text-gray-600;
+}
+
 .Loader {
   @apply inline-block relative w-[80px] h-[80px];
 }
