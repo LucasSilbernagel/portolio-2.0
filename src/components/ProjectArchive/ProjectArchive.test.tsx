@@ -1,6 +1,5 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import ProjectArchive from './ProjectArchive'
-import { PROJECTS } from '../../content/projects'
 
 describe('ProjectArchive', () => {
   test('renders correctly', () => {
@@ -12,10 +11,6 @@ describe('ProjectArchive', () => {
         `Educational, freelance, and side projects I've completed over the years`
       )
     ).toBeInTheDocument()
-    waitFor(() => {
-      expect(screen.getAllByTestId('archive-projet').length).toEqual(
-        PROJECTS.length
-      )
-    })
+    expect(screen.getAllByTestId('archive-project').length).toEqual(4)
   })
 })
