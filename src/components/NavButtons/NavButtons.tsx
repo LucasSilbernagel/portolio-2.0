@@ -28,7 +28,7 @@ const NavButtons = (props: NavButtonsProps) => {
       navigate('/')
       setTimeout(() => {
         scrollTo(selector)
-      }, 100)
+      }, 500)
     }
   }
 
