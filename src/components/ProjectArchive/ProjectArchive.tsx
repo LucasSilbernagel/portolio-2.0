@@ -53,13 +53,15 @@ const ProjectArchive = () => {
   const showProjects = (projects: IProject[]) => {
     const items = []
     for (let i = 0; i < records; i++) {
-      items.push(
-        <ArchiveProject
-          key={projects[i].github}
-          project={projects[i]}
-          index={i}
-        />
-      )
+      if (projects.length >= records) {
+        items.push(
+          <ArchiveProject
+            key={projects[i].github}
+            project={projects[i]}
+            index={i}
+          />
+        )
+      }
     }
     return items
   }
