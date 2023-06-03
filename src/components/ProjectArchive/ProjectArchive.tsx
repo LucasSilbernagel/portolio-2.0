@@ -5,6 +5,7 @@ import { AnimationOnScroll } from 'react-animation-on-scroll'
 import InfiniteScroll from 'react-infinite-scroller'
 import { useEffect, useState } from 'react'
 import ArchiveProject, { IProject } from '../ArchiveProject/ArchiveProject'
+import Loader from '../Loader/Loader'
 
 const ProjectArchive = () => {
   const itemsPerPage = 4
@@ -107,12 +108,7 @@ const ProjectArchive = () => {
         </div>
         {isLoadingSearch ? (
           <div className="w-full flex justify-center" key="loader">
-            <div className="Loader">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+            <Loader />
           </div>
         ) : (
           <div className="mt-12 mb-10">
@@ -131,12 +127,7 @@ const ProjectArchive = () => {
               hasMore={hasMore}
               loader={
                 <li className="w-full flex justify-center" key="loader">
-                  <div className="Loader">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
+                  <Loader />
                 </li>
               }
             >
