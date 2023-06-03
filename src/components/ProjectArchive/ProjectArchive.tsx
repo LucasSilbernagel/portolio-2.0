@@ -128,14 +128,14 @@ const ProjectArchive = () => {
               loadMore={loadMore}
               hasMore={hasMore}
               loader={
-                <div className="w-full flex justify-center" key="loader">
+                <li className="w-full flex justify-center" key="loader">
                   <div className="Loader">
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                   </div>
-                </div>
+                </li>
               }
             >
               {showProjects(filteredProjects)}
