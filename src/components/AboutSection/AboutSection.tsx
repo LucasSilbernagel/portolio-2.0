@@ -18,43 +18,53 @@ const AboutSection = () => {
         <div className="flex gap-12 flex-col xl:flex-row">
           <div>
             <p>
-              Hi, I&apos;m Lucas! I&apos;m a front-end developer based in
-              Toronto, Canada. I specialize in transforming designs, prototypes,
-              and ideas into delightful user interfaces.
+              Hi, I&apos;m Lucas! I&apos;m a Toronto-based front-end developer
+              specializing in crafting captivating user interfaces that leave a
+              lasting impact. With a strong focus on accessibility and
+              user-centric design, I bring mockups and ideas to life, creating
+              immersive web pages and apps that seamlessly connect users with
+              digital experiences.
             </p>
             <p>
-              I&apos;ve been working in the industry since 2020, when I
-              graduated from web development bootcamp. The logical side of my
-              brain loves solving tricky coding problems and software
-              architecture challenges, while the creative side of my brain loves
-              converting designs into beautiful and functional web pages that
-              people use every day. I&apos;m also passionate about making the
-              web a more accessible place, one page at a time.
+              Armed with a Master&apos;s degree in anthropology, I bring a
+              unique perspective that places human behaviour and user needs at
+              the forefront of my work. My deep understanding of how people
+              interact with technology allows me to craft intuitive and engaging
+              digital solutions that truly resonate with users.
             </p>
             <SmoothCollapse expanded={isShowingMore}>
               <p>
-                In university I studied anthropology and French. I planned to
-                work in academia, but after completing a Master&apos;s degree in
-                anthropology I realized that this was not a viable option due to
-                the overly competitive job market and the increasing trend of
-                hiring contract faculty instead of full-time positions. I worked
-                briefly in a sales role at a tech company, and then for over
-                three years in a customer service role at a call center.
+                My web development journey started with a part-time course while
+                working at a call center in 2019. In early 2020, I made the bold
+                decision to quit my job and enroll in an intensive full-time web
+                development bootcamp. Throughout the program, I immersed myself
+                in mastering the latest industry tools and technologies,
+                acquiring the skills necessary to excel in the field. Despite
+                the challenges posed by the COVID-19 pandemic, I swiftly secured
+                my first position as a front-end developer, demonstrating my
+                adaptability and determination.
               </p>
               <p>
-                While working at the call center, I enrolled in a part-time
-                introduction to web development course in October 2019. I had
-                dabbled in building websites in the past, and I wanted to see if
-                a career change into web development was the right move for me.
-                I really enjoyed the course, so after much deliberation I quit
-                my job to begin full-time bootcamp in February 2020.
+                I thrive on continuous learning and remain at the forefront of
+                industry trends and technologies, actively working on side
+                projects and staying informed through industry newsletters.
+                Collaboration is central to my approach, and I find great joy in
+                coaching and mentoring others, drawing inspiration from my
+                initial career plan of becoming a teacher.
               </p>
               <p>
-                Finding a job after bootcamp was challenging, since I graduated
-                shortly after the start of the COVID-19 pandemic. However,
-                within two months I managed to land my first position as a
-                front-end developer, and I&apos;ve been working in the industry
-                ever since!
+                With exceptional organizational skills and unwavering
+                dedication, I consistently deliver high-quality features within
+                tight deadlines. Colleagues commend my efficiency and ability to
+                maintain exceptional standards. Above all, I am passionate about
+                creating products that meet stringent web accessibility
+                requirements, ensuring that everyone can access and enjoy the
+                digital landscape.
+              </p>
+              <p>
+                Let&apos;s embark on a journey together to create remarkable
+                user experiences, foster collaboration, and build a more
+                inclusive web!
               </p>
             </SmoothCollapse>
             <div className="w-full flex justify-center">
