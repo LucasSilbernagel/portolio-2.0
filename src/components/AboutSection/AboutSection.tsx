@@ -19,11 +19,10 @@ const AboutSection = () => {
           <div>
             <p>
               Hi, I&apos;m Lucas! I&apos;m a Toronto-based front-end developer
-              specializing in the craft of user interfaces that truly make a
-              difference. With a strong focus on accessibility and user-centric
-              design, I bring mockups and ideas to life in the form of beautiful
-              web pages and apps that seamlessly connect users with digital
-              experiences.
+              focused on crafting user interfaces that truly make a difference.
+              With a strong focus on accessibility and user-centric design, I
+              bring mockups and ideas to life in the form of beautiful web pages
+              and apps that seamlessly connect users with digital experiences.
             </p>
             <p>
               Armed with a Master&apos;s degree in anthropology, I bring a
