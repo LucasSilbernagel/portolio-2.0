@@ -7,10 +7,8 @@ export const EXPERIENCE = [
     timeframeLong: 'January 2023 to present',
     accomplishments: [
       `Built key features of Xanadu’s quantum hackathon software with React, TypeScript, Tailwind, and GraphQL.`,
-      `Converted the PennyLane.ai website from a legacy codebase to Gatsby, React, TypeScript, and Tailwind.`,
-      `Added new pages and features to the Xanadu corporate website, including the ability to write unit tests.`,
-      `Delivered a presentation about Progressive Web Apps at a company-wide software meeting.`,
-      `Attended an accessibility conference and trained the front-end team on how to use screen reader software.`,
+      `Converted the PennyLane.ai website from a legacy codebase to Gatsby, React, TypeScript, and Tailwind. Helped move it to a monorepo structure, for which I also helped build a new component library and datasets project.`,
+      `Added several new pages and features to the Xanadu corporate website, including the ability to write unit tests. For a hackathon project, integrated the website with the Xanadu merchandise shop using the Shopify API.`,
     ],
   },
   {
