@@ -12,12 +12,12 @@ export const TECH_STACK = [
   {
     id: 3,
     section: 'State Management',
-    skills: ['Recoil', 'Apollo Client'],
+    skills: ['Recoil', 'Apollo Client', 'React Context'],
   },
   {
     id: 4,
     section: 'Data',
-    skills: ['REST', 'GraphQL', 'MongoDB', 'Firebase'],
+    skills: ['REST', 'GraphQL', 'MongoDB', 'Firebase', 'Postgres'],
   },
   {
     id: 5,
