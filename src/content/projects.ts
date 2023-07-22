@@ -1,5 +1,15 @@
 export const PROJECTS = [
   {
+    name: 'NexaTech',
+    year: '2023',
+    description:
+      'A website for a fictional tech company. This is the first project I built using React Server Components, and also the first project I built with Sanity CMS.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'Sanity'],
+    github: 'https://github.com/LucasSilbernagel/NexaTech',
+    liveLink: 'https://nexa-tech.vercel.app/',
+    imageFileName: 'nexaTech.png',
+  },
+  {
     name: 'ReykrMusic.com',
     year: '2023',
     description:

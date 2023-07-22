@@ -27,7 +27,7 @@ export const TECH_STACK = [
   {
     id: 6,
     section: 'Content Management',
-    skills: ['Strapi', 'WordPress', 'Shopify'],
+    skills: ['Sanity', 'Strapi', 'Shopify', 'WordPress'],
   },
   {
     id: 7,
