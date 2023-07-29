@@ -4,7 +4,6 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `Lucas Silbernagel | Front-End Developer`,
     description: `Personal website and web development portfolio for Lucas Silbernagel`,
-    twitterUsername: `@LucasCodePro`,
     image: '/portfolio.png',
     siteUrl: `https://lucassilbernagel.com/`,
   },

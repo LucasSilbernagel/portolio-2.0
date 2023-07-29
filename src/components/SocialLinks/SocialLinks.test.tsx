@@ -14,10 +14,10 @@ describe('SocialLinks', () => {
       'href',
       'https://www.linkedin.com/in/lucassilbernagel/'
     )
-    expect(screen.getByTestId('twitter-link')).toBeInTheDocument()
-    expect(screen.getByTestId('twitter-link')).toHaveAttribute(
+    expect(screen.getByTestId('bluesky-link')).toBeInTheDocument()
+    expect(screen.getByTestId('bluesky-link')).toHaveAttribute(
       'href',
-      'https://twitter.com/LucasCodePro'
+      'https://bsky.app/profile/lucassilbernagel.com'
     )
   })
 })

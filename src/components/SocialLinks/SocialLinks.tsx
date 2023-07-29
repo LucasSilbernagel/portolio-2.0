@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaSquare } from 'react-icons/fa'
 
 const SocialLinks = () => {
   return (
@@ -22,13 +22,13 @@ const SocialLinks = () => {
         <FaLinkedin size="1.2rem" />
       </a>
       <a
-        href="https://twitter.com/LucasCodePro"
+        href="https://bsky.app/profile/lucassilbernagel.com"
         target="_blank"
         rel="noreferrer"
-        aria-label="Twitter"
-        data-testid="twitter-link"
+        aria-label="Bluesky"
+        data-testid="bluesky-link"
       >
-        <FaTwitter size="1.2rem" />
+        <FaSquare size="1.2rem" />
       </a>
     </>
   )

@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react'
 import ProjectsSection from './ProjectsSection'
-import mockProjects from './MockProjects'
+import { PROJECTS } from '../../content/projects'
 
 const mockImageData = 'mocked-image-data'
+
+const mockProjects = PROJECTS.filter(
+  (project) => !project.name.toLowerCase().includes('portfolio')
+).slice(0, 6)
 
 jest.mock('gatsby', () => {
   const originalModule = jest.requireActual('gatsby')
