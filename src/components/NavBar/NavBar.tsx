@@ -90,7 +90,7 @@ const NavBar = (props: NavBarProps) => {
           className={`MobileMenu ${
             isMenuOpening
               ? 'animate-slide-in right-0'
-              : 'animate-slide-out -right-[500px]'
+              : 'animate-slide-out -right-[575px]'
           } ${isMenuOpen ? 'visible' : 'invisible'}`}
           data-testid="mobile-menu"
         >
