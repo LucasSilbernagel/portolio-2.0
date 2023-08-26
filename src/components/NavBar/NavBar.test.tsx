@@ -21,7 +21,7 @@ describe('NavBar', () => {
     expect(screen.getByTestId('nav-buttons-desktop')).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu')).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu')).toHaveClass(
-      'animate-slide-out -right-[500px]'
+      'animate-slide-out -right-[575px]'
     )
     expect(screen.getByTestId('mobile-menu')).toHaveClass('invisible')
     expect(screen.getByTestId('nav-buttons-mobile')).toBeInTheDocument()
@@ -71,7 +71,7 @@ describe('NavBar', () => {
     expect(screen.getByTestId('nav-buttons-desktop')).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu')).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu')).toHaveClass(
-      'animate-slide-out -right-[500px]'
+      'animate-slide-out -right-[575px]'
     )
     expect(screen.getByTestId('mobile-menu')).toHaveClass('visible')
     expect(screen.getByTestId('nav-buttons-mobile')).toBeInTheDocument()
