@@ -24,7 +24,7 @@ export const PROJECTS = [
     year: '2023',
     description:
       'Freelance business website built for Quinn Bonnett, a Registered Massage Therapist.',
-    techStack: ['Gatsby', 'React', 'TypeScript', 'Tailwind'],
+    techStack: ['Gatsby', 'React', 'TypeScript', 'Tailwind', 'Sanity'],
     github: 'https://github.com/LucasSilbernagel/quinn-rmt',
     liveLink: 'https://quinnbonnettrmt.com/',
     imageFileName: 'quinnBonnettRMT.png',
