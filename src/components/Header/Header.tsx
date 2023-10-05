@@ -42,7 +42,7 @@ const Header = ({ isHomePage }: HeaderProps) => {
         setIsMenuOpen(false)
       }, 500)
     }
-  }, [isMenuOpening])
+  }, [isMenuOpening, isMenuOpen])
 
   return (
     <header
