@@ -1,9 +1,10 @@
 import { Link } from 'gatsby'
 import Layout from '../components/Layout'
+import Seo from '../components/Seo'
 
 const NotFoundPage = () => {
   return (
-    <Layout isHomePage={false} pageTitle="404" pageRoute="/404">
+    <Layout isHomePage={false}>
       <div className="text-center my-36">
         <h1 className="font-fira-code text-9xl font-black text-accent-1 mb-4">
           404
@@ -20,3 +21,7 @@ const NotFoundPage = () => {
 }
 
 export default NotFoundPage
+
+export const Head = () => {
+  return <Seo title="Lucas Silbernagel | 404" />
+}
