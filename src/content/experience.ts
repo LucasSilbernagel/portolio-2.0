@@ -6,9 +6,10 @@ export const EXPERIENCE = [
     timeframe: '2023-01 — present',
     timeframeLong: 'January 2023 to present',
     accomplishments: [
-      `Built key features of Xanadu’s quantum hackathon software with React, TypeScript, Tailwind, and GraphQL.`,
-      `Converted the PennyLane.ai website from a legacy codebase to Gatsby, React, TypeScript, and Tailwind. Helped move it to a monorepo structure, for which I also helped build a new component library and datasets project.`,
-      `Added several new pages and features to the Xanadu corporate website, including the ability to write unit tests. For a hackathon project, integrated the website with the Xanadu merchandise shop using the Shopify API.`,
+      `Enhanced the Xanadu.ai website by implementing server-side rendering, image optimization, and several new pages. Single-handedly integrated the Xanadu merchandise shop using Shopify APIs.`,
+      `Led front-end development of the Generic Datasets project (scoping, requirements gathering, and implementation).`,
+      `Drove the front-end work for the quantum hackathon software challenge dashboard refresh.`,
+      `Transitioned the PennyLane.ai website to a modern tech stack of Gatsby, React, TypeScript, and Tailwind.`,
     ],
   },
   {
@@ -19,10 +20,8 @@ export const EXPERIENCE = [
     timeframeLong: 'April 2022 to December 2022',
     accomplishments: [
       `Led a company-wide accessibility audit and advocated for compliance with web accessibility best practices.`,
-      `Added key features to a reusable component library built with React, TypeScript, Tailwind, and Storybook.`,
-      `Improved and maintained the Xanadu corporate website, built with Gatsby, TypeScript, and Tailwind.`,
-      `Built key features of Xanadu’s quantum hackathon software with React, TypeScript, Tailwind, and GraphQL.`,
-      `Assisted in interviewing and selecting a new front-end developer for the team.`,
+      `Co-created a reusable component library built with React, TypeScript, Tailwind, and Storybook.`,
+      `Developed key features of Xanadu’s quantum hackathon software with React, TypeScript, Tailwind, and GraphQL.`,
     ],
   },
   {
