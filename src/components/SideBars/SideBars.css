@@ -19,5 +19,5 @@
 
 .SocialLinks svg,
 .Email a {
-  @apply text-slate-2 hover:text-accent-1 hover:scale-110 focus:text-accent-1 focus:scale-110 duration-300;
+  @apply text-slate-2 hover:text-accent-1 hover:scale-110 focus-visible:text-accent-1 focus-visible:scale-110 duration-300;
 }

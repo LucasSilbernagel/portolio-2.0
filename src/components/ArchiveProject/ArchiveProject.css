@@ -3,9 +3,9 @@
 }
 
 .ArchiveProject .ProjectName {
-  @apply text-2xl font-bold tracking-wide text-slate-3 hover:text-accent-1 focus:text-accent-1 duration-300;
+  @apply text-2xl font-bold tracking-wide text-slate-3 hover:text-accent-1 focus-visible:text-accent-1 duration-300;
 }
 
 .ArchiveProject .IconLink {
-  @apply hover:text-accent-1 focus:text-accent-1 duration-300;
+  @apply hover:text-accent-1 focus-visible:text-accent-1 duration-300;
 }
