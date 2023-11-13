@@ -3,7 +3,7 @@
 }
 
 .Nav .IconButton {
-  @apply w-12 h-12 rounded-full overflow-hidden border-2 border-accent-1 hover:scale-105 focus:scale-105 duration-300;
+  @apply w-12 h-12 rounded-full overflow-hidden border-2 border-accent-1 hover:scale-105 focus-visible:scale-105 duration-300;
 }
 
 .Nav .IconButton img {
@@ -29,7 +29,7 @@
 }
 
 .Nav .NavButtons button {
-  @apply tracking-wide hover:text-accent-1 focus:text-accent-1 duration-300 relative;
+  @apply tracking-wide hover:text-accent-1 focus-visible:text-accent-1 duration-300 relative;
   counter-increment: NavButton;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .Nav .NavButtons .ContactButton {
-  @apply flex items-center justify-center md:justify-start border border-accent-1 rounded-sm h-10 px-4 text-accent-1 hover:bg-accent-1 focus:bg-accent-1 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 cursor-pointer;
+  @apply flex items-center justify-center md:justify-start border border-accent-1 rounded-sm h-10 px-4 text-accent-1 hover:bg-accent-1 focus-visible:bg-accent-1 hover:bg-opacity-10 focus-visible:bg-opacity-10 duration-300 cursor-pointer;
 }
 
 .Nav .MobileMenu__Button {

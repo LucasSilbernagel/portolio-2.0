@@ -3,7 +3,7 @@ footer .IconLinks {
 }
 
 footer .IconLinks svg {
-  @apply text-slate-2 hover:text-accent-1 hover:scale-110 focus:text-accent-1 focus:scale-110 duration-300;
+  @apply text-slate-2 hover:text-accent-1 hover:scale-110 focus-visible:text-accent-1 focus-visible:scale-110 duration-300;
 }
 
 
@@ -12,5 +12,5 @@ footer .TextLinks {
 }
 
 footer .TextLinks a {
-  @apply underline underline-offset-4 hover:text-accent-1 focus:text-accent-1 duration-300;
+  @apply underline underline-offset-4 hover:text-accent-1 focus-visible:text-accent-1 duration-300;
 }

@@ -35,7 +35,7 @@ const ExperienceItem = (props: IExperienceItemProps) => {
             <h4 className="mb-3 text-2xl font-fira-code text-accent-1">
               {experience.title}
             </h4>
-            <h5 className="pb-3 text-xl font-bold text-slate-3 hover:text-accent-1 focus:text-accent-1 duration-300 max-w-min sm:max-w-max">
+            <h5 className="pb-3 text-xl font-bold text-slate-3 hover:text-accent-1 focus-visible:text-accent-1 duration-300 max-w-min sm:max-w-max">
               <a
                 href={experience.website}
                 target="_blank"

@@ -5,10 +5,11 @@ import ProjectsSection from '../components/ProjectsSection/ProjectsSection'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import 'animate.css/animate.min.css'
 import Layout from '../components/Layout'
+import Seo from '../components/Seo'
 
 const Home = () => {
   return (
-    <Layout isHomePage={true} pageTitle="Front-End Developer" pageRoute="/">
+    <Layout isHomePage={true}>
       <AboutSection />
       <TechStack />
       <Experience />
@@ -30,3 +31,7 @@ const Home = () => {
 }
 
 export default Home
+
+export const Head = () => {
+  return <Seo />
+}

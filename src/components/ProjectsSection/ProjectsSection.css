@@ -20,8 +20,8 @@
 
 .ProjectsSection .ImageLink:hover .Overlay--desktop,
 .ProjectsSection .ImageLink:hover .Overlay2--desktop,
-.ProjectsSection .ImageLink:focus .Overlay--desktop,
-.ProjectsSection .ImageLink:focus .Overlay2--desktop {
+.ProjectsSection .ImageLink:focus-visible .Overlay--desktop,
+.ProjectsSection .ImageLink:focus-visible .Overlay2--desktop {
   @apply opacity-0;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .ProjectsSection .ProjectName {
-  @apply text-2xl font-bold tracking-wide text-slate-3 hover:text-accent-1 focus:text-accent-1 duration-300;
+  @apply text-2xl font-bold tracking-wide text-slate-3 hover:text-accent-1 focus-visible:text-accent-1 duration-300;
 }
 
 .ProjectsSection .ProjectDescription {
@@ -54,7 +54,7 @@
 }
 
 .ProjectsSection .IconLink {
-  @apply hover:text-accent-1 focus:text-accent-1 duration-300;
+  @apply hover:text-accent-1 focus-visible:text-accent-1 duration-300;
 }
 
 .ProjectsSection .ArchiveLink {
@@ -69,7 +69,7 @@
 }
 
 .ProjectsSection .ArchiveLink:hover::after,
-.ProjectsSection .ArchiveLink:focus::after {
+.ProjectsSection .ArchiveLink:focus-visible::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

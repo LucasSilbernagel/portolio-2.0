@@ -27,7 +27,7 @@ main {
 }
 
 .AccentButton {
-  @apply mt-10 max-w-max flex items-center justify-center border border-accent-1 rounded-sm px-8 py-4 text-accent-1 hover:bg-accent-1 focus:bg-accent-1 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 cursor-pointer mx-auto md:mx-[unset] font-fira-code;
+  @apply mt-10 max-w-max flex items-center justify-center border border-accent-1 rounded-sm px-8 py-4 text-accent-1 hover:bg-accent-1 focus-visible:bg-accent-1 hover:bg-opacity-10 focus-visible:bg-opacity-10 duration-300 cursor-pointer mx-auto md:mx-[unset] font-fira-code;
 }
 
 .SectionHeader {
