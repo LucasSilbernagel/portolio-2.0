@@ -18,7 +18,7 @@ export const TECH_STACK = [
   {
     id: 3,
     section: 'State Management',
-    skills: ['Recoil.js', 'Apollo Client', 'React Context'],
+    skills: ['React Context', 'Apollo Client', 'Recoil.js', 'Redux'],
   },
   {
     id: 4,
@@ -38,11 +38,24 @@ export const TECH_STACK = [
   {
     id: 7,
     section: 'Testing',
-    skills: ['React Testing Library', 'Cypress', 'Jest', 'TestCafe'],
+    skills: [
+      'Jest',
+      'React Testing Library',
+      'Playwright',
+      'Cypress',
+      'TestCafe',
+    ],
   },
   {
     id: 8,
     section: `Other`,
-    skills: ['Storybook', 'Figma', 'Docker', 'PHP', 'Liquid'],
+    skills: [
+      'Progressive Web Apps',
+      'Storybook',
+      'Figma',
+      'Docker',
+      'PHP',
+      'Liquid',
+    ],
   },
 ]
