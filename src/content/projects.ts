@@ -3,7 +3,7 @@ export const PROJECTS = [
     name: 'Super Simon',
     year: '2023',
     description:
-      'The classic memory game Simon, with a twist! How long of a sequence can you remember? Super Simon is a Progressive Web App that can be played on the web, installed on your device, and even played offline! Includes unit tests (Jest, React Testing Library) and e2e tests (Playwright)',
+      'The classic memory game Simon, with a twist! How long of a sequence can you remember? Super Simon is a Progressive Web App that can be played on the web, installed on your device, and even played offline! Includes unit tests (Jest, React Testing Library) and e2e tests (Playwright).',
     techStack: [
       'Next.js',
       'React',
