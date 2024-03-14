@@ -2,7 +2,7 @@
 
 The second iteration of my software development portfolio.
 
-![Screen Shot 2022-12-06 at 22 02 55](https://user-images.githubusercontent.com/57023164/206079118-1fb7d28e-ed14-4ff9-ae08-69dc027f6848.png)
+![Screen Shot 2024-03-14 at 15 58 33](https://github.com/LucasSilbernagel/portolio-2.0/assets/57023164/33b7fcb1-e6a5-4d21-abfb-fd5f4f4f067e)
 
 ## Live link
 
