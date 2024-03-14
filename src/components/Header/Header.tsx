@@ -60,7 +60,7 @@ const Header = ({ isHomePage }: HeaderProps) => {
         <>
           <div className="HeroText">
             <h1>Lucas Silbernagel</h1>
-            <h2>Front-End Developer</h2>
+            <h2>Software Developer</h2>
             <a
               href="mailto:hello@lucassilbernagel.com"
               target="_blank"

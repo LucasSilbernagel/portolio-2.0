@@ -2,8 +2,8 @@ import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Lucas Silbernagel | Front-End Developer`,
-    description: `Personal website and web development portfolio for Lucas Silbernagel`,
+    title: `Lucas Silbernagel | Software Developer`,
+    description: `Personal website and software development portfolio for Lucas Silbernagel`,
     image: '/portfolio.png',
     siteUrl: `https://lucassilbernagel.com`,
   },

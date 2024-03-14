@@ -7,7 +7,7 @@ describe('Header', () => {
     expect(screen.getByTestId('header')).toBeInTheDocument()
     expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
     expect(screen.getByText('Lucas Silbernagel')).toBeInTheDocument()
-    expect(screen.getByText('Front-End Developer')).toBeInTheDocument()
+    expect(screen.getByText('Software Developer')).toBeInTheDocument()
     expect(screen.getByTestId('hero-contact-link')).toBeInTheDocument()
     expect(screen.getByTestId('hero-contact-link')).toHaveTextContent(
       'Say hello'
@@ -24,7 +24,7 @@ describe('Header', () => {
     expect(screen.getByTestId('header')).toBeInTheDocument()
     expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
     expect(screen.queryByText('Lucas Silbernagel')).toBeNull()
-    expect(screen.queryByText('Front-End Developer')).toBeNull()
+    expect(screen.queryByText('Software Developer')).toBeNull()
     expect(screen.queryByTestId('hero-contact-link')).toBeNull()
     expect(screen.queryByTestId('hero-image')).toBeNull()
   })

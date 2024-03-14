@@ -1,6 +1,6 @@
 # Portfolio 2.0
 
-The second iteration of my web development portfolio.
+The second iteration of my software development portfolio.
 
 ![Screen Shot 2022-12-06 at 22 02 55](https://user-images.githubusercontent.com/57023164/206079118-1fb7d28e-ed14-4ff9-ae08-69dc027f6848.png)
 

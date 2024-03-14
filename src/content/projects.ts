@@ -1,3 +1,5 @@
+// Project screenshots: 1470px x 900px
+
 export const PROJECTS = [
   {
     name: 'Super Simon',
@@ -49,7 +51,7 @@ export const PROJECTS = [
   {
     name: 'Portfolio 2.0',
     year: '2022',
-    description: 'The second iteration of my web development portfolio.',
+    description: 'The second iteration of my software development portfolio.',
     techStack: ['Gatsby', 'React', 'TypeScript', 'Tailwind'],
     github: 'https://github.com/LucasSilbernagel/portolio-2.0',
     liveLink: 'https://lucassilbernagel.com/',
@@ -163,7 +165,7 @@ export const PROJECTS = [
   {
     name: 'Portfolio 1.0',
     year: '2020',
-    description: 'The first iteration of my web development portfolio.',
+    description: 'The first iteration of my software development portfolio.',
     techStack: ['JavaScript', 'HTML5', 'SCSS'],
     github: 'https://github.com/LucasSilbernagel/portolio-1.0',
     liveLink: 'https://lucassilbernagel.github.io/portolio-1.0/',
@@ -259,5 +261,3 @@ export const PROJECTS = [
     imageFileName: '',
   },
 ]
-
-// Project screenshots: 1470px x 900px
