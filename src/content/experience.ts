@@ -1,10 +1,18 @@
 export const EXPERIENCE = [
   {
+    title: 'Software Developer',
+    company: 'theScore',
+    website: 'https://www.scoremediaandgaming.com/',
+    timeframe: '2024-03 — present',
+    timeframeLong: 'March 2024 to present',
+    accomplishments: [],
+  },
+  {
     title: 'Software Developer II',
     company: 'Xanadu',
     website: 'https://xanadu.ai/',
-    timeframe: '2023-01 — present',
-    timeframeLong: 'January 2023 to present',
+    timeframe: '2023-01 — 2024-03',
+    timeframeLong: 'January 2023 to March 2024',
     accomplishments: [
       `Enhanced the Xanadu.ai website by implementing server-side rendering, image optimization, and several new pages. Leveraged Shopify APIs to seamlessly integrate the Xanadu merchandise shop into the website.`,
       `Drove the front-end work for a refresh of the quantum hackathon software challenge dashboard.`,
