@@ -4,16 +4,14 @@ import Footer from './Footer/Footer'
 
 interface ILayoutProps {
   children: ReactNode
-  isHomePage?: boolean
-  isContactPage?: boolean
 }
 
 const Layout = (props: ILayoutProps) => {
-  const { children, isHomePage = false, isContactPage = false } = props
+  const { children } = props
 
   return (
     <>
-      <Header isHomePage={isHomePage} isContactPage={isContactPage} />
+      <Header />
       <main>{children}</main>
       <Footer />
     </>

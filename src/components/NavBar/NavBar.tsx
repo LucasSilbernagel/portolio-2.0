@@ -9,35 +9,27 @@ interface NavBarProps {
   isMenuOpening: boolean
   isMenuOpen: boolean
   setIsMenuOpening: Dispatch<SetStateAction<boolean>>
-  isHomePage?: boolean
-  isContactPage?: boolean
 }
 
 const NavBar = (props: NavBarProps) => {
-  const {
-    isMenuOpening,
-    setIsMenuOpening,
-    isMenuOpen,
-    isHomePage = false,
-    isContactPage = false,
-  } = props
+  const { isMenuOpening, setIsMenuOpening, isMenuOpen } = props
 
   const [currentScrollPos, setCurrentScrollPos] = useState(0)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [isNavVisible, setIsNavVisible] = useState(true)
 
   const handleScroll = () => {
-    setCurrentScrollPos(window.pageYOffset)
+    setCurrentScrollPos(window.scrollY)
     setPrevScrollPos(currentScrollPos)
     setIsNavVisible(prevScrollPos > currentScrollPos || currentScrollPos < 70)
   }
 
   const handleIconButtonClick = () => {
     setIsMenuOpening(false)
-    if (isHomePage) {
+    if (window.location.pathname === '/') {
       scrollTo('#header')
     }
-    if (!isHomePage) {
+    if (window.location.pathname !== '/') {
       navigate('/')
       setTimeout(() => {
         scrollTo('#header')
@@ -91,7 +83,7 @@ const NavBar = (props: NavBarProps) => {
           className="AccentFont NavButtons NavButtons__Desktop"
           data-testid="nav-buttons-desktop"
         >
-          <NavButtons isHomePage={isHomePage} isContactPage={isContactPage} />
+          <NavButtons />
         </div>
         <div
           className={`MobileMenu ${
@@ -105,11 +97,7 @@ const NavBar = (props: NavBarProps) => {
             className="AccentFont NavButtons"
             data-testid="nav-buttons-mobile"
           >
-            <NavButtons
-              setIsMenuOpening={setIsMenuOpening}
-              isHomePage={isHomePage}
-              isContactPage={isContactPage}
-            />
+            <NavButtons setIsMenuOpening={setIsMenuOpening} />
           </div>
         </div>
       </div>

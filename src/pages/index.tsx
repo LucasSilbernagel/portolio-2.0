@@ -10,7 +10,7 @@ import { Link } from 'gatsby'
 
 const Home = () => {
   return (
-    <Layout isHomePage={true}>
+    <Layout>
       <AboutSection />
       <TechStack />
       <Experience />

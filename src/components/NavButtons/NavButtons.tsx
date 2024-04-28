@@ -4,12 +4,10 @@ import { Link, navigate } from 'gatsby'
 
 interface NavButtonsProps {
   setIsMenuOpening?: Dispatch<SetStateAction<boolean>>
-  isHomePage?: boolean
-  isContactPage?: boolean
 }
 
 const NavButtons = (props: NavButtonsProps) => {
-  const { setIsMenuOpening, isHomePage = false, isContactPage = false } = props
+  const { setIsMenuOpening } = props
 
   const buttons = [
     { label: 'About', selector: '#about-section' },
@@ -22,10 +20,10 @@ const NavButtons = (props: NavButtonsProps) => {
     if (setIsMenuOpening) {
       setIsMenuOpening(false)
     }
-    if (isHomePage) {
+    if (window.location.pathname === '/') {
       scrollTo(selector)
     }
-    if (!isHomePage) {
+    if (window.location.pathname !== '/') {
       navigate('/')
       setTimeout(() => {
         scrollTo(selector)
@@ -45,7 +43,7 @@ const NavButtons = (props: NavButtonsProps) => {
           </button>
         )
       })}
-      {isContactPage ? (
+      {window.location.pathname === '/contact' ? (
         <Link to="/" className="ContactButton">
           Homepage
         </Link>

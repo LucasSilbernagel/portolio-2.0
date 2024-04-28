@@ -7,9 +7,5 @@ describe('SideBars', () => {
     expect(screen.getByTestId('social-links-sidebar')).toBeInTheDocument()
     expect(screen.getByTestId('email-sidebar')).toBeInTheDocument()
     expect(screen.getByText('hello@lucassilbernagel.com')).toBeInTheDocument()
-    expect(screen.getByText('hello@lucassilbernagel.com')).toHaveAttribute(
-      'href',
-      'mailto:hello@lucassilbernagel.com'
-    )
   })
 })

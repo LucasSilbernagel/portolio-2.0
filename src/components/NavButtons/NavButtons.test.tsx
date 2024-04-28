@@ -9,9 +9,6 @@ describe('NavButtons', () => {
     expect(screen.getByText('Experience')).toBeInTheDocument()
     expect(screen.getByText('Projects')).toBeInTheDocument()
     expect(screen.getByText('Say hello')).toBeInTheDocument()
-    expect(screen.getByText('Say hello')).toHaveAttribute(
-      'href',
-      'mailto:hello@lucassilbernagel.com'
-    )
+    expect(screen.getByText('Say hello')).toHaveAttribute('href', '/contact')
   })
 })

@@ -5,12 +5,7 @@ import SideBars from '../SideBars/SideBars'
 import './Header.css'
 import { Link } from 'gatsby'
 
-interface HeaderProps {
-  isHomePage?: boolean
-  isContactPage?: boolean
-}
-
-const Header = ({ isHomePage = false, isContactPage = false }: HeaderProps) => {
+const Header = () => {
   const [isMenuOpening, setIsMenuOpening] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [windowHeight, setWindowHeight] = useState(0)
@@ -48,7 +43,9 @@ const Header = ({ isHomePage = false, isContactPage = false }: HeaderProps) => {
 
   return (
     <header
-      className={`scroll-mt-72 ${isHomePage ? 'Header' : ''}`}
+      className={`scroll-mt-72 ${
+        window.location.pathname === '/' ? 'Header' : ''
+      }`}
       id="header"
       data-testid="header"
     >
@@ -56,10 +53,8 @@ const Header = ({ isHomePage = false, isContactPage = false }: HeaderProps) => {
         isMenuOpening={isMenuOpening}
         setIsMenuOpening={setIsMenuOpening}
         isMenuOpen={isMenuOpen}
-        isHomePage={isHomePage}
-        isContactPage={isContactPage}
       />
-      {isHomePage && (
+      {window.location.pathname === '/' && (
         <>
           <div className="HeroText">
             <h1>Lucas Silbernagel</h1>
