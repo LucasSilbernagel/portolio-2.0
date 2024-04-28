@@ -9,11 +9,18 @@ interface NavBarProps {
   isMenuOpening: boolean
   isMenuOpen: boolean
   setIsMenuOpening: Dispatch<SetStateAction<boolean>>
-  isHomePage: boolean
+  isHomePage?: boolean
+  isContactPage?: boolean
 }
 
 const NavBar = (props: NavBarProps) => {
-  const { isMenuOpening, setIsMenuOpening, isMenuOpen, isHomePage } = props
+  const {
+    isMenuOpening,
+    setIsMenuOpening,
+    isMenuOpen,
+    isHomePage = false,
+    isContactPage = false,
+  } = props
 
   const [currentScrollPos, setCurrentScrollPos] = useState(0)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -84,7 +91,7 @@ const NavBar = (props: NavBarProps) => {
           className="AccentFont NavButtons NavButtons__Desktop"
           data-testid="nav-buttons-desktop"
         >
-          <NavButtons isHomePage={isHomePage} />
+          <NavButtons isHomePage={isHomePage} isContactPage={isContactPage} />
         </div>
         <div
           className={`MobileMenu ${
@@ -101,6 +108,7 @@ const NavBar = (props: NavBarProps) => {
             <NavButtons
               setIsMenuOpening={setIsMenuOpening}
               isHomePage={isHomePage}
+              isContactPage={isContactPage}
             />
           </div>
         </div>

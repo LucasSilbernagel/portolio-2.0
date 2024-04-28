@@ -5,10 +5,11 @@ import SideBars from '../SideBars/SideBars'
 import './Header.css'
 
 interface HeaderProps {
-  isHomePage: boolean
+  isHomePage?: boolean
+  isContactPage?: boolean
 }
 
-const Header = ({ isHomePage }: HeaderProps) => {
+const Header = ({ isHomePage = false, isContactPage = false }: HeaderProps) => {
   const [isMenuOpening, setIsMenuOpening] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [windowHeight, setWindowHeight] = useState(0)
@@ -55,6 +56,7 @@ const Header = ({ isHomePage }: HeaderProps) => {
         setIsMenuOpening={setIsMenuOpening}
         isMenuOpen={isMenuOpen}
         isHomePage={isHomePage}
+        isContactPage={isContactPage}
       />
       {isHomePage && (
         <>

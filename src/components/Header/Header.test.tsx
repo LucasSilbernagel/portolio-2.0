@@ -20,7 +20,7 @@ describe('Header', () => {
   })
 
   test('renders correctly on a page other than the homepage', () => {
-    render(<Header isHomePage={false} />)
+    render(<Header />)
     expect(screen.getByTestId('header')).toBeInTheDocument()
     expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
     expect(screen.queryByText('Lucas Silbernagel')).toBeNull()

@@ -29,7 +29,7 @@ const Contact = () => {
           type="email"
           name="email"
           id="email"
-          placeholder="Your email"
+          placeholder="Your email address"
           required
         />
         <label htmlFor="message" className="sr-only">

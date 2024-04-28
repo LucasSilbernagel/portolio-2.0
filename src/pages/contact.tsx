@@ -4,7 +4,7 @@ import Contact from '../components/Contact/Contact'
 
 const ContactPage = () => {
   return (
-    <Layout isHomePage={false}>
+    <Layout isContactPage={true}>
       <Contact />
     </Layout>
   )
