@@ -3,8 +3,9 @@ const Contact = () => {
     <div className="Contact mb-36">
       <h1>Contact me</h1>
       <h2 className="AccentFont">
-        Get in touch with me through any of my social accounts, by emailing me
-        directly, or by using the form below.
+        Get in touch with me through any of my social accounts, or by using the
+        form below. You can also email me directly at
+        hello@lucassilbernagel.com.
       </h2>
       <form
         action="https://formspree.io/f/xkndywly"
