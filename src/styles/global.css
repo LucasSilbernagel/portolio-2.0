@@ -43,3 +43,26 @@ main {
 .SectionHeader:after {
   @apply content-[''] w-[20vw] sm:w-[30vw] h-[1px] bg-navy-3 ml-2;
 }
+
+input, textarea {
+  @apply text-black bg-white-1 py-2 pl-3 pr-10 rounded-sm;
+}
+
+input::placeholder, textarea::placeholder {
+  @apply text-gray-600;
+}
+
+.ProjectArchive,
+.Contact {
+  @apply mt-36;
+}
+
+.ProjectArchive h1,
+.Contact h1 {
+  @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-slate-3 mb-10 md:mb-6 text-center md:text-left;
+}
+
+.ProjectArchive h2,
+.Contact h2 {
+  @apply text-accent-1 mb-24;
+}
