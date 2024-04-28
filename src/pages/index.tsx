@@ -6,6 +6,7 @@ import { AnimationOnScroll } from 'react-animation-on-scroll'
 import 'animate.css/animate.min.css'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
+import { Link } from 'gatsby'
 
 const Home = () => {
   return (
@@ -16,14 +17,9 @@ const Home = () => {
       <ProjectsSection />
       <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
         <div className="flex justify-center my-36">
-          <a
-            href="mailto:hello@lucassilbernagel.com"
-            target="_blank"
-            rel="noreferrer"
-            className="AccentButton"
-          >
+          <Link to="/contact" className="AccentButton">
             Say hello
-          </a>
+          </Link>
         </div>
       </AnimationOnScroll>
     </Layout>

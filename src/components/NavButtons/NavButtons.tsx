@@ -50,14 +50,9 @@ const NavButtons = (props: NavButtonsProps) => {
           Homepage
         </Link>
       ) : (
-        <a
-          href="mailto:hello@lucassilbernagel.com"
-          target="_blank"
-          rel="noreferrer"
-          className="ContactButton"
-        >
+        <Link to="/contact" className="ContactButton">
           Say hello
-        </a>
+        </Link>
       )}
     </>
   )

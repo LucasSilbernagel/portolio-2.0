@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import NavBar from '../NavBar/NavBar'
 import SideBars from '../SideBars/SideBars'
 import './Header.css'
+import { Link } from 'gatsby'
 
 interface HeaderProps {
   isHomePage?: boolean
@@ -63,15 +64,13 @@ const Header = ({ isHomePage = false, isContactPage = false }: HeaderProps) => {
           <div className="HeroText">
             <h1>Lucas Silbernagel</h1>
             <h2>Software Developer</h2>
-            <a
-              href="mailto:hello@lucassilbernagel.com"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/contact"
               className="AccentButton relative z-10"
               data-testid="hero-contact-link"
             >
               Say hello
-            </a>
+            </Link>
           </div>
           {windowHeight >= 568 && (
             <div className="HeroImage" data-testid="hero-image">
