@@ -44,6 +44,10 @@ Then `cd` into the project folder and open it in your code editor. For Visual St
 `cd portfolio-2.0`
 `code .`
 
+### Environment variables
+
+Create a [Formspark](https://formspark.io/) ID for the website contact form. In the project codebase, create a `.env.production` file and a `.env.development` file. In each file, add `GATSBY_FORMSPARK_ID=your_formspark_id`.
+
 ### Install dependencies
 
 To install all of the required dependencies, run `npm install`.
