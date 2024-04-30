@@ -26,10 +26,10 @@ const NavBar = (props: NavBarProps) => {
 
   const handleIconButtonClick = () => {
     setIsMenuOpening(false)
-    if (window.location.pathname === '/') {
+    if (typeof window !== 'undefined' && window.location.pathname === '/') {
       scrollTo('#header')
     }
-    if (window.location.pathname !== '/') {
+    if (typeof window !== 'undefined' && window.location.pathname !== '/') {
       navigate('/')
       setTimeout(() => {
         scrollTo('#header')

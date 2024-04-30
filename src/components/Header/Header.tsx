@@ -44,7 +44,9 @@ const Header = () => {
   return (
     <header
       className={`scroll-mt-72 ${
-        window.location.pathname === '/' ? 'Header' : ''
+        typeof window !== 'undefined' && window.location.pathname === '/'
+          ? 'Header'
+          : ''
       }`}
       id="header"
       data-testid="header"
@@ -54,7 +56,7 @@ const Header = () => {
         setIsMenuOpening={setIsMenuOpening}
         isMenuOpen={isMenuOpen}
       />
-      {window.location.pathname === '/' && (
+      {typeof window !== 'undefined' && window.location.pathname === '/' && (
         <>
           <div className="HeroText">
             <h1>Lucas Silbernagel</h1>

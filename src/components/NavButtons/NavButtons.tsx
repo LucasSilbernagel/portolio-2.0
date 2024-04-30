@@ -20,10 +20,10 @@ const NavButtons = (props: NavButtonsProps) => {
     if (setIsMenuOpening) {
       setIsMenuOpening(false)
     }
-    if (window.location.pathname === '/') {
+    if (typeof window !== 'undefined' && window.location.pathname === '/') {
       scrollTo(selector)
     }
-    if (window.location.pathname !== '/') {
+    if (typeof window !== 'undefined' && window.location.pathname !== '/') {
       navigate('/')
       setTimeout(() => {
         scrollTo(selector)
@@ -43,7 +43,8 @@ const NavButtons = (props: NavButtonsProps) => {
           </button>
         )
       })}
-      {window.location.pathname === '/contact' ? (
+      {typeof window !== 'undefined' &&
+      window.location.pathname === '/contact' ? (
         <Link to="/" className="ContactButton">
           Homepage
         </Link>
