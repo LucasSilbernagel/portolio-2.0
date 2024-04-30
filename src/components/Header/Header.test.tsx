@@ -3,7 +3,7 @@ import Header from './Header'
 
 describe('Header', () => {
   test('renders correctly on the homepage', () => {
-    render(<Header isHomePage={true} />)
+    render(<Header />)
     expect(screen.getByTestId('header')).toBeInTheDocument()
     expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
     expect(screen.getByText('Lucas Silbernagel')).toBeInTheDocument()
@@ -14,13 +14,21 @@ describe('Header', () => {
     )
     expect(screen.getByTestId('hero-contact-link')).toHaveAttribute(
       'href',
-      'mailto:hello@lucassilbernagel.com'
+      '/contact'
     )
     expect(screen.getByTestId('hero-image')).toBeInTheDocument()
   })
 
   test('renders correctly on a page other than the homepage', () => {
-    render(<Header isHomePage={false} />)
+    // eslint-disable-next-line no-global-assign
+    window = Object.create(window)
+    Object.defineProperty(window, 'location', {
+      value: {
+        pathname: '/contact',
+      },
+      writable: true,
+    })
+    render(<Header />)
     expect(screen.getByTestId('header')).toBeInTheDocument()
     expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
     expect(screen.queryByText('Lucas Silbernagel')).toBeNull()

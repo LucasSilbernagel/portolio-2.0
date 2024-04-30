@@ -3,12 +3,9 @@ import { useEffect, useState } from 'react'
 import NavBar from '../NavBar/NavBar'
 import SideBars from '../SideBars/SideBars'
 import './Header.css'
+import { Link } from 'gatsby'
 
-interface HeaderProps {
-  isHomePage: boolean
-}
-
-const Header = ({ isHomePage }: HeaderProps) => {
+const Header = () => {
   const [isMenuOpening, setIsMenuOpening] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [windowHeight, setWindowHeight] = useState(0)
@@ -46,7 +43,11 @@ const Header = ({ isHomePage }: HeaderProps) => {
 
   return (
     <header
-      className={`scroll-mt-72 ${isHomePage ? 'Header' : ''}`}
+      className={`scroll-mt-72 ${
+        typeof window !== 'undefined' && window.location.pathname === '/'
+          ? 'Header'
+          : ''
+      }`}
       id="header"
       data-testid="header"
     >
@@ -54,22 +55,19 @@ const Header = ({ isHomePage }: HeaderProps) => {
         isMenuOpening={isMenuOpening}
         setIsMenuOpening={setIsMenuOpening}
         isMenuOpen={isMenuOpen}
-        isHomePage={isHomePage}
       />
-      {isHomePage && (
+      {typeof window !== 'undefined' && window.location.pathname === '/' && (
         <>
           <div className="HeroText">
             <h1>Lucas Silbernagel</h1>
             <h2>Software Developer</h2>
-            <a
-              href="mailto:hello@lucassilbernagel.com"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/contact"
               className="AccentButton relative z-10"
               data-testid="hero-contact-link"
             >
               Say hello
-            </a>
+            </Link>
           </div>
           {windowHeight >= 568 && (
             <div className="HeroImage" data-testid="hero-image">

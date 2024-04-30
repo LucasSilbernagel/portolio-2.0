@@ -4,7 +4,7 @@ import Seo from '../components/Seo'
 
 const ProjectArchivePage = () => {
   return (
-    <Layout isHomePage={false}>
+    <Layout>
       <ProjectArchive />
     </Layout>
   )

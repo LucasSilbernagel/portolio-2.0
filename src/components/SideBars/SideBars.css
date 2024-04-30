@@ -8,7 +8,11 @@
 }
 
 .Email {
-  @apply right-14 text-slate-2 tracking-widest text-xs;
+  @apply right-14;
+}
+
+.Email button {
+  @apply tracking-widest right-14 text-slate-2 text-xs;
   writing-mode: vertical-rl;
 }
 
@@ -18,6 +22,6 @@
 }
 
 .SocialLinks svg,
-.Email a {
+.Email button {
   @apply text-slate-2 hover:text-accent-1 hover:scale-110 focus-visible:text-accent-1 focus-visible:scale-110 duration-300;
 }

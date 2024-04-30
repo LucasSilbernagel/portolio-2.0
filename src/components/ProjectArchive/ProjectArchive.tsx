@@ -1,5 +1,4 @@
 import { PROJECTS } from '../../content/projects'
-import './ProjectArchive.css'
 import { FaTimes } from 'react-icons/fa'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import InfiniteScroll from 'react-infinite-scroller'
@@ -91,6 +90,7 @@ const ProjectArchive = () => {
                 placeholder="Filter projects by keyword..."
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
+                className="w-[300px]"
               />
               {searchValue.length > 0 && (
                 <div className="absolute text-gray-600 top-2.5 right-3">

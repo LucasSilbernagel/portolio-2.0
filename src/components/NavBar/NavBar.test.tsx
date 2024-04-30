@@ -7,7 +7,6 @@ describe('NavBar', () => {
       <NavBar
         isMenuOpening={false}
         setIsMenuOpening={jest.fn()}
-        isHomePage={false}
         isMenuOpen={false}
       />
     )
@@ -32,7 +31,6 @@ describe('NavBar', () => {
       <NavBar
         isMenuOpening={true}
         setIsMenuOpening={jest.fn()}
-        isHomePage={false}
         isMenuOpen={false}
       />
     )
@@ -57,7 +55,6 @@ describe('NavBar', () => {
       <NavBar
         isMenuOpening={false}
         setIsMenuOpening={jest.fn()}
-        isHomePage={false}
         isMenuOpen={true}
       />
     )

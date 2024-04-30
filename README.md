@@ -21,6 +21,7 @@ https://lucassilbernagel.com/
 - [react-icons](https://www.npmjs.com/package/react-icons)
 - [react-smooth-collapse](https://www.npmjs.com/package/react-smooth-collapse)
 - [react-infinite-scroller](https://www.npmjs.com/package/react-infinite-scroller)
+- [copy-to-clipboard](https://www.npmjs.com/package/copy-to-clipboard)
 
 ### Linting & Formatting
 
@@ -42,6 +43,10 @@ Then `cd` into the project folder and open it in your code editor. For Visual St
 
 `cd portfolio-2.0`
 `code .`
+
+### Environment variables
+
+Create a [Formspark](https://formspark.io/) ID for the website contact form. In the project codebase, create a `.env.production` file and a `.env.development` file. In each file, add `GATSBY_FORMSPARK_ID=your_formspark_id`.
 
 ### Install dependencies
 

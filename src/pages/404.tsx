@@ -4,7 +4,7 @@ import Seo from '../components/Seo'
 
 const NotFoundPage = () => {
   return (
-    <Layout isHomePage={false}>
+    <Layout>
       <div className="text-center my-36">
         <h1 className="font-fira-code text-9xl font-black text-accent-1 mb-4">
           404
