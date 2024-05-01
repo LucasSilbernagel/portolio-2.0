@@ -3,6 +3,7 @@ import { TECH_STACK } from '../../content/skills'
 import './TechStack.css'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import { isHTMLElement } from '../../utils/htmlHelpers'
+import { slugifyString } from '../../utils/stringHelpers'
 
 const TechStack = () => {
   const [maxBoxHeight, setMaxBoxHeight] = useState(0)
@@ -31,7 +32,10 @@ const TechStack = () => {
         <ul className="SkillGrid">
           {TECH_STACK.map((skillset) => {
             return (
-              <li key={skillset.id} className="flex flex-col items-center">
+              <li
+                key={slugifyString(skillset.section)}
+                className="flex flex-col items-center"
+              >
                 <h4 className="font-fira-code text-accent-1 text-center mb-1">
                   {skillset.section}
                 </h4>
@@ -42,9 +46,11 @@ const TechStack = () => {
                       height: maxBoxHeight > 0 ? `${maxBoxHeight}px` : 'unset',
                     }}
                   >
-                    {skillset.skills.map((skill, skillIndex) => (
+                    {skillset.skills.map((skill) => (
                       <li
-                        key={`${skillset.id}-${skillIndex}`}
+                        key={`${slugifyString(
+                          skillset.section
+                        )}-${slugifyString(skill)}`}
                         className="Skill"
                       >
                         {skill}
