@@ -6,7 +6,6 @@ html,
 body {
   @apply bg-navy-1 text-white-1;
   font-family: "Inter", sans-serif;
-  scrollbar-color: #233554 transparent;
 }
 
 body::-webkit-scrollbar {
@@ -14,7 +13,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  @apply bg-navy-3 rounded-md;
+  @apply bg-slate-600 rounded-md;
 }
 
 main {
