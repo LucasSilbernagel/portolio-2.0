@@ -7,7 +7,7 @@
 }
 
 .TechStack .SkillBox {
-  @apply bg-navy-2 rounded-sm shadow-lg p-4 w-[200px] h-[225px];
+  @apply bg-navy-2 rounded-sm shadow-lg p-4 w-[200px];
 }
 
 .TechStack .Skill {
