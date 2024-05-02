@@ -74,6 +74,41 @@ const TechStack = () => {
             </a>
             .
           </li>
+          <li>
+            In terms of JavaScript libraries, I&apos;m very much a{' '}
+            <a
+              href="https://react.dev/"
+              target="_blank"
+              rel="noreferrer"
+              className="UnderlineLink"
+            >
+              React
+            </a>{' '}
+            developer.
+            <ul>
+              <li>
+                React frameworks I&apos;ve worked with include{' '}
+                <a
+                  href="https://www.gatsbyjs.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="UnderlineLink"
+                >
+                  Gatsby
+                </a>{' '}
+                and{' '}
+                <a
+                  href="https://nextjs.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="UnderlineLink"
+                >
+                  Next.js
+                </a>
+                .
+              </li>
+            </ul>
+          </li>
         </ul>
         {/* <ul className="SkillGrid">
           {TECH_STACK.map((skillset) => {
