@@ -65,3 +65,20 @@ input::placeholder, textarea::placeholder {
 .Contact h2 {
   @apply text-accent-1 mb-24;
 }
+
+.UnderlineLink {
+  @apply text-accent-1 inline-block relative;
+}
+
+.UnderlineLink::after {
+  @apply content-[''] absolute w-full h-[1px] bottom-0 left-0 bg-accent-1;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.UnderlineLink:hover::after,
+.UnderlineLink:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

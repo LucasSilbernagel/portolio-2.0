@@ -10,8 +10,9 @@ const TechStack = () => {
 
   useEffect(() => {
     // All of the skill section boxes should be the same height as the one with the most content.
-    const skillBoxHeights = TECH_STACK.map(() => {
-      const skillList = document.querySelector(`.SkillBox ul`)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const skillBoxHeights = TECH_STACK.map((_skill, index) => {
+      const skillList = document.querySelectorAll(`.SkillBox ul`)[index]
       if (isHTMLElement(skillList)) {
         return skillList.offsetHeight
       } else {
@@ -29,7 +30,52 @@ const TechStack = () => {
         data-testid="tech-stack-section"
       >
         <h3 className="SectionHeader">Tech Stack</h3>
-        <ul className="SkillGrid">
+        <ul className="SkillList">
+          <li>
+            As a graduate of a front-end web development bootcamp, I have a
+            strong foundation in modern{' '}
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+              target="_blank"
+              rel="noreferrer"
+              className="UnderlineLink"
+            >
+              HTML
+            </a>{' '}
+            and{' '}
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+              target="_blank"
+              rel="noreferrer"
+              className="UnderlineLink"
+            >
+              CSS
+            </a>
+            .
+          </li>
+          <li>
+            I try to stay up to date with the latest developments in{' '}
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              target="_blank"
+              rel="noreferrer"
+              className="UnderlineLink"
+            >
+              JavaScript
+            </a>
+            , and I make my code type-safe with{' '}
+            <a
+              href="https://www.typescriptlang.org/"
+              target="_blank"
+              rel="noreferrer"
+              className="UnderlineLink"
+            >
+              TypeScript
+            </a>
+            .
+          </li>
+        </ul>
+        {/* <ul className="SkillGrid">
           {TECH_STACK.map((skillset) => {
             return (
               <li
@@ -50,10 +96,24 @@ const TechStack = () => {
                       <li
                         key={`${slugifyString(
                           skillset.section
-                        )}-${slugifyString(skill)}`}
+                        )}-${slugifyString(skill.subheader)}`}
                         className="Skill"
                       >
-                        {skill}
+                        {skill.subheader}
+                        {skill.subskills && (
+                          <ul className="pl-6">
+                            {skill.subskills.map((subskill) => {
+                              return (
+                                <li
+                                  key={slugifyString(subskill)}
+                                  className="Skill"
+                                >
+                                  {subskill}
+                                </li>
+                              )
+                            })}
+                          </ul>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -61,7 +121,7 @@ const TechStack = () => {
               </li>
             )
           })}
-        </ul>
+        </ul> */}
       </div>
     </AnimationOnScroll>
   )

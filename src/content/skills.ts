@@ -1,53 +1,61 @@
 export const TECH_STACK = [
   {
-    section: 'JavaScript',
-    skills: ['ES6+', 'TypeScript', 'React', 'Gatsby', 'Next.js', 'jQuery'],
-  },
-  {
-    section: 'Styling',
+    section: 'Languages',
     skills: [
-      'Tailwind CSS',
-      'MUI (Material UI)',
-      'Styled Components',
-      'SCSS',
-      'CSS',
+      { subheader: 'HTML', subskills: [] },
+      { subheader: 'CSS', subskills: [] },
+      { subheader: 'JavaScript', subskills: [] },
+      { subheader: 'TypeScript', subskills: [] },
     ],
   },
   {
-    section: 'State Management',
-    skills: ['React Context', 'Apollo Client', 'Recoil.js', 'Redux'],
+    section: 'Frameworks',
+    skills: [{ subheader: 'React', subskills: ['Gatsby', 'Next.js'] }],
   },
   {
-    section: 'Data',
-    skills: ['REST', 'GraphQL', 'MongoDB', 'Firebase', 'PostgreSQL'],
-  },
-  {
-    section: 'Back End',
-    skills: ['Node.js', 'Express.js', 'Apollo Server'],
-  },
-  {
-    section: 'Content Management',
-    skills: ['Sanity.io', 'Strapi', 'Shopify', 'WordPress'],
-  },
-  {
-    section: 'Testing',
+    section: 'Styling Libraries',
     skills: [
-      'Jest',
-      'React Testing Library',
-      'Playwright',
-      'Cypress',
-      'TestCafe',
+      { subheader: 'Tailwind CSS', subskills: [] },
+      { subheader: 'MUI (Material UI)', subskills: [] },
+      { subheader: 'Styled Components', subskills: [] },
+      { subheader: 'SCSS', subskills: [] },
     ],
   },
-  {
-    section: `Other`,
-    skills: [
-      'Progressive Web Apps',
-      'Storybook',
-      'Figma',
-      'Docker',
-      'PHP',
-      'Liquid',
-    ],
-  },
+  // {
+  //   section: 'State Management',
+  //   skills: ['React Context', 'Apollo Client', 'Recoil.js', 'Redux'],
+  // },
+  // {
+  //   section: 'Data',
+  //   skills: ['REST', 'GraphQL', 'MongoDB', 'Firebase', 'PostgreSQL'],
+  // },
+  // {
+  //   section: 'Back End',
+  //   skills: ['Node.js', 'Express.js', 'Apollo Server'],
+  // },
+  // {
+  //   section: 'Content Management',
+  //   skills: ['Sanity.io', 'Strapi', 'Shopify', 'WordPress'],
+  // },
+  // {
+  //   section: 'Testing',
+  //   skills: [
+  //     'Jest',
+  //     'React Testing Library',
+  //     'Playwright',
+  //     'Cypress',
+  //     'TestCafe',
+  //   ],
+  // },
+  // {
+  //   section: `Other`,
+  //   skills: [
+  //     'Progressive Web Apps',
+  //     'Storybook',
+  //     'Figma',
+  //     'Docker',
+  //     'PHP',
+  //     'Liquid',
+  //   ],
+  // },
 ]
