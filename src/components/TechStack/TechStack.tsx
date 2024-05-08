@@ -92,7 +92,146 @@ const TechStack = () => {
                 </a>
                 .
               </li>
+              <li>
+                I have experience managing React state with APIs like{' '}
+                <a
+                  href="https://react.dev/learn/passing-data-deeply-with-context"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  React Context
+                </a>{' '}
+                and libraries like{' '}
+                <a
+                  href="https://www.apollographql.com/docs/react/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Apollo Client
+                </a>
+                ,{' '}
+                <a
+                  href="https://recoiljs.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Recoil.js
+                </a>{' '}
+                and{' '}
+                <a
+                  href="https://redux.js.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Redux
+                </a>
+                .
+              </li>
             </ul>
+          </li>
+          <li>
+            When I&apos;m not styling webpages and apps with plain old CSS or{' '}
+            <a href="https://sass-lang.com/" target="_blank" rel="noreferrer">
+              SCSS
+            </a>
+            , I like to use utility-first CSS frameworks like{' '}
+            <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
+              Tailwind CSS{' '}
+            </a>
+            and component libraries like{' '}
+            <a href="https://mui.com/" target="_blank" rel="noreferrer">
+              MUI
+            </a>
+            .
+          </li>
+          <li>
+            I&apos;m comfortable working with data from both{' '}
+            <a
+              href="https://en.wikipedia.org/wiki/REST"
+              target="_blank"
+              rel="noreferrer"
+            >
+              REST{' '}
+            </a>
+            and{' '}
+            <a href="https://graphql.org/" target="_blank" rel="noreferrer">
+              GraphQL
+            </a>{' '}
+            APIs.
+          </li>
+          <li>
+            While I specialize in front-end development, I&apos;ve built
+            full-stack applications using technologies like{' '}
+            <a href="https://nodejs.org/en" target="_blank" rel="noreferrer">
+              Node.js{' '}
+            </a>
+            ,{' '}
+            <a href="https://expressjs.com/" target="_blank" rel="noreferrer">
+              Express
+            </a>
+            ,{' '}
+            <a
+              href="https://www.apollographql.com/docs/apollo-server/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Apollo Server
+            </a>
+            ,{' '}
+            <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer">
+              MongoDB
+            </a>
+            , and{' '}
+            <a
+              href="https://firebase.google.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Firebase
+            </a>
+            .
+          </li>
+          <li>
+            I have experience organizing and managing web content using{' '}
+            <a href="https://www.sanity.io/" target="_blank" rel="noreferrer">
+              Sanity
+            </a>
+            ,{' '}
+            <a href="https://strapi.io/" target="_blank" rel="noreferrer">
+              Strapi
+            </a>
+            ,{' '}
+            <a
+              href="https://www.shopify.com/ca"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Shopify
+            </a>
+            , and{' '}
+            <a href="https://wordpress.com/" target="_blank" rel="noreferrer">
+              WordPress
+            </a>
+            .
+          </li>
+          <li>
+            My preferred software testing frameworks include{' '}
+            <a href="https://jestjs.io/" target="_blank" rel="noreferrer">
+              Jest{' '}
+            </a>
+            ,{' '}
+            <a
+              href="https://testing-library.com/docs/react-testing-library/intro/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              React Testing Library
+            </a>
+            , and{' '}
+            <a href="https://playwright.dev/" target="_blank" rel="noreferrer">
+              Playwright
+            </a>
+            .
           </li>
         </ul>
         {/* <ul className="SkillGrid">
