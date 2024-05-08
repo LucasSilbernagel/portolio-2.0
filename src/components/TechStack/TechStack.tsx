@@ -116,8 +116,8 @@ const TechStack = () => {
                   rel="noreferrer"
                 >
                   Recoil.js
-                </a>{' '}
-                and{' '}
+                </a>
+                , and{' '}
                 <a
                   href="https://redux.js.org/"
                   target="_blank"
