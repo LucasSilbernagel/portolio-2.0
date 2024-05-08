@@ -38,7 +38,6 @@ const TechStack = () => {
               href="https://developer.mozilla.org/en-US/docs/Web/HTML"
               target="_blank"
               rel="noreferrer"
-              className="UnderlineLink"
             >
               HTML
             </a>{' '}
@@ -47,7 +46,6 @@ const TechStack = () => {
               href="https://developer.mozilla.org/en-US/docs/Web/CSS"
               target="_blank"
               rel="noreferrer"
-              className="UnderlineLink"
             >
               CSS
             </a>
@@ -59,7 +57,6 @@ const TechStack = () => {
               href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
               target="_blank"
               rel="noreferrer"
-              className="UnderlineLink"
             >
               JavaScript
             </a>
@@ -68,7 +65,6 @@ const TechStack = () => {
               href="https://www.typescriptlang.org/"
               target="_blank"
               rel="noreferrer"
-              className="UnderlineLink"
             >
               TypeScript
             </a>
@@ -76,12 +72,7 @@ const TechStack = () => {
           </li>
           <li>
             When it comes to JavaScript libraries, I&apos;m very much a{' '}
-            <a
-              href="https://react.dev/"
-              target="_blank"
-              rel="noreferrer"
-              className="UnderlineLink"
-            >
+            <a href="https://react.dev/" target="_blank" rel="noreferrer">
               React
             </a>{' '}
             developer.
@@ -92,17 +83,11 @@ const TechStack = () => {
                   href="https://www.gatsbyjs.com/"
                   target="_blank"
                   rel="noreferrer"
-                  className="UnderlineLink"
                 >
                   Gatsby
                 </a>{' '}
                 and{' '}
-                <a
-                  href="https://nextjs.org/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="UnderlineLink"
-                >
+                <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
                   Next.js
                 </a>
                 .
