@@ -5,13 +5,13 @@
       @apply font-bold;
     }
     li {
-      @apply mb-4;
+      @apply mb-6;
     }
     li:before {
-      @apply content-['\203A'] text-accent-1 text-lg font-bold mr-2;
+      @apply content-['\203A'] text-accent-1 text-lg font-bold mr-2 -ml-4;
     }
     li ul {
-      @apply pl-4;
+      @apply pl-6;
       li {
         @apply my-4;
       }

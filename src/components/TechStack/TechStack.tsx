@@ -54,7 +54,7 @@ const TechStack = () => {
             .
           </li>
           <li>
-            I try to stay up to date with the latest developments in{' '}
+            I follow industry newsletters to stay at the forefront of modern{' '}
             <a
               href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
               target="_blank"
@@ -75,7 +75,7 @@ const TechStack = () => {
             .
           </li>
           <li>
-            In terms of JavaScript libraries, I&apos;m very much a{' '}
+            When it comes to JavaScript libraries, I&apos;m very much a{' '}
             <a
               href="https://react.dev/"
               target="_blank"
