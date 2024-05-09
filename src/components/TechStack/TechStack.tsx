@@ -32,8 +32,8 @@ const TechStack = () => {
         <h3 className="SectionHeader">Tech Stack</h3>
         <ul className="SkillList">
           <li>
-            As a graduate of a front-end web development bootcamp, I have a
-            strong foundation in modern{' '}
+            As a graduate of a web development bootcamp, I have a strong
+            foundation in modern{' '}
             <a
               href="https://developer.mozilla.org/en-US/docs/Web/HTML"
               target="_blank"
@@ -93,7 +93,7 @@ const TechStack = () => {
                 .
               </li>
               <li>
-                I have experience managing React state with APIs like{' '}
+                I manage React state with APIs like{' '}
                 <a
                   href="https://react.dev/learn/passing-data-deeply-with-context"
                   target="_blank"
@@ -130,11 +130,8 @@ const TechStack = () => {
             </ul>
           </li>
           <li>
-            When I&apos;m not styling webpages and apps with plain old CSS or{' '}
-            <a href="https://sass-lang.com/" target="_blank" rel="noreferrer">
-              SCSS
-            </a>
-            , I like to use utility-first CSS frameworks like{' '}
+            I enjoy building user interfaces with utility-first CSS frameworks
+            like{' '}
             <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
               Tailwind CSS{' '}
             </a>
@@ -234,53 +231,6 @@ const TechStack = () => {
             .
           </li>
         </ul>
-        {/* <ul className="SkillGrid">
-          {TECH_STACK.map((skillset) => {
-            return (
-              <li
-                key={slugifyString(skillset.section)}
-                className="flex flex-col items-center"
-              >
-                <h4 className="font-fira-code text-accent-1 text-center mb-1">
-                  {skillset.section}
-                </h4>
-                <div className="SkillBox">
-                  <ul
-                    className={`text-sm`}
-                    style={{
-                      height: maxBoxHeight > 0 ? `${maxBoxHeight}px` : 'unset',
-                    }}
-                  >
-                    {skillset.skills.map((skill) => (
-                      <li
-                        key={`${slugifyString(
-                          skillset.section
-                        )}-${slugifyString(skill.subheader)}`}
-                        className="Skill"
-                      >
-                        {skill.subheader}
-                        {skill.subskills && (
-                          <ul className="pl-6">
-                            {skill.subskills.map((subskill) => {
-                              return (
-                                <li
-                                  key={slugifyString(subskill)}
-                                  className="Skill"
-                                >
-                                  {subskill}
-                                </li>
-                              )
-                            })}
-                          </ul>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-            )
-          })}
-        </ul> */}
       </div>
     </AnimationOnScroll>
   )
