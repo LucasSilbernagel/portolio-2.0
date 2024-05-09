@@ -6,6 +6,5 @@ describe('TechStack', () => {
     render(<TechStack />)
     expect(screen.getByTestId('tech-stack-section')).toBeInTheDocument()
     expect(screen.getByText('Tech Stack')).toBeInTheDocument()
-    screen.debug()
   })
 })
