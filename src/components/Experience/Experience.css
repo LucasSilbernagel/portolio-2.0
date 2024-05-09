@@ -3,7 +3,7 @@
 }
 
 .Experience .Timeline {
-  @apply max-w-screen-sm mx-auto text-slate-3 pl-0 xl:pl-14;
+  @apply max-w-screen-sm mx-auto text-slate-2 pl-0 xl:pl-14;
 }
 
 .Experience .Timeline__container {

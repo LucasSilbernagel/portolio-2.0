@@ -218,7 +218,10 @@ const ProjectsSection = () => {
           <h3 className="text-2xl font-bold mb-2">
             Want to see more of my work?
           </h3>
-          <Link className="AccentFont ArchiveLink" to="/project-archive">
+          <Link
+            className="AccentFont UnderlineAnimationLink"
+            to="/project-archive"
+          >
             View the archive
           </Link>
         </div>

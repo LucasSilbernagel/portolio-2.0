@@ -3,7 +3,7 @@
 }
 
 .AboutSection p {
-  @apply text-slate-1 mb-4;
+  @apply text-slate-2 mb-4;
 }
 
 .AboutSection .PhotoContainer {
