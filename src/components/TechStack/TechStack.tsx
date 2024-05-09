@@ -110,8 +110,7 @@ const TechStack = () => {
             </ul>
           </li>
           <li>
-            I enjoy building user interfaces with utility-first CSS frameworks
-            like{' '}
+            I enjoy building user interfaces with CSS frameworks like{' '}
             <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
               Tailwind CSS{' '}
             </a>
