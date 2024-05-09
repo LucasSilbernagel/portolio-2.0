@@ -1,27 +1,7 @@
-import { useEffect, useState } from 'react'
-import { TECH_STACK } from '../../content/skills'
 import './TechStack.css'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
-import { isHTMLElement } from '../../utils/htmlHelpers'
-import { slugifyString } from '../../utils/stringHelpers'
 
 const TechStack = () => {
-  const [maxBoxHeight, setMaxBoxHeight] = useState(0)
-
-  useEffect(() => {
-    // All of the skill section boxes should be the same height as the one with the most content.
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const skillBoxHeights = TECH_STACK.map((_skill, index) => {
-      const skillList = document.querySelectorAll(`.SkillBox ul`)[index]
-      if (isHTMLElement(skillList)) {
-        return skillList.offsetHeight
-      } else {
-        return 0
-      }
-    })
-    setMaxBoxHeight(Math.max(...skillBoxHeights))
-  }, [])
-
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
       <div
