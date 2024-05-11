@@ -7,9 +7,6 @@
   @apply text-accent-1 underline underline-offset-4 transition-all duration-300 hover:underline-offset-2 focus-visible:underline-offset-2;
 }
 
-.MyStory__image-grid {
-  @apply flex flex-wrap gap-2;
-  li {
-    @apply max-w-[300px];
-  }
+.MyStory__carousel {
+  @apply max-w-[380px] min-h-[400px] lg:min-h-[560px] mx-auto;
 }

@@ -14,7 +14,7 @@ const MyStory = () => {
   }
 
   return (
-    <div className="MyStory mb-36">
+    <div data-testid="my-story" className="MyStory mb-36">
       <h1>My story</h1>
       <section className="mt-24">
         <p>
@@ -113,8 +113,14 @@ const MyStory = () => {
           movie. I also love to travel, and I make it a point to always be
           saving and planning for my next big trip.
         </p>
-        <div className="max-w-[380px] min-h-[400px] lg:min-h-[560px] mx-auto">
-          <Carousel autoPlay infiniteLoop interval={7000} showStatus={false}>
+        <div className="MyStory__carousel">
+          <Carousel
+            autoPlay
+            infiniteLoop
+            interval={7000}
+            showStatus={false}
+            showThumbs={false}
+          >
             <div className="PhotoContainer">
               <StaticImage
                 alt="Lucas Silbernagel standing in front of Angkor Wat at sunrise"
