@@ -29,8 +29,8 @@ const AboutSection = () => {
               creating remarkable and accessible user experiences that everyone
               can enjoy.
             </p>
-            <div className="w-full flex justify-center mt-6">
-              <Link to="/my-story" className="UnderlineAnimationLink">
+            <div className="w-full flex justify-center">
+              <Link to="/my-story" className="AccentButton">
                 Read my story
               </Link>
             </div>

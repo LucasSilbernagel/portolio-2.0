@@ -1,5 +1,7 @@
 import { Link, navigate } from 'gatsby'
 import scrollTo from 'gatsby-plugin-smoothscroll'
+import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
+import { Carousel } from 'react-responsive-carousel'
 import './MyStory.css'
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -111,32 +113,34 @@ const MyStory = () => {
           movie. I also love to travel, and I make it a point to always be
           saving and planning for my next big trip.
         </p>
-        <ul className="MyStory__image-grid">
-          <li className="PhotoContainer">
-            <StaticImage
-              alt="Lucas Silbernagel standing in front of Angkor Wat at sunrise"
-              src="../../images/angkor.jpg"
-            />
-          </li>
-          <li className="PhotoContainer">
-            <StaticImage
-              alt="Lucas Silbernagel standing on a riverboat at sunset in Phnom Penh, Cambodia"
-              src="../../images/cambodia.jpg"
-            />
-          </li>
-          <li className="PhotoContainer">
-            <StaticImage
-              alt="Lucas Silbernagel sitting on a rooftop patio in Toronto"
-              src="../../images/north-york.jpg"
-            />
-          </li>
-          <li className="PhotoContainer">
-            <StaticImage
-              alt="Lucas Silbernagel sitting on a couch playing an acoustic guitar"
-              src="../../images/guitar.jpg"
-            />
-          </li>
-        </ul>
+        <div className="max-w-[380px] min-h-[400px] lg:min-h-[560px] mx-auto">
+          <Carousel autoPlay infiniteLoop interval={7000} showStatus={false}>
+            <div className="PhotoContainer">
+              <StaticImage
+                alt="Lucas Silbernagel standing in front of Angkor Wat at sunrise"
+                src="../../images/angkor.jpg"
+              />
+            </div>
+            <div className="PhotoContainer">
+              <StaticImage
+                alt="Lucas Silbernagel standing on a riverboat at sunset in Phnom Penh, Cambodia"
+                src="../../images/cambodia.jpg"
+              />
+            </div>
+            <div className="PhotoContainer">
+              <StaticImage
+                alt="Lucas Silbernagel sitting on a rooftop patio in Toronto"
+                src="../../images/north-york.jpg"
+              />
+            </div>
+            <div className="PhotoContainer">
+              <StaticImage
+                alt="Lucas Silbernagel sitting on a couch playing an acoustic guitar"
+                src="../../images/guitar.jpg"
+              />
+            </div>
+          </Carousel>
+        </div>
         <p>
           I’m always happy to make more connections, so feel free to reach out!
         </p>
