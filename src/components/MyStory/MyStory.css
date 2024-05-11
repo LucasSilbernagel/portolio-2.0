@@ -1,0 +1,12 @@
+.MyStory p {
+  @apply text-slate-2 mb-6;
+}
+
+.MyStory__link,
+.MyStory button {
+  @apply text-accent-1 underline underline-offset-4 transition-all duration-300 hover:underline-offset-2 focus-visible:underline-offset-2;
+}
+
+.MyStory__carousel {
+  @apply max-w-[380px] min-h-[400px] lg:min-h-[560px] mx-auto;
+}

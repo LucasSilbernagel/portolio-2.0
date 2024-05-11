@@ -22,6 +22,7 @@ https://lucassilbernagel.com/
 - [react-smooth-collapse](https://www.npmjs.com/package/react-smooth-collapse)
 - [react-infinite-scroller](https://www.npmjs.com/package/react-infinite-scroller)
 - [copy-to-clipboard](https://www.npmjs.com/package/copy-to-clipboard)
+- [react-responsive-carousel](https://www.npmjs.com/package/react-responsive-carousel)
 
 ### Linting & Formatting
 

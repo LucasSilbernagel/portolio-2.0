@@ -73,7 +73,7 @@ const ProjectArchive = () => {
         id="project-archive"
         data-testid="project-archive"
       >
-        <h1>Project Archive</h1>
+        <h1>Project archive</h1>
         <h2 className="AccentFont">
           Educational, freelance, and side projects I&apos;ve completed over the
           years
