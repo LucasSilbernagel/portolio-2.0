@@ -13,5 +13,5 @@ const ProjectArchivePage = () => {
 export default ProjectArchivePage
 
 export const Head = () => {
-  return <Seo title="Lucas Silbernagel | Project Archive" />
+  return <Seo title="Lucas Silbernagel | Project archive" />
 }

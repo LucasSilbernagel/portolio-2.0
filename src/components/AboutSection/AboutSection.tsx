@@ -4,6 +4,7 @@ import './AboutSection.css'
 import SmoothCollapse from 'react-smooth-collapse'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import ABOUT from '../../content/about'
+import { Link } from 'gatsby'
 
 const AboutSection = () => {
   const [isShowingMore, setIsShowingMore] = useState(false)
@@ -18,22 +19,20 @@ const AboutSection = () => {
         <h3 className="SectionHeader">About Me</h3>
         <div className="flex gap-12 flex-col xl:flex-row">
           <div>
-            <p>{ABOUT[0]}</p>
-            <p>{ABOUT[1]}</p>
-            <SmoothCollapse expanded={isShowingMore}>
-              <p>{ABOUT[2]}</p>
-              <p>{ABOUT[3]}</p>
-              <p>{ABOUT[4]}</p>
-              <p>{ABOUT[5]}</p>
-            </SmoothCollapse>
-            <div className="w-full flex justify-center">
-              <button
-                className="AccentButton"
-                onClick={() => setIsShowingMore(!isShowingMore)}
-                data-testid="read-more-button"
-              >
-                {isShowingMore ? 'Read less' : 'Read more'}
-              </button>
+            <p>
+              Hi, I&apos;m Lucas! I&apos;m a software developer based in
+              Toronto, Canada. I specialize in front-end development, and
+              I&apos;ve been working in the industry since 2020. My
+              contributions can be found in the codebases of an environmental
+              nonprofit, a cleantech startup, a quantum computing startup, and
+              an online casino and sportsbook. I&apos;m passionate about
+              creating remarkable and accessible user experiences that everyone
+              can enjoy.
+            </p>
+            <div className="w-full flex justify-center mt-6">
+              <Link to="/my-story" className="UnderlineAnimationLink">
+                Read my story
+              </Link>
             </div>
           </div>
           <div className="max-w-[300px] w-auto xl:w-max mx-auto xl:ml-0">

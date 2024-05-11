@@ -52,12 +52,14 @@ input::placeholder, textarea::placeholder {
 }
 
 .ProjectArchive,
-.Contact {
+.Contact,
+.MyStory {
   @apply mt-36;
 }
 
 .ProjectArchive h1,
-.Contact h1 {
+.Contact h1,
+.MyStory h1 {
   @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-slate-3 mb-10 md:mb-6 text-center md:text-left;
 }
 
