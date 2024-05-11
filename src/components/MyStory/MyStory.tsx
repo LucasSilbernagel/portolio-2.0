@@ -141,7 +141,7 @@ const MyStory = () => {
             </div>
           </Carousel>
         </div>
-        <p>
+        <p className="md:text-center">
           I’m always happy to make more connections, so feel free to reach out!
         </p>
         <div className="w-full flex justify-center">

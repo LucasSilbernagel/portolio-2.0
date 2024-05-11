@@ -1,5 +1,5 @@
 .MyStory p {
-  @apply text-slate-2 mb-4;
+  @apply text-slate-2 mb-6;
 }
 
 .MyStory__link,
