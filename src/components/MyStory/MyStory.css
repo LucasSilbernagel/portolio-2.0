@@ -8,5 +8,5 @@
 }
 
 .MyStory__carousel {
-  @apply max-w-[380px] min-h-[400px] lg:min-h-[560px] mx-auto;
+  @apply max-w-[380px] min-h-[400px] lg:min-h-[560px] mx-auto mb-12 lg:mb-2;
 }
