@@ -43,10 +43,16 @@ const config: GatsbyConfig = {
             return { ...page }
           })
         },
-        serialize: ({ path }: { path: string; modifiedGmt: string }) => {
+        serialize: ({
+          path,
+          modifiedGmt,
+        }: {
+          path: string
+          modifiedGmt: string
+        }) => {
           return {
             url: path,
-            lastmod: new Date().toISOString(),
+            lastmod: modifiedGmt,
           }
         },
       },
