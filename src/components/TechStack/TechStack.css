@@ -1,20 +1,23 @@
 .TechStack {
   @apply mt-24 pt-2;
-  .SkillList {
-    a {
-      @apply text-accent-1 underline underline-offset-4 transition-all duration-300 hover:underline-offset-2 focus-visible:underline-offset-2;
-    }
-    li {
-      @apply mb-4 text-slate-2;
-    }
-    li:before {
-      @apply content-['\203A'] text-accent-1 text-lg font-bold mr-2 -ml-4;
-    }
-    li ul {
-      @apply pl-8;
-      li {
-        @apply my-2;
-      }
-    }
-  }
+}
+
+.TechStack .SkillList a {
+  @apply text-accent-1 underline underline-offset-4 transition-all duration-300 hover:underline-offset-2 focus-visible:underline-offset-2;
+}
+
+.TechStack .SkillList li {
+  @apply mb-4 text-slate-2;
+}
+
+.TechStack .SkillList li:before {
+  @apply content-['\203A'] text-accent-1 text-lg font-bold mr-2 -ml-4;
+}
+
+.TechStack .SkillList li ul {
+  @apply pl-8;
+}
+
+.TechStack .SkillList li ul li {
+  @apply my-2;
 }
