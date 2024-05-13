@@ -2,6 +2,9 @@ footer {
   a {
     @apply font-fira-code text-slate-2 text-center mt-6 text-sm underline underline-offset-4 hover:text-accent-1 focus-visible:text-accent-1 duration-300;
   }
+  .Sitemap {
+    @apply w-full md:w-[unset] p-6 flex gap-7 flex-wrap md:flex-col justify-center md:ml-24 md:-mb-[54px];
+  }
   .IconLinks {
     @apply flex md:hidden justify-center gap-12 py-6;
     a {

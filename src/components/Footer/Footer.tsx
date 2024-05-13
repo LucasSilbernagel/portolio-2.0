@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 const Footer = () => {
   return (
     <footer className="mt-12 mb-6" data-testid="footer">
-      <ul className="w-full md:w-[unset] p-6 flex gap-7 flex-wrap md:flex-col justify-center  md:ml-24 md:-mb-[54px]">
+      <ul className="Sitemap">
         {Sitemap.map((page) => {
           return (
             <li key={page.url}>
@@ -15,9 +15,9 @@ const Footer = () => {
           )
         })}
       </ul>
-      <div className="IconLinks" data-testid="social-links">
+      <ul className="IconLinks" data-testid="social-links">
         <SocialLinks />
-      </div>
+      </ul>
       <div className="TextLinks">
         <p className="mb-4">
           Design inspired by{' '}

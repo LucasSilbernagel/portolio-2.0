@@ -1,10 +1,15 @@
 import { render, screen } from '@testing-library/react'
 import Footer from './Footer'
+import Sitemap from '../../content/sitemap'
 
 describe('Footer', () => {
   test('renders correctly', () => {
     render(<Footer />)
-    expect(screen.getByTestId('footer')).toBeInTheDocument()
+    expect(screen.getByTestId('footer')).toBeVisible()
+    Sitemap.forEach((page) => {
+      expect(screen.getByText(page.label)).toBeVisible()
+      expect(screen.getByText(page.label)).toHaveAttribute('href', page.url)
+    })
     expect(screen.getByTestId('social-links')).toBeInTheDocument()
     expect(screen.getByText('Design inspired by')).toBeInTheDocument()
     expect(screen.getByText('Brittany Chiang')).toBeInTheDocument()

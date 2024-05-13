@@ -4,7 +4,7 @@
 }
 
 .SocialLinks {
-  @apply left-14 flex-col gap-8;
+  @apply left-14 flex-col gap-8 list-none;
 }
 
 .Email {
