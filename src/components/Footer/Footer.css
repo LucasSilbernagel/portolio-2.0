@@ -3,7 +3,7 @@ footer {
     @apply font-fira-code text-slate-2 text-center mt-6 text-sm underline underline-offset-4 hover:text-accent-1 focus-visible:text-accent-1 duration-300;
   }
   .IconLinks {
-    @apply flex md:hidden justify-center gap-12 border-b-slate-1 border border-t-transparent border-x-transparent py-6;
+    @apply flex md:hidden justify-center gap-12 py-6;
     a {
       @apply mt-0;
     }
