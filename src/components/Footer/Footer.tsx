@@ -1,12 +1,28 @@
 import SocialLinks from '../SocialLinks/SocialLinks'
+import Sitemap from '../../content/sitemap'
+import { Link } from 'gatsby'
 import './Footer.css'
 
 const Footer = () => {
   return (
     <footer className="mt-12 mb-6" data-testid="footer">
-      <div className="IconLinks" data-testid="social-links">
+      <ul className="Sitemap">
+        {Sitemap.map((page) => {
+          return (
+            <li key={page.url}>
+              {typeof window !== 'undefined' &&
+              window.location.pathname === page.url ? (
+                <span>{page.label}</span>
+              ) : (
+                <Link to={page.url}>{page.label}</Link>
+              )}
+            </li>
+          )
+        })}
+      </ul>
+      <ul className="IconLinks" data-testid="social-links">
         <SocialLinks />
-      </div>
+      </ul>
       <div className="TextLinks">
         <p className="mb-4">
           Design inspired by{' '}
