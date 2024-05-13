@@ -1,16 +1,20 @@
-footer .IconLinks {
-  @apply flex md:hidden justify-center gap-12;
-}
-
-footer .IconLinks svg {
-  @apply text-slate-2 hover:text-accent-1 hover:scale-110 focus-visible:text-accent-1 focus-visible:scale-110 duration-300;
-}
-
-
-footer .TextLinks {
-  @apply font-fira-code text-slate-2 text-center mt-6 text-sm;
-}
-
-footer .TextLinks a {
-  @apply underline underline-offset-4 hover:text-accent-1 focus-visible:text-accent-1 duration-300;
+footer {
+  a {
+    @apply font-fira-code text-slate-2 text-center mt-6 text-sm underline underline-offset-4 hover:text-accent-1 focus-visible:text-accent-1 duration-300;
+  }
+  .IconLinks {
+    @apply flex md:hidden justify-center gap-12 border-b-slate-1 border border-t-transparent border-x-transparent py-6;
+    a {
+      @apply mt-0;
+    }
+    svg {
+      @apply text-slate-2 hover:text-accent-1 hover:scale-110 focus-visible:text-accent-1 focus-visible:scale-110 duration-300;
+    }
+  }
+  .TextLinks {
+    @apply font-fira-code text-slate-2 text-center mt-6 text-sm;
+    a {
+      @apply underline underline-offset-4 hover:text-accent-1 focus-visible:text-accent-1 duration-300;
+    }
+  }
 }
