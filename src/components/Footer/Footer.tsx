@@ -1,7 +1,7 @@
 import SocialLinks from '../SocialLinks/SocialLinks'
 import Sitemap from '../../content/sitemap'
-import './Footer.css'
 import { Link } from 'gatsby'
+import './Footer.css'
 
 const Footer = () => {
   return (
@@ -10,7 +10,12 @@ const Footer = () => {
         {Sitemap.map((page) => {
           return (
             <li key={page.url}>
-              <Link to={page.url}>{page.label}</Link>
+              {typeof window !== 'undefined' &&
+              window.location.pathname === page.url ? (
+                <span>{page.label}</span>
+              ) : (
+                <Link to={page.url}>{page.label}</Link>
+              )}
             </li>
           )
         })}

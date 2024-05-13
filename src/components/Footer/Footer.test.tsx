@@ -4,11 +4,21 @@ import Sitemap from '../../content/sitemap'
 
 describe('Footer', () => {
   test('renders correctly', () => {
+    // eslint-disable-next-line no-global-assign
+    window = Object.create(window)
+    Object.defineProperty(window, 'location', {
+      value: {
+        pathname: '/contact',
+      },
+      writable: true,
+    })
     render(<Footer />)
     expect(screen.getByTestId('footer')).toBeVisible()
     Sitemap.forEach((page) => {
       expect(screen.getByText(page.label)).toBeVisible()
-      expect(screen.getByText(page.label)).toHaveAttribute('href', page.url)
+      if (page.url !== '/contact') {
+        expect(screen.getByText(page.label)).toHaveAttribute('href', page.url)
+      }
     })
     expect(screen.getByTestId('social-links')).toBeInTheDocument()
     expect(screen.getByText('Design inspired by')).toBeInTheDocument()
