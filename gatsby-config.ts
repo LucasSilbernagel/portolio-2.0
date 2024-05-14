@@ -67,7 +67,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/favicon-32x32.png',
+        icon: 'src/images/profile-photo.jpg',
       },
     },
     'gatsby-plugin-sharp',

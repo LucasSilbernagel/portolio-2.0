@@ -1,5 +1,5 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { PiButterflyFill } from 'react-icons/pi'
+import { FaBluesky } from 'react-icons/fa6'
 
 const SocialLinks = () => {
   return (
@@ -34,7 +34,7 @@ const SocialLinks = () => {
           aria-label="Bluesky"
           data-testid="bluesky-link"
         >
-          <PiButterflyFill size="1.2rem" />
+          <FaBluesky size="1.2rem" />
         </a>
       </li>
     </>
