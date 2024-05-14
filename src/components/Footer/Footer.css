@@ -1,5 +1,5 @@
 footer .Sitemap {
-  @apply w-full md:max-w-max p-6 flex gap-7 flex-wrap md:flex-col justify-center md:ml-24 md:-mb-[54px];
+  @apply w-full md:max-w-max p-6 flex gap-7 flex-wrap md:flex-col justify-center md:ml-24 md:-mb-[62px];
 }
 
 footer .Sitemap a,
