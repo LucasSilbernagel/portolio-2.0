@@ -24,10 +24,12 @@ const AboutSection = () => {
           </div>
           <div className="max-w-[300px] w-auto xl:w-max mx-auto xl:ml-0">
             <div className="PhotoContainer">
-              <StaticImage
-                alt="Lucas Silbernagel"
-                src="../../images/profile-photo.jpg"
-              />
+              <div>
+                <StaticImage
+                  alt="Lucas Silbernagel"
+                  src="../../images/profile-photo.jpg"
+                />
+              </div>
             </div>
           </div>
         </div>

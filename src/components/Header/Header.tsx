@@ -34,7 +34,7 @@ const Header = () => {
       document.body.style.overflow = 'hidden'
     } else {
       document.removeEventListener('keydown', (e) => e.key === 'Escape')
-      document.body.style.overflow = 'scroll'
+      document.body.style.overflow = 'auto'
       setTimeout(() => {
         setIsMenuOpen(false)
       }, 500)

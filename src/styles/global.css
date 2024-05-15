@@ -8,14 +8,6 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-body::-webkit-scrollbar {
-  @apply w-2 bg-transparent h-full;
-}
-
-body::-webkit-scrollbar-thumb {
-  @apply bg-slate-600 rounded-md;
-}
-
 main {
   @apply mx-auto max-w-none sm:max-w-screen-lg md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg px-6 sm:px-12;
   counter-reset: SectionHeader;
