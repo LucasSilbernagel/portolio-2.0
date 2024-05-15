@@ -4,6 +4,7 @@ import NavButtons from '../NavButtons/NavButtons'
 import './NavBar.css'
 import scrollTo from 'gatsby-plugin-smoothscroll'
 import { navigate } from 'gatsby'
+import FocusTrap from 'focus-trap-react'
 
 interface NavBarProps {
   isMenuOpening: boolean
@@ -64,43 +65,56 @@ const NavBar = (props: NavBarProps) => {
           />
         </button>
       </div>
-      <div className={`flex md:hidden z-20 fixed right-4`}>
-        <button
-          aria-label={isMenuOpening ? 'Close mobile menu' : 'Open mobile menu'}
-          onClick={() => setIsMenuOpening(!isMenuOpen)}
-          className={`MobileMenu__Button ${
-            isMenuOpening ? 'MobileMenu__Button--open' : ''
-          }`}
-          data-testid="mobile-menu-button"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-      <div>
-        <div
-          className="AccentFont NavButtons NavButtons__Desktop"
-          data-testid="nav-buttons-desktop"
-        >
-          <NavButtons />
-        </div>
-        <div
-          className={`MobileMenu ${
-            isMenuOpening
-              ? 'animate-slide-in right-0'
-              : 'animate-slide-out -right-[575px]'
-          } ${isMenuOpen ? 'visible' : 'invisible'}`}
-          data-testid="mobile-menu"
-        >
-          <div
-            className="AccentFont NavButtons"
-            data-testid="nav-buttons-mobile"
-          >
-            <NavButtons setIsMenuOpening={setIsMenuOpening} />
+      <FocusTrap
+        active={isMenuOpening}
+        focusTrapOptions={{
+          clickOutsideDeactivates: true,
+          escapeDeactivates: true,
+        }}
+      >
+        <div role="dialog" aria-modal="true">
+          <div className={`flex md:hidden z-20 fixed right-4`}>
+            <button
+              aria-label={
+                isMenuOpening ? 'Close mobile menu' : 'Open mobile menu'
+              }
+              aria-expanded={isMenuOpening}
+              onClick={() => setIsMenuOpening(!isMenuOpen)}
+              className={`MobileMenu__Button ${
+                isMenuOpening ? 'MobileMenu__Button--open' : ''
+              }`}
+              data-testid="mobile-menu-button"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+          <div>
+            <div
+              className="AccentFont NavButtons NavButtons__Desktop"
+              data-testid="nav-buttons-desktop"
+            >
+              <NavButtons />
+            </div>
+            <div
+              className={`MobileMenu ${
+                isMenuOpening
+                  ? 'animate-slide-in right-0'
+                  : 'animate-slide-out -right-[575px]'
+              } ${isMenuOpen ? 'visible' : 'invisible'}`}
+              data-testid="mobile-menu"
+            >
+              <div
+                className="AccentFont NavButtons"
+                data-testid="nav-buttons-mobile"
+              >
+                <NavButtons setIsMenuOpening={setIsMenuOpening} />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </FocusTrap>
     </nav>
   )
 }
