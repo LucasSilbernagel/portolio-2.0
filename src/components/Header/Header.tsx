@@ -9,17 +9,19 @@ const Header = () => {
   const [isMenuOpening, setIsMenuOpening] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [windowHeight, setWindowHeight] = useState(0)
+  const [windowWidth, setWindowWidth] = useState(0)
 
   useEffect(() => {
     const handleResize = () => {
       setWindowHeight(window.innerHeight)
+      setWindowWidth(window.innerWidth)
     }
     window.addEventListener('resize', handleResize)
     handleResize()
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [setWindowHeight])
+  }, [setWindowHeight, setWindowWidth])
 
   useEffect(() => {
     if (isMenuOpening) {
@@ -40,6 +42,13 @@ const Header = () => {
       }, 500)
     }
   }, [isMenuOpening, isMenuOpen])
+
+  useEffect(() => {
+    if (windowWidth > 767) {
+      setIsMenuOpening(false)
+      document.body.style.overflow = 'auto'
+    }
+  }, [windowWidth])
 
   return (
     <header
