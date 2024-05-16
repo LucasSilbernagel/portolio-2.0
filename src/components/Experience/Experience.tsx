@@ -15,7 +15,9 @@ const Experience = () => {
         id="experience-section"
         data-testid="experience-section"
       >
-        <h3 className="SectionHeader">Experience</h3>
+        <h3 className="SectionHeader" aria-label="Experience">
+          Experience
+        </h3>
         <div className="Timeline">
           <div className="Timeline__container">
             <div className="Timeline__Vertical-Line"></div>

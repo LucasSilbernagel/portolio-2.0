@@ -37,7 +37,10 @@ const ProjectsSection = () => {
         id="projects-section"
         data-testid="projects-section"
       >
-        <h3 className="SectionHeader after:w-7 after:sm:w-[30vw]">
+        <h3
+          className="SectionHeader after:w-7 after:sm:w-[30vw]"
+          aria-label="Latest Projects"
+        >
           Latest Projects
         </h3>
         <ul>

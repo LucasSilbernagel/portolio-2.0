@@ -64,6 +64,7 @@ const Header = () => {
         isMenuOpening={isMenuOpening}
         setIsMenuOpening={setIsMenuOpening}
         isMenuOpen={isMenuOpen}
+        windowWidth={windowWidth}
       />
       {typeof window !== 'undefined' && window.location.pathname === '/' && (
         <>

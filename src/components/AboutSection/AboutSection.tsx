@@ -12,7 +12,9 @@ const AboutSection = () => {
         id="about-section"
         data-testid="about-section"
       >
-        <h3 className="SectionHeader">About Me</h3>
+        <h3 className="SectionHeader" aria-label="About Me">
+          About Me
+        </h3>
         <div className="flex gap-12 flex-col xl:flex-row">
           <div>
             <p data-testid="about-text">{AboutContent}</p>
