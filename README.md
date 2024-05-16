@@ -23,6 +23,7 @@ https://lucassilbernagel.com/
 - [react-infinite-scroller](https://www.npmjs.com/package/react-infinite-scroller)
 - [copy-to-clipboard](https://www.npmjs.com/package/copy-to-clipboard)
 - [react-responsive-carousel](https://www.npmjs.com/package/react-responsive-carousel)
+- [focus-trap-react](https://www.npmjs.com/package/focus-trap-react)
 
 ### Linting & Formatting
 
