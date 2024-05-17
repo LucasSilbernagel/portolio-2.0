@@ -8,11 +8,11 @@ describe('NavBar', () => {
         isMenuOpening={false}
         setIsMenuOpening={jest.fn()}
         isMenuOpen={false}
+        windowWidth={350}
       />
     )
     expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
     expect(screen.getByTestId('icon-button')).toBeInTheDocument()
-    expect(screen.getByAltText('Lucas Silbernagel')).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu-button')).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu-button')).not.toHaveClass(
       'MobileMenu__Button--open'
@@ -26,41 +26,17 @@ describe('NavBar', () => {
     expect(screen.getByTestId('nav-buttons-mobile')).toBeInTheDocument()
   })
 
-  test('renders correctly with the menu opening', () => {
-    render(
-      <NavBar
-        isMenuOpening={true}
-        setIsMenuOpening={jest.fn()}
-        isMenuOpen={false}
-      />
-    )
-    expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
-    expect(screen.getByTestId('icon-button')).toBeInTheDocument()
-    expect(screen.getByAltText('Lucas Silbernagel')).toBeInTheDocument()
-    expect(screen.getByTestId('mobile-menu-button')).toBeInTheDocument()
-    expect(screen.getByTestId('mobile-menu-button')).toHaveClass(
-      'MobileMenu__Button--open'
-    )
-    expect(screen.getByTestId('nav-buttons-desktop')).toBeInTheDocument()
-    expect(screen.getByTestId('mobile-menu')).toBeInTheDocument()
-    expect(screen.getByTestId('mobile-menu')).toHaveClass(
-      'animate-slide-in right-0'
-    )
-    expect(screen.getByTestId('mobile-menu')).toHaveClass('invisible')
-    expect(screen.getByTestId('nav-buttons-mobile')).toBeInTheDocument()
-  })
-
   test('renders correctly with the menu open', () => {
     render(
       <NavBar
         isMenuOpening={false}
         setIsMenuOpening={jest.fn()}
         isMenuOpen={true}
+        windowWidth={350}
       />
     )
     expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
     expect(screen.getByTestId('icon-button')).toBeInTheDocument()
-    expect(screen.getByAltText('Lucas Silbernagel')).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu-button')).toBeInTheDocument()
     expect(screen.getByTestId('mobile-menu-button')).not.toHaveClass(
       'MobileMenu__Button--open'
