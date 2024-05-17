@@ -22,10 +22,9 @@ const MenuContainer = ({
   windowWidth: number
   children: ReactNode
 }) => {
-  if (windowWidth < 768) {
+  if (windowWidth < 768 && isMenuOpening) {
     return (
       <FocusTrap
-        active={isMenuOpening}
         focusTrapOptions={{
           clickOutsideDeactivates: true,
           escapeDeactivates: true,
