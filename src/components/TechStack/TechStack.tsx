@@ -9,7 +9,9 @@ const TechStack = () => {
         id="tech-stack-section"
         data-testid="tech-stack-section"
       >
-        <h3 className="SectionHeader">Tech Stack</h3>
+        <h3 className="SectionHeader" aria-label="Tech Stack">
+          Tech Stack
+        </h3>
         <ul className="SkillList">
           <li>
             As a graduate of a web development bootcamp, I have a strong

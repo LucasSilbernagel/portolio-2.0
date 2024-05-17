@@ -79,7 +79,10 @@ const ProjectArchive = () => {
           years
         </h2>
         <div className="w-full flex justify-center mb-8">
-          <form>
+          <form
+            aria-controls="project-count"
+            onSubmit={(e) => e.preventDefault()}
+          >
             <label htmlFor="searchInput" className="sr-only">
               Filter projects by keyword
             </label>
@@ -111,7 +114,7 @@ const ProjectArchive = () => {
             <Loader />
           </div>
         ) : (
-          <div className="mt-12 mb-10">
+          <div className="mt-12 mb-10" id="project-count" aria-live="polite">
             <p className="AccentFont text-center text-accent-1">
               Showing {filteredProjects.length} of {PROJECTS.length} projects
             </p>

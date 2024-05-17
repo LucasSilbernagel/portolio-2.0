@@ -1,5 +1,5 @@
 import { StaticImage } from 'gatsby-plugin-image'
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react'
 import NavButtons from '../NavButtons/NavButtons'
 import './NavBar.css'
 import scrollTo from 'gatsby-plugin-smoothscroll'
@@ -10,10 +10,38 @@ interface NavBarProps {
   isMenuOpening: boolean
   isMenuOpen: boolean
   setIsMenuOpening: Dispatch<SetStateAction<boolean>>
+  windowWidth: number
+}
+
+const MenuContainer = ({
+  isMenuOpening,
+  windowWidth,
+  children,
+}: {
+  isMenuOpening: boolean
+  windowWidth: number
+  children: ReactNode
+}) => {
+  if (windowWidth < 768 && isMenuOpening) {
+    return (
+      <FocusTrap
+        focusTrapOptions={{
+          clickOutsideDeactivates: true,
+          escapeDeactivates: true,
+        }}
+      >
+        <div role="dialog" aria-modal="true" aria-label="navigation menu">
+          {children}
+        </div>
+      </FocusTrap>
+    )
+  } else {
+    return <div>{children}</div>
+  }
 }
 
 const NavBar = (props: NavBarProps) => {
-  const { isMenuOpening, setIsMenuOpening, isMenuOpen } = props
+  const { isMenuOpening, setIsMenuOpening, isMenuOpen, windowWidth } = props
 
   const [currentScrollPos, setCurrentScrollPos] = useState(0)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -57,64 +85,57 @@ const NavBar = (props: NavBarProps) => {
           className="IconButton"
           onClick={handleIconButtonClick}
           data-testid="icon-button"
+          aria-label="home"
         >
           <StaticImage
             src="../../images/profile-photo.jpg"
-            alt="Lucas Silbernagel"
+            alt=""
             className="h-full w-full"
           />
         </button>
       </div>
-      <FocusTrap
-        active={isMenuOpening}
-        focusTrapOptions={{
-          clickOutsideDeactivates: true,
-          escapeDeactivates: true,
-        }}
-      >
-        <div role="dialog" aria-modal="true">
-          <div className={`flex md:hidden z-20 fixed right-4`}>
-            <button
-              aria-label={
-                isMenuOpening ? 'Close mobile menu' : 'Open mobile menu'
-              }
-              aria-expanded={isMenuOpening}
-              onClick={() => setIsMenuOpening(!isMenuOpen)}
-              className={`MobileMenu__Button ${
-                isMenuOpening ? 'MobileMenu__Button--open' : ''
-              }`}
-              data-testid="mobile-menu-button"
+      <MenuContainer isMenuOpening={isMenuOpening} windowWidth={windowWidth}>
+        <div className={`flex md:hidden z-20 fixed right-4 top-[35px]`}>
+          <button
+            aria-label={
+              isMenuOpening ? 'Close mobile menu' : 'Open mobile menu'
+            }
+            aria-expanded={isMenuOpening}
+            onClick={() => setIsMenuOpening(!isMenuOpen)}
+            className={`MobileMenu__Button ${
+              isMenuOpening ? 'MobileMenu__Button--open' : ''
+            }`}
+            data-testid="mobile-menu-button"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div>
+          <ul
+            className="AccentFont NavButtons NavButtons__Desktop"
+            data-testid="nav-buttons-desktop"
+          >
+            <NavButtons />
+          </ul>
+          <div
+            className={`MobileMenu ${
+              isMenuOpening
+                ? 'animate-slide-in right-0'
+                : 'animate-slide-out -right-[575px]'
+            } ${isMenuOpen ? 'visible' : 'invisible'}`}
+            data-testid="mobile-menu"
+          >
+            <ul
+              className="AccentFont NavButtons"
+              data-testid="nav-buttons-mobile"
             >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-          <div>
-            <div
-              className="AccentFont NavButtons NavButtons__Desktop"
-              data-testid="nav-buttons-desktop"
-            >
-              <NavButtons />
-            </div>
-            <div
-              className={`MobileMenu ${
-                isMenuOpening
-                  ? 'animate-slide-in right-0'
-                  : 'animate-slide-out -right-[575px]'
-              } ${isMenuOpen ? 'visible' : 'invisible'}`}
-              data-testid="mobile-menu"
-            >
-              <div
-                className="AccentFont NavButtons"
-                data-testid="nav-buttons-mobile"
-              >
-                <NavButtons setIsMenuOpening={setIsMenuOpening} />
-              </div>
-            </div>
+              <NavButtons setIsMenuOpening={setIsMenuOpening} />
+            </ul>
           </div>
         </div>
-      </FocusTrap>
+      </MenuContainer>
     </nav>
   )
 }

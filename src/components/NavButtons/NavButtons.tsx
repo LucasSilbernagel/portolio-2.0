@@ -35,23 +35,29 @@ const NavButtons = (props: NavButtonsProps) => {
     <>
       {buttons.map((button) => {
         return (
-          <button
-            key={button.selector}
-            onClick={() => handleClick(button.selector)}
-          >
-            {button.label}
-          </button>
+          <li key={button.selector}>
+            <button
+              onClick={() => handleClick(button.selector)}
+              aria-label={button.label}
+            >
+              {button.label}
+            </button>
+          </li>
         )
       })}
       {typeof window !== 'undefined' &&
       window.location.pathname === '/contact' ? (
-        <Link to="/" className="ContactButton">
-          Homepage
-        </Link>
+        <li>
+          <Link to="/" className="ContactButton">
+            Homepage
+          </Link>
+        </li>
       ) : (
-        <Link to="/contact" className="ContactButton">
-          Say hello
-        </Link>
+        <li>
+          <Link to="/contact" className="ContactButton">
+            Say hello
+          </Link>
+        </li>
       )}
     </>
   )
