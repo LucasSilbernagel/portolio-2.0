@@ -16,9 +16,11 @@ const SideBars = () => {
 
   return (
     <>
-      <ul className="SocialLinks" data-testid="social-links-sidebar">
-        <SocialLinks />
-      </ul>
+      <nav>
+        <ul className="SocialLinks" data-testid="social-links-sidebar">
+          <SocialLinks />
+        </ul>
+      </nav>
       <div className="Email" data-testid="email-sidebar">
         <div
           className={`relative transition-all duration-1000 ${

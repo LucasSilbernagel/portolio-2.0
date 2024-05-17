@@ -6,23 +6,27 @@ import './Footer.css'
 const Footer = () => {
   return (
     <footer className="mt-12 mb-6" data-testid="footer">
-      <ul className="Sitemap">
-        {Sitemap.map((page) => {
-          return (
-            <li key={page.url}>
-              {typeof window !== 'undefined' &&
-              window.location.pathname === page.url ? (
-                <span>{page.label}</span>
-              ) : (
-                <Link to={page.url}>{page.label}</Link>
-              )}
-            </li>
-          )
-        })}
-      </ul>
-      <ul className="IconLinks" data-testid="social-links">
-        <SocialLinks />
-      </ul>
+      <nav>
+        <ul className="Sitemap">
+          {Sitemap.map((page) => {
+            return (
+              <li key={page.url}>
+                {typeof window !== 'undefined' &&
+                window.location.pathname === page.url ? (
+                  <span>{page.label}</span>
+                ) : (
+                  <Link to={page.url}>{page.label}</Link>
+                )}
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
+      <nav>
+        <ul className="IconLinks" data-testid="social-links">
+          <SocialLinks />
+        </ul>
+      </nav>
       <div className="TextLinks">
         <p className="mb-4">
           Design inspired by{' '}

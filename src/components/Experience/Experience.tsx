@@ -55,6 +55,7 @@ const Experience = () => {
                     className="AccentButton"
                     onClick={() => setIsShowingMore(!isShowingMore)}
                     data-testid="read-more-button"
+                    aria-expanded={isShowingMore}
                   >
                     {isShowingMore ? 'Read less' : 'Read more'}
                   </button>
