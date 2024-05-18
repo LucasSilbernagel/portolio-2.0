@@ -22,22 +22,23 @@ const MenuContainer = ({
   windowWidth: number
   children: ReactNode
 }) => {
-  if (windowWidth < 768 && isMenuOpening) {
-    return (
-      <FocusTrap
-        focusTrapOptions={{
-          clickOutsideDeactivates: true,
-          escapeDeactivates: true,
-        }}
+  return (
+    <FocusTrap
+      active={windowWidth < 768 && isMenuOpening}
+      focusTrapOptions={{
+        clickOutsideDeactivates: true,
+        escapeDeactivates: true,
+      }}
+    >
+      <div
+        role={windowWidth < 768 && isMenuOpening ? 'dialog' : undefined}
+        aria-modal={windowWidth < 768 && isMenuOpening ? true : undefined}
+        aria-label="navigation menu"
       >
-        <div role="dialog" aria-modal="true" aria-label="navigation menu">
-          {children}
-        </div>
-      </FocusTrap>
-    )
-  } else {
-    return <div>{children}</div>
-  }
+        {children}
+      </div>
+    </FocusTrap>
+  )
 }
 
 const NavBar = (props: NavBarProps) => {
