@@ -4837,6 +4837,11 @@ export type ProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type ProjectsQuery = { allFile: { nodes: Array<{ relativePath: string, childImageSharp?: { gatsbyImageData: any } | null }> } };
 
+export type TechStackQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type TechStackQuery = { sanityHomepage?: { _rawTechStack?: any | null } | null };
+
 export type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
