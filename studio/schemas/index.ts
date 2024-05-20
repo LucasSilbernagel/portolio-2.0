@@ -1,3 +1,4 @@
 import homepage from './homepage'
-import priceItem from './priceItem'
-export const schemaTypes = [homepage, priceItem]
+import experienceItem from './experienceItem'
+import timeframe from './timeframe'
+export const schemaTypes = [homepage, experienceItem, timeframe]

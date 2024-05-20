@@ -371,6 +371,22 @@ export type SanityDocument = {
   _rev?: Maybe<Scalars['String']>;
 };
 
+export type SanityExperienceItem = {
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  company?: Maybe<Scalars['String']>;
+  companyWebsite?: Maybe<Scalars['String']>;
+  timeframe?: Maybe<SanityTimeframe>;
+  accomplishments?: Maybe<Array<Maybe<Scalars['String']>>>;
+  _rawTimeframe?: Maybe<Scalars['JSON']>;
+};
+
+
+export type SanityExperienceItem_RawTimeframeArgs = {
+  resolveReferences?: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
 export type SanityFile = {
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
@@ -398,10 +414,12 @@ export type SanityHomepage = SanityDocument & Node & {
   _updatedAt?: Maybe<Scalars['Date']>;
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  experience?: Maybe<Array<Maybe<SanityExperienceItem>>>;
   aboutMe?: Maybe<Array<Maybe<SanityBlock>>>;
   techStack?: Maybe<Array<Maybe<SanityBlock>>>;
   _rawAboutMe?: Maybe<Scalars['JSON']>;
   _rawTechStack?: Maybe<Scalars['JSON']>;
+  _rawExperience?: Maybe<Scalars['JSON']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
@@ -431,6 +449,11 @@ export type SanityHomepage_RawAboutMeArgs = {
 
 
 export type SanityHomepage_RawTechStackArgs = {
+  resolveReferences?: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+export type SanityHomepage_RawExperienceArgs = {
   resolveReferences?: InputMaybe<SanityResolveReferencesConfiguration>;
 };
 
@@ -494,13 +517,6 @@ export type SanityMediaTag_UpdatedAtArgs = {
 
 export type SanityMediaTag_RawNameArgs = {
   resolveReferences?: InputMaybe<SanityResolveReferencesConfiguration>;
-};
-
-export type SanityPriceItem = {
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  time?: Maybe<Scalars['String']>;
-  price?: Maybe<Scalars['String']>;
 };
 
 export type SanityAssetSourceData = {
@@ -897,6 +913,29 @@ export type SanitySpan = {
   _type?: Maybe<Scalars['String']>;
   marks?: Maybe<Array<Maybe<Scalars['String']>>>;
   text?: Maybe<Scalars['String']>;
+};
+
+export type SanityTimeframe = {
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  startDate?: Maybe<Scalars['Date']>;
+  endDate?: Maybe<Scalars['Date']>;
+};
+
+
+export type SanityTimeframeStartDateArgs = {
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+export type SanityTimeframeEndDateArgs = {
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 export type SanityResolveReferencesConfiguration = {
@@ -1419,10 +1458,12 @@ export type QuerySanityHomepageArgs = {
   _updatedAt?: InputMaybe<DateQueryOperatorInput>;
   _rev?: InputMaybe<StringQueryOperatorInput>;
   _key?: InputMaybe<StringQueryOperatorInput>;
+  experience?: InputMaybe<SanityExperienceItemFilterListInput>;
   aboutMe?: InputMaybe<SanityBlockFilterListInput>;
   techStack?: InputMaybe<SanityBlockFilterListInput>;
   _rawAboutMe?: InputMaybe<JsonQueryOperatorInput>;
   _rawTechStack?: InputMaybe<JsonQueryOperatorInput>;
+  _rawExperience?: InputMaybe<JsonQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
   parent?: InputMaybe<NodeFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
@@ -3488,6 +3529,28 @@ export type SiteBuildMetadataSortInput = {
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
 
+export type SanityExperienceItemFilterListInput = {
+  elemMatch?: InputMaybe<SanityExperienceItemFilterInput>;
+};
+
+export type SanityExperienceItemFilterInput = {
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  title?: InputMaybe<StringQueryOperatorInput>;
+  company?: InputMaybe<StringQueryOperatorInput>;
+  companyWebsite?: InputMaybe<StringQueryOperatorInput>;
+  timeframe?: InputMaybe<SanityTimeframeFilterInput>;
+  accomplishments?: InputMaybe<StringQueryOperatorInput>;
+  _rawTimeframe?: InputMaybe<JsonQueryOperatorInput>;
+};
+
+export type SanityTimeframeFilterInput = {
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  startDate?: InputMaybe<DateQueryOperatorInput>;
+  endDate?: InputMaybe<DateQueryOperatorInput>;
+};
+
 export type SanityBlockFilterListInput = {
   elemMatch?: InputMaybe<SanityBlockFilterInput>;
 };
@@ -3565,6 +3628,18 @@ export type SanityHomepageFieldsEnum =
   | '_updatedAt'
   | '_rev'
   | '_key'
+  | 'experience'
+  | 'experience____key'
+  | 'experience____type'
+  | 'experience___title'
+  | 'experience___company'
+  | 'experience___companyWebsite'
+  | 'experience___timeframe____key'
+  | 'experience___timeframe____type'
+  | 'experience___timeframe___startDate'
+  | 'experience___timeframe___endDate'
+  | 'experience___accomplishments'
+  | 'experience____rawTimeframe'
   | 'aboutMe'
   | 'aboutMe____key'
   | 'aboutMe____type'
@@ -3591,6 +3666,7 @@ export type SanityHomepageFieldsEnum =
   | 'techStack____rawChildren'
   | '_rawAboutMe'
   | '_rawTechStack'
+  | '_rawExperience'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -3733,10 +3809,12 @@ export type SanityHomepageFilterInput = {
   _updatedAt?: InputMaybe<DateQueryOperatorInput>;
   _rev?: InputMaybe<StringQueryOperatorInput>;
   _key?: InputMaybe<StringQueryOperatorInput>;
+  experience?: InputMaybe<SanityExperienceItemFilterListInput>;
   aboutMe?: InputMaybe<SanityBlockFilterListInput>;
   techStack?: InputMaybe<SanityBlockFilterListInput>;
   _rawAboutMe?: InputMaybe<JsonQueryOperatorInput>;
   _rawTechStack?: InputMaybe<JsonQueryOperatorInput>;
+  _rawExperience?: InputMaybe<JsonQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
   parent?: InputMaybe<NodeFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
@@ -4831,6 +4909,11 @@ export type AboutMeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type AboutMeQuery = { sanityHomepage?: { _rawAboutMe?: any | null } | null };
+
+export type ExperienceQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ExperienceQuery = { sanityHomepage?: { experience?: Array<{ _key?: string | null, title?: string | null, company?: string | null, companyWebsite?: string | null, accomplishments?: Array<string | null> | null, timeframe?: { startDate?: any | null, endDate?: any | null } | null } | null> | null } | null };
 
 export type ProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 

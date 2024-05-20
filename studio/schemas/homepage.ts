@@ -10,6 +10,7 @@ export default {
   name: 'homepage',
   type: 'document',
   title: 'Homepage',
+  validation: (Rule: {required: () => any}) => Rule.required(),
   fields: [
     {
       type: 'array', 
@@ -23,6 +24,19 @@ export default {
       name: 'techStack',
       validation: (Rule: {required: () => any}) => Rule.required(),
     },
+    defineField({
+      name: 'experience',
+      type: 'array',
+      title: 'Experience',
+      validation: (Rule: {required: () => any}) => Rule.required(),
+      of: [
+        defineArrayMember({
+          type: 'experienceItem',
+          name: 'experienceItem',
+          validation: (Rule: {required: () => any}) => Rule.required(),
+        }),
+      ],
+    }),
     // {
     //   type: 'array',
     //   name: 'about',
