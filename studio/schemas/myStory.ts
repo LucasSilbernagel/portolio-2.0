@@ -1,15 +1,14 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {defineArrayMember, defineField} from 'sanity'
 
 export default {
   preview: {
     prepare() {
-      return { title: `Homepage` };
+      return { title: `My story` };
     },
   },
-  name: 'homepage',
+  name: 'myStory',
   type: 'document',
-  title: 'Homepage',
+  title: 'My story',
   validation: (Rule: {required: () => any}) => Rule.required(),
   fields: [
     {
@@ -18,21 +17,15 @@ export default {
       name: 'aboutMe',
       validation: (Rule: {required: () => any}) => Rule.required(),
     },
-    {
-      type: 'array', 
-      of: [{type: 'block'}],
-      name: 'techStack',
-      validation: (Rule: {required: () => any}) => Rule.required(),
-    },
     defineField({
-      name: 'experience',
+      name: 'myStoryImageCarousel',
       type: 'array',
-      title: 'Experience',
-      validation: (Rule: {required: () => any}) => Rule.required(),
+      title: 'My Story Image Carousel',
+      validation: (Rule: { required: () => any }) => Rule.required(),
       of: [
         defineArrayMember({
-          type: 'experienceItem',
-          name: 'experienceItem',
+          type: 'imageSlide',
+          name: 'imageSlide',
           validation: (Rule: {required: () => any}) => Rule.required(),
         }),
       ],

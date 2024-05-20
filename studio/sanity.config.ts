@@ -27,6 +27,10 @@ export default defineConfig({
               .title('Homepage')
               .id('homepage')
               .child(S.document().schemaType('homepage').documentId('homepage')),
+              S.listItem()
+              .title('My story')
+              .id('myStory')
+              .child(S.document().schemaType('myStory').documentId('myStory')),
               // Regular document types
             S.documentTypeListItem('project').title('Projects'),
           ]),
