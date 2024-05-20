@@ -27,7 +27,10 @@ export default defineConfig({
               .title('Homepage')
               .id('homepage')
               .child(S.document().schemaType('homepage').documentId('homepage')),
+              // Regular document types
+            S.documentTypeListItem('project').title('Projects'),
           ]),
+          
     }),
     visionTool(),
     media(),

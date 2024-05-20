@@ -519,6 +519,48 @@ export type SanityMediaTag_RawNameArgs = {
   resolveReferences?: InputMaybe<SanityResolveReferencesConfiguration>;
 };
 
+export type SanityProject = SanityDocument & Node & {
+  _id?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  _createdAt?: Maybe<Scalars['Date']>;
+  _updatedAt?: Maybe<Scalars['Date']>;
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  year?: Maybe<Scalars['Float']>;
+  description?: Maybe<Scalars['String']>;
+  techStack?: Maybe<Array<Maybe<Scalars['String']>>>;
+  githubProjectLink?: Maybe<Scalars['String']>;
+  liveLink?: Maybe<Scalars['String']>;
+  image?: Maybe<SanityImage>;
+  _rawImage?: Maybe<Scalars['JSON']>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
+
+export type SanityProject_CreatedAtArgs = {
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+export type SanityProject_UpdatedAtArgs = {
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+export type SanityProject_RawImageArgs = {
+  resolveReferences?: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
 export type SanityAssetSourceData = {
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
@@ -1230,6 +1272,8 @@ export type Query = {
   allSanityHomepage: SanityHomepageConnection;
   sanityMediaTag?: Maybe<SanityMediaTag>;
   allSanityMediaTag: SanityMediaTagConnection;
+  sanityProject?: Maybe<SanityProject>;
+  allSanityProject: SanityProjectConnection;
   sanityFileAsset?: Maybe<SanityFileAsset>;
   allSanityFileAsset: SanityFileAssetConnection;
   sanityImageAsset?: Maybe<SanityImageAsset>;
@@ -1498,6 +1542,36 @@ export type QuerySanityMediaTagArgs = {
 export type QueryAllSanityMediaTagArgs = {
   filter?: InputMaybe<SanityMediaTagFilterInput>;
   sort?: InputMaybe<SanityMediaTagSortInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type QuerySanityProjectArgs = {
+  _id?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  _createdAt?: InputMaybe<DateQueryOperatorInput>;
+  _updatedAt?: InputMaybe<DateQueryOperatorInput>;
+  _rev?: InputMaybe<StringQueryOperatorInput>;
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  year?: InputMaybe<FloatQueryOperatorInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  techStack?: InputMaybe<StringQueryOperatorInput>;
+  githubProjectLink?: InputMaybe<StringQueryOperatorInput>;
+  liveLink?: InputMaybe<StringQueryOperatorInput>;
+  image?: InputMaybe<SanityImageFilterInput>;
+  _rawImage?: InputMaybe<JsonQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
+
+
+export type QueryAllSanityProjectArgs = {
+  filter?: InputMaybe<SanityProjectFilterInput>;
+  sort?: InputMaybe<SanityProjectSortInput>;
   skip?: InputMaybe<Scalars['Int']>;
   limit?: InputMaybe<Scalars['Int']>;
 };
@@ -4045,12 +4119,441 @@ export type SanityMediaTagSortInput = {
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
 
+export type SanityImageFilterInput = {
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  asset?: InputMaybe<SanityImageAssetFilterInput>;
+  hotspot?: InputMaybe<SanityImageHotspotFilterInput>;
+  crop?: InputMaybe<SanityImageCropFilterInput>;
+  _rawAsset?: InputMaybe<JsonQueryOperatorInput>;
+  _rawHotspot?: InputMaybe<JsonQueryOperatorInput>;
+  _rawCrop?: InputMaybe<JsonQueryOperatorInput>;
+};
+
+export type SanityImageAssetFilterInput = {
+  _id?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  _createdAt?: InputMaybe<DateQueryOperatorInput>;
+  _updatedAt?: InputMaybe<DateQueryOperatorInput>;
+  _rev?: InputMaybe<StringQueryOperatorInput>;
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  originalFilename?: InputMaybe<StringQueryOperatorInput>;
+  label?: InputMaybe<StringQueryOperatorInput>;
+  title?: InputMaybe<StringQueryOperatorInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  altText?: InputMaybe<StringQueryOperatorInput>;
+  sha1hash?: InputMaybe<StringQueryOperatorInput>;
+  extension?: InputMaybe<StringQueryOperatorInput>;
+  mimeType?: InputMaybe<StringQueryOperatorInput>;
+  size?: InputMaybe<FloatQueryOperatorInput>;
+  assetId?: InputMaybe<StringQueryOperatorInput>;
+  uploadId?: InputMaybe<StringQueryOperatorInput>;
+  path?: InputMaybe<StringQueryOperatorInput>;
+  url?: InputMaybe<StringQueryOperatorInput>;
+  metadata?: InputMaybe<SanityImageMetadataFilterInput>;
+  source?: InputMaybe<SanityAssetSourceDataFilterInput>;
+  _rawMetadata?: InputMaybe<JsonQueryOperatorInput>;
+  _rawSource?: InputMaybe<JsonQueryOperatorInput>;
+  gatsbyImageData?: InputMaybe<GatsbyImageDataQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  filename?: InputMaybe<StringQueryOperatorInput>;
+  filesize?: InputMaybe<IntQueryOperatorInput>;
+  width?: InputMaybe<IntQueryOperatorInput>;
+  height?: InputMaybe<IntQueryOperatorInput>;
+  publicUrl?: InputMaybe<StringQueryOperatorInput>;
+  resize?: InputMaybe<RemoteFileResizeFilterInput>;
+  gatsbyImage?: InputMaybe<GatsbyImageDataQueryOperatorInput>;
+};
+
+export type SanityImageMetadataFilterInput = {
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  location?: InputMaybe<SanityGeopointFilterInput>;
+  dimensions?: InputMaybe<SanityImageDimensionsFilterInput>;
+  palette?: InputMaybe<SanityImagePaletteFilterInput>;
+  lqip?: InputMaybe<StringQueryOperatorInput>;
+  blurHash?: InputMaybe<StringQueryOperatorInput>;
+  hasAlpha?: InputMaybe<BooleanQueryOperatorInput>;
+  isOpaque?: InputMaybe<BooleanQueryOperatorInput>;
+  _rawLocation?: InputMaybe<JsonQueryOperatorInput>;
+  _rawDimensions?: InputMaybe<JsonQueryOperatorInput>;
+  _rawPalette?: InputMaybe<JsonQueryOperatorInput>;
+};
+
+export type SanityGeopointFilterInput = {
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  lat?: InputMaybe<FloatQueryOperatorInput>;
+  lng?: InputMaybe<FloatQueryOperatorInput>;
+  alt?: InputMaybe<FloatQueryOperatorInput>;
+};
+
+export type SanityImageDimensionsFilterInput = {
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  height?: InputMaybe<FloatQueryOperatorInput>;
+  width?: InputMaybe<FloatQueryOperatorInput>;
+  aspectRatio?: InputMaybe<FloatQueryOperatorInput>;
+};
+
+export type SanityImagePaletteFilterInput = {
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  darkMuted?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  lightVibrant?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  darkVibrant?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  vibrant?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  dominant?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  lightMuted?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  muted?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  _rawDarkMuted?: InputMaybe<JsonQueryOperatorInput>;
+  _rawLightVibrant?: InputMaybe<JsonQueryOperatorInput>;
+  _rawDarkVibrant?: InputMaybe<JsonQueryOperatorInput>;
+  _rawVibrant?: InputMaybe<JsonQueryOperatorInput>;
+  _rawDominant?: InputMaybe<JsonQueryOperatorInput>;
+  _rawLightMuted?: InputMaybe<JsonQueryOperatorInput>;
+  _rawMuted?: InputMaybe<JsonQueryOperatorInput>;
+};
+
+export type SanityImagePaletteSwatchFilterInput = {
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  background?: InputMaybe<StringQueryOperatorInput>;
+  foreground?: InputMaybe<StringQueryOperatorInput>;
+  population?: InputMaybe<FloatQueryOperatorInput>;
+  title?: InputMaybe<StringQueryOperatorInput>;
+};
+
 export type SanityAssetSourceDataFilterInput = {
   _key?: InputMaybe<StringQueryOperatorInput>;
   _type?: InputMaybe<StringQueryOperatorInput>;
   name?: InputMaybe<StringQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
   url?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type RemoteFileResizeFilterInput = {
+  width?: InputMaybe<IntQueryOperatorInput>;
+  height?: InputMaybe<IntQueryOperatorInput>;
+  src?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type SanityImageHotspotFilterInput = {
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  x?: InputMaybe<FloatQueryOperatorInput>;
+  y?: InputMaybe<FloatQueryOperatorInput>;
+  height?: InputMaybe<FloatQueryOperatorInput>;
+  width?: InputMaybe<FloatQueryOperatorInput>;
+};
+
+export type SanityImageCropFilterInput = {
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  top?: InputMaybe<FloatQueryOperatorInput>;
+  bottom?: InputMaybe<FloatQueryOperatorInput>;
+  left?: InputMaybe<FloatQueryOperatorInput>;
+  right?: InputMaybe<FloatQueryOperatorInput>;
+};
+
+export type SanityProjectConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<SanityProjectEdge>;
+  nodes: Array<SanityProject>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SanityProjectGroupConnection>;
+};
+
+
+export type SanityProjectConnectionDistinctArgs = {
+  field: SanityProjectFieldsEnum;
+};
+
+
+export type SanityProjectConnectionMaxArgs = {
+  field: SanityProjectFieldsEnum;
+};
+
+
+export type SanityProjectConnectionMinArgs = {
+  field: SanityProjectFieldsEnum;
+};
+
+
+export type SanityProjectConnectionSumArgs = {
+  field: SanityProjectFieldsEnum;
+};
+
+
+export type SanityProjectConnectionGroupArgs = {
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SanityProjectFieldsEnum;
+};
+
+export type SanityProjectEdge = {
+  next?: Maybe<SanityProject>;
+  node: SanityProject;
+  previous?: Maybe<SanityProject>;
+};
+
+export type SanityProjectFieldsEnum =
+  | '_id'
+  | '_type'
+  | '_createdAt'
+  | '_updatedAt'
+  | '_rev'
+  | '_key'
+  | 'name'
+  | 'year'
+  | 'description'
+  | 'techStack'
+  | 'githubProjectLink'
+  | 'liveLink'
+  | 'image____key'
+  | 'image____type'
+  | 'image___asset____id'
+  | 'image___asset____type'
+  | 'image___asset____createdAt'
+  | 'image___asset____updatedAt'
+  | 'image___asset____rev'
+  | 'image___asset____key'
+  | 'image___asset___originalFilename'
+  | 'image___asset___label'
+  | 'image___asset___title'
+  | 'image___asset___description'
+  | 'image___asset___altText'
+  | 'image___asset___sha1hash'
+  | 'image___asset___extension'
+  | 'image___asset___mimeType'
+  | 'image___asset___size'
+  | 'image___asset___assetId'
+  | 'image___asset___uploadId'
+  | 'image___asset___path'
+  | 'image___asset___url'
+  | 'image___asset___metadata____key'
+  | 'image___asset___metadata____type'
+  | 'image___asset___metadata___lqip'
+  | 'image___asset___metadata___blurHash'
+  | 'image___asset___metadata___hasAlpha'
+  | 'image___asset___metadata___isOpaque'
+  | 'image___asset___metadata____rawLocation'
+  | 'image___asset___metadata____rawDimensions'
+  | 'image___asset___metadata____rawPalette'
+  | 'image___asset___source____key'
+  | 'image___asset___source____type'
+  | 'image___asset___source___name'
+  | 'image___asset___source___id'
+  | 'image___asset___source___url'
+  | 'image___asset____rawMetadata'
+  | 'image___asset____rawSource'
+  | 'image___asset___gatsbyImageData'
+  | 'image___asset___id'
+  | 'image___asset___parent___id'
+  | 'image___asset___parent___children'
+  | 'image___asset___children'
+  | 'image___asset___children___id'
+  | 'image___asset___children___children'
+  | 'image___asset___internal___content'
+  | 'image___asset___internal___contentDigest'
+  | 'image___asset___internal___description'
+  | 'image___asset___internal___fieldOwners'
+  | 'image___asset___internal___ignoreType'
+  | 'image___asset___internal___mediaType'
+  | 'image___asset___internal___owner'
+  | 'image___asset___internal___type'
+  | 'image___asset___internal___contentFilePath'
+  | 'image___asset___filename'
+  | 'image___asset___filesize'
+  | 'image___asset___width'
+  | 'image___asset___height'
+  | 'image___asset___publicUrl'
+  | 'image___asset___resize___width'
+  | 'image___asset___resize___height'
+  | 'image___asset___resize___src'
+  | 'image___asset___gatsbyImage'
+  | 'image___hotspot____key'
+  | 'image___hotspot____type'
+  | 'image___hotspot___x'
+  | 'image___hotspot___y'
+  | 'image___hotspot___height'
+  | 'image___hotspot___width'
+  | 'image___crop____key'
+  | 'image___crop____type'
+  | 'image___crop___top'
+  | 'image___crop___bottom'
+  | 'image___crop___left'
+  | 'image___crop___right'
+  | 'image____rawAsset'
+  | 'image____rawHotspot'
+  | 'image____rawCrop'
+  | '_rawImage'
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___parent___internal___contentFilePath'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___children___internal___contentFilePath'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'parent___internal___contentFilePath'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___parent___internal___contentFilePath'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___children___internal___contentFilePath'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'children___internal___contentFilePath'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'internal___contentFilePath';
+
+export type SanityProjectGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<SanityProjectEdge>;
+  nodes: Array<SanityProject>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SanityProjectGroupConnection>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+
+export type SanityProjectGroupConnectionDistinctArgs = {
+  field: SanityProjectFieldsEnum;
+};
+
+
+export type SanityProjectGroupConnectionMaxArgs = {
+  field: SanityProjectFieldsEnum;
+};
+
+
+export type SanityProjectGroupConnectionMinArgs = {
+  field: SanityProjectFieldsEnum;
+};
+
+
+export type SanityProjectGroupConnectionSumArgs = {
+  field: SanityProjectFieldsEnum;
+};
+
+
+export type SanityProjectGroupConnectionGroupArgs = {
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SanityProjectFieldsEnum;
+};
+
+export type SanityProjectFilterInput = {
+  _id?: InputMaybe<StringQueryOperatorInput>;
+  _type?: InputMaybe<StringQueryOperatorInput>;
+  _createdAt?: InputMaybe<DateQueryOperatorInput>;
+  _updatedAt?: InputMaybe<DateQueryOperatorInput>;
+  _rev?: InputMaybe<StringQueryOperatorInput>;
+  _key?: InputMaybe<StringQueryOperatorInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  year?: InputMaybe<FloatQueryOperatorInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  techStack?: InputMaybe<StringQueryOperatorInput>;
+  githubProjectLink?: InputMaybe<StringQueryOperatorInput>;
+  liveLink?: InputMaybe<StringQueryOperatorInput>;
+  image?: InputMaybe<SanityImageFilterInput>;
+  _rawImage?: InputMaybe<JsonQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
+
+export type SanityProjectSortInput = {
+  fields?: InputMaybe<Array<InputMaybe<SanityProjectFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
 
 export type SanityFileAssetConnection = {
@@ -4290,71 +4793,6 @@ export type SanityFileAssetFilterInput = {
 export type SanityFileAssetSortInput = {
   fields?: InputMaybe<Array<InputMaybe<SanityFileAssetFieldsEnum>>>;
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
-};
-
-export type SanityImageMetadataFilterInput = {
-  _key?: InputMaybe<StringQueryOperatorInput>;
-  _type?: InputMaybe<StringQueryOperatorInput>;
-  location?: InputMaybe<SanityGeopointFilterInput>;
-  dimensions?: InputMaybe<SanityImageDimensionsFilterInput>;
-  palette?: InputMaybe<SanityImagePaletteFilterInput>;
-  lqip?: InputMaybe<StringQueryOperatorInput>;
-  blurHash?: InputMaybe<StringQueryOperatorInput>;
-  hasAlpha?: InputMaybe<BooleanQueryOperatorInput>;
-  isOpaque?: InputMaybe<BooleanQueryOperatorInput>;
-  _rawLocation?: InputMaybe<JsonQueryOperatorInput>;
-  _rawDimensions?: InputMaybe<JsonQueryOperatorInput>;
-  _rawPalette?: InputMaybe<JsonQueryOperatorInput>;
-};
-
-export type SanityGeopointFilterInput = {
-  _key?: InputMaybe<StringQueryOperatorInput>;
-  _type?: InputMaybe<StringQueryOperatorInput>;
-  lat?: InputMaybe<FloatQueryOperatorInput>;
-  lng?: InputMaybe<FloatQueryOperatorInput>;
-  alt?: InputMaybe<FloatQueryOperatorInput>;
-};
-
-export type SanityImageDimensionsFilterInput = {
-  _key?: InputMaybe<StringQueryOperatorInput>;
-  _type?: InputMaybe<StringQueryOperatorInput>;
-  height?: InputMaybe<FloatQueryOperatorInput>;
-  width?: InputMaybe<FloatQueryOperatorInput>;
-  aspectRatio?: InputMaybe<FloatQueryOperatorInput>;
-};
-
-export type SanityImagePaletteFilterInput = {
-  _key?: InputMaybe<StringQueryOperatorInput>;
-  _type?: InputMaybe<StringQueryOperatorInput>;
-  darkMuted?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
-  lightVibrant?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
-  darkVibrant?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
-  vibrant?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
-  dominant?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
-  lightMuted?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
-  muted?: InputMaybe<SanityImagePaletteSwatchFilterInput>;
-  _rawDarkMuted?: InputMaybe<JsonQueryOperatorInput>;
-  _rawLightVibrant?: InputMaybe<JsonQueryOperatorInput>;
-  _rawDarkVibrant?: InputMaybe<JsonQueryOperatorInput>;
-  _rawVibrant?: InputMaybe<JsonQueryOperatorInput>;
-  _rawDominant?: InputMaybe<JsonQueryOperatorInput>;
-  _rawLightMuted?: InputMaybe<JsonQueryOperatorInput>;
-  _rawMuted?: InputMaybe<JsonQueryOperatorInput>;
-};
-
-export type SanityImagePaletteSwatchFilterInput = {
-  _key?: InputMaybe<StringQueryOperatorInput>;
-  _type?: InputMaybe<StringQueryOperatorInput>;
-  background?: InputMaybe<StringQueryOperatorInput>;
-  foreground?: InputMaybe<StringQueryOperatorInput>;
-  population?: InputMaybe<FloatQueryOperatorInput>;
-  title?: InputMaybe<StringQueryOperatorInput>;
-};
-
-export type RemoteFileResizeFilterInput = {
-  width?: InputMaybe<IntQueryOperatorInput>;
-  height?: InputMaybe<IntQueryOperatorInput>;
-  src?: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type SanityImageAssetConnection = {
@@ -4644,44 +5082,6 @@ export type SanityImageAssetGroupConnectionGroupArgs = {
   field: SanityImageAssetFieldsEnum;
 };
 
-export type SanityImageAssetFilterInput = {
-  _id?: InputMaybe<StringQueryOperatorInput>;
-  _type?: InputMaybe<StringQueryOperatorInput>;
-  _createdAt?: InputMaybe<DateQueryOperatorInput>;
-  _updatedAt?: InputMaybe<DateQueryOperatorInput>;
-  _rev?: InputMaybe<StringQueryOperatorInput>;
-  _key?: InputMaybe<StringQueryOperatorInput>;
-  originalFilename?: InputMaybe<StringQueryOperatorInput>;
-  label?: InputMaybe<StringQueryOperatorInput>;
-  title?: InputMaybe<StringQueryOperatorInput>;
-  description?: InputMaybe<StringQueryOperatorInput>;
-  altText?: InputMaybe<StringQueryOperatorInput>;
-  sha1hash?: InputMaybe<StringQueryOperatorInput>;
-  extension?: InputMaybe<StringQueryOperatorInput>;
-  mimeType?: InputMaybe<StringQueryOperatorInput>;
-  size?: InputMaybe<FloatQueryOperatorInput>;
-  assetId?: InputMaybe<StringQueryOperatorInput>;
-  uploadId?: InputMaybe<StringQueryOperatorInput>;
-  path?: InputMaybe<StringQueryOperatorInput>;
-  url?: InputMaybe<StringQueryOperatorInput>;
-  metadata?: InputMaybe<SanityImageMetadataFilterInput>;
-  source?: InputMaybe<SanityAssetSourceDataFilterInput>;
-  _rawMetadata?: InputMaybe<JsonQueryOperatorInput>;
-  _rawSource?: InputMaybe<JsonQueryOperatorInput>;
-  gatsbyImageData?: InputMaybe<GatsbyImageDataQueryOperatorInput>;
-  id?: InputMaybe<StringQueryOperatorInput>;
-  parent?: InputMaybe<NodeFilterInput>;
-  children?: InputMaybe<NodeFilterListInput>;
-  internal?: InputMaybe<InternalFilterInput>;
-  filename?: InputMaybe<StringQueryOperatorInput>;
-  filesize?: InputMaybe<IntQueryOperatorInput>;
-  width?: InputMaybe<IntQueryOperatorInput>;
-  height?: InputMaybe<IntQueryOperatorInput>;
-  publicUrl?: InputMaybe<StringQueryOperatorInput>;
-  resize?: InputMaybe<RemoteFileResizeFilterInput>;
-  gatsbyImage?: InputMaybe<GatsbyImageDataQueryOperatorInput>;
-};
-
 export type SanityImageAssetSortInput = {
   fields?: InputMaybe<Array<InputMaybe<SanityImageAssetFieldsEnum>>>;
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
@@ -4915,10 +5315,15 @@ export type ExperienceQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type ExperienceQuery = { sanityHomepage?: { experience?: Array<{ _key?: string | null, title?: string | null, company?: string | null, companyWebsite?: string | null, accomplishments?: Array<string | null> | null, timeframe?: { startDate?: any | null, endDate?: any | null } | null } | null> | null } | null };
 
+export type ProjectArchiveQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ProjectArchiveQuery = { allSanityProject: { nodes: Array<{ name?: string | null, year?: number | null, description?: string | null, techStack?: Array<string | null> | null, githubProjectLink?: string | null, liveLink?: string | null }> } };
+
 export type ProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ProjectsQuery = { allFile: { nodes: Array<{ relativePath: string, childImageSharp?: { gatsbyImageData: any } | null }> } };
+export type ProjectsQuery = { allSanityProject: { nodes: Array<{ name?: string | null, year?: number | null, description?: string | null, techStack?: Array<string | null> | null, githubProjectLink?: string | null, liveLink?: string | null, image?: { asset?: { gatsbyImageData: any } | null } | null }> } };
 
 export type TechStackQueryVariables = Exact<{ [key: string]: never; }>;
 
