@@ -1,5 +1,5 @@
 import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
+import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import {media, mediaAssetSource} from 'sanity-plugin-media'
@@ -17,7 +17,7 @@ export default defineConfig({
   dataset: 'lucas-silbernagel-portfolio',
 
   plugins: [
-    deskTool({
+    structureTool({
       structure: (S) =>
         S.list()
           .title('Content')

@@ -27,6 +27,7 @@ const config: GatsbyConfig = {
         graphqlTag: 'default',
       },
     },
+    `gatsby-plugin-graphql-codegen`,
     'gatsby-plugin-image',
     'gatsby-plugin-smoothscroll',
     {

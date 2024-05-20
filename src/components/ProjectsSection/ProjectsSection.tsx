@@ -7,7 +7,7 @@ import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const ProjectsSection = () => {
   const data = useStaticQuery(graphql`
-    query {
+    query Projects {
       allFile(filter: { extension: { regex: "/(jpg|png|jpeg)/" } }) {
         nodes {
           relativePath
