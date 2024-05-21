@@ -17,11 +17,7 @@ const Seo = ({
   imageBasePath = '/',
   children,
 }: SeoProps) => {
-  const {
-    title: defaultTitle,
-    description: defaultDescription,
-    siteUrl,
-  } = useSiteMetadata()
+  const { defaultTitle, defaultDescription, siteUrl } = useSiteMetadata()
 
   const formatImagePath = () => {
     if (image?.includes('https://')) {
@@ -43,17 +39,17 @@ const Seo = ({
   return (
     <>
       <title>{seo.title}</title>
-      <meta name="description" content={seo.description} />
+      <meta name="description" content={String(seo.description)} />
       <meta name="image" content={seo.image} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:title" content={String(seo.title)} />
       <meta name="twitter:url" content={seo.url} />
-      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:description" content={String(seo.description)} />
       <meta name="twitter:image" content={seo.image} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
+      <meta property="og:title" content={String(seo.title)} />
+      <meta property="og:description" content={String(seo.description)} />
       <meta property="og:image" content={seo.image} />
       {children}
     </>

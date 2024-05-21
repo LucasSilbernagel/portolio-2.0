@@ -53,7 +53,7 @@ const MyStory = () => {
           }}
         />
         <ImageCarousel imageCarouselItems={imageCarouselItems} />
-        <p className="md:text-center">
+        <p className="text-slate-2 mb-6 md:text-center">
           I’m always happy to make more connections, so feel free to reach out!
         </p>
         <div className="w-full flex justify-center">

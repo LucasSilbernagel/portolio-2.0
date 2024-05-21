@@ -18,7 +18,7 @@ const ImageCarousel = (props: ImageCarouselProps) => {
 
   if (imageCarouselItems && imageCarouselItems.length > 0) {
     return (
-      <div className="MyStory__carousel">
+      <div className="max-w-[380px] min-h-[400px] lg:min-h-[560px] mx-auto mb-12 lg:mb-2">
         <Carousel
           autoPlay
           infiniteLoop
@@ -28,10 +28,7 @@ const ImageCarousel = (props: ImageCarouselProps) => {
         >
           {imageCarouselItems.map((carouselItem, index) => {
             return (
-              <div
-                key={`image-carousel-item-${index}`}
-                className="PhotoContainer"
-              >
+              <div key={`image-carousel-item-${index}`}>
                 {carouselItem?.image?.asset?.gatsbyImageData && (
                   <GatsbyImage
                     alt={String(carouselItem.altText)}
