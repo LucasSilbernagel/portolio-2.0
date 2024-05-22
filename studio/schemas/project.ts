@@ -1,4 +1,5 @@
-import {defineArrayMember, defineField} from 'sanity'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { defineArrayMember, defineField } from 'sanity'
 
 export default {
   name: 'project',
@@ -24,12 +25,12 @@ export default {
       name: 'techStack',
       type: 'array',
       title: 'Tech Stack',
-      validation: (Rule: {required: () => any}) => Rule.required(),
+      validation: (Rule: { required: () => any }) => Rule.required(),
       of: [
         defineArrayMember({
           type: 'string',
           name: 'skill',
-          validation: (Rule: {required: () => any}) => Rule.required(),
+          validation: (Rule: { required: () => any }) => Rule.required(),
         }),
       ],
     }),
