@@ -13,15 +13,15 @@ interface IExperienceItemProps {
   } | null
 }
 
+export const formatFullMonthYear = (
+  dateString: Date | string | null | undefined
+) => {
+  const parsedDate = parse(String(dateString), 'yyyy-MM', new Date())
+  return format(parsedDate, 'MMMM yyyy')
+}
+
 const ExperienceItem = (props: IExperienceItemProps) => {
   const { experience } = props
-
-  const formatFullMonthYear = (
-    dateString: Date | string | null | undefined
-  ) => {
-    const parsedDate = parse(String(dateString), 'yyyy-MM', new Date())
-    return format(parsedDate, 'MMMM yyyy')
-  }
 
   const timeframe = `${experience?.timeframe?.startDate} — ${
     experience?.timeframe?.endDate ? experience.timeframe.endDate : 'present'

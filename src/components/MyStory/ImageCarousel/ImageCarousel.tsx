@@ -18,7 +18,10 @@ const ImageCarousel = (props: ImageCarouselProps) => {
 
   if (imageCarouselItems && imageCarouselItems.length > 0) {
     return (
-      <div className="max-w-[380px] min-h-[400px] lg:min-h-[560px] mx-auto mb-12 lg:mb-2">
+      <div
+        data-testid="image-carousel"
+        className="max-w-[380px] min-h-[400px] lg:min-h-[560px] mx-auto mb-12 lg:mb-2"
+      >
         <Carousel
           autoPlay
           infiniteLoop

@@ -111,6 +111,7 @@ const ProjectArchive = () => {
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
                 className="w-[300px]"
+                data-testid="archive-filter-input"
               />
               {searchValue.length > 0 && (
                 <div className="absolute text-gray-600 top-2.5 right-3">
