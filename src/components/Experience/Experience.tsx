@@ -1,10 +1,10 @@
-import './Experience.css'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import SmoothCollapse from 'react-smooth-collapse'
 import { useState } from 'react'
 import ExperienceItem from './ExperienceItem/ExperienceItem'
 import { graphql, useStaticQuery } from 'gatsby'
 import { ExperienceQuery } from '../../../graphql-types'
+import './Experience.css'
 
 const Experience = () => {
   const data: ExperienceQuery = useStaticQuery(graphql`

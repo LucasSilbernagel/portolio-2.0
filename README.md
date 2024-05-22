@@ -6,7 +6,7 @@ The second iteration of my software development portfolio.
 
 ## Live link
 
-https://lucassilbernagel.com/
+https://meek-cannoli-5408ac.netlify.app/
 
 ## Tech stack
 
