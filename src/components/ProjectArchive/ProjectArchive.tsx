@@ -92,8 +92,8 @@ const ProjectArchive = () => {
       >
         <h1>Project archive</h1>
         <h2 className="AccentFont">
-          Educational, freelance, and side projects I&apos;ve completed over the
-          years
+          {`Educational, freelance, and side projects I've completed over the
+          years.`}
         </h2>
         <div className="w-full flex justify-center mb-8">
           <form

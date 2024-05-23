@@ -27,6 +27,10 @@ const MyStory = () => {
   return (
     <div data-testid="my-story" className="MyStory mb-36">
       <h1>My story</h1>
+      <h2 className="AccentFont">
+        Learn more about my background, my interests, and how I became a
+        software developer.
+      </h2>
       <section className="mt-24">
         <div className="MyStory__body">
           <PortableText

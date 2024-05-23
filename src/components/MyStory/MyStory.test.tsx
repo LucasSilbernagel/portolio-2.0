@@ -18,6 +18,11 @@ describe('MyStory', () => {
     expect(screen.getByText('My story')).toBeVisible()
     expect(
       screen.getByText(
+        'Learn more about my background, my interests, and how I became a software developer.'
+      )
+    ).toBeVisible()
+    expect(
+      screen.getByText(
         MOCK_MY_STORY_QUERY.sanityMyStory._rawAboutMe[0].children[0].text
       )
     ).toBeVisible()

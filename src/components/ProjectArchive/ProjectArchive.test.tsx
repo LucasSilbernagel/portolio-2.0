@@ -18,7 +18,7 @@ describe('ProjectArchive', () => {
     expect(screen.getByText('Project archive')).toBeInTheDocument()
     expect(
       screen.getByText(
-        `Educational, freelance, and side projects I've completed over the years`
+        `Educational, freelance, and side projects I've completed over the years.`
       )
     ).toBeInTheDocument()
     expect(
