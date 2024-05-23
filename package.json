@@ -19,12 +19,14 @@
     "test": "jest"
   },
   "dependencies": {
-    "@testing-library/user-event": "^14.5.2",
+    "@portabletext/react": "^3.0.18",
     "animate.css": "^4.1.1",
     "copy-to-clipboard": "^3.3.3",
+    "date-fns": "^3.6.0",
     "focus-trap-react": "^10.2.3",
     "gatsby": "^4.24.4",
     "gatsby-omni-font-loader": "^2.0.2",
+    "gatsby-plugin-graphql-codegen": "^3.1.1",
     "gatsby-plugin-html-attributes": "^1.0.5",
     "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-manifest": "^4.24.0",
@@ -32,6 +34,7 @@
     "gatsby-plugin-sitemap": "^5.24.0",
     "gatsby-plugin-smoothscroll": "^1.2.0",
     "gatsby-source-filesystem": "^4.24.0",
+    "gatsby-source-sanity": "^7.9.1",
     "gatsby-transformer-sharp": "^4.24.0",
     "react": "^18.1.0",
     "react-animation-on-scroll": "^5.1.0",
@@ -39,7 +42,8 @@
     "react-icons": "^5.2.1",
     "react-infinite-scroller": "^1.2.6",
     "react-responsive-carousel": "^3.2.23",
-    "react-smooth-collapse": "^2.1.2"
+    "react-smooth-collapse": "^2.1.2",
+    "sanity-plugin-media": "^2.2.5"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.5",

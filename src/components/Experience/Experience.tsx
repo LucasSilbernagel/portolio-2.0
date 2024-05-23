@@ -1,12 +1,34 @@
-import './Experience.css'
-import { EXPERIENCE } from '../../content/experience'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import SmoothCollapse from 'react-smooth-collapse'
 import { useState } from 'react'
 import ExperienceItem from './ExperienceItem/ExperienceItem'
+import { graphql, useStaticQuery } from 'gatsby'
+import { ExperienceQuery } from '../../../graphql-types'
+import './Experience.css'
 
 const Experience = () => {
+  const data: ExperienceQuery = useStaticQuery(graphql`
+    query Experience {
+      sanityHomepage {
+        experience {
+          _key
+          title
+          company
+          companyWebsite
+          timeframe {
+            startDate(formatString: "YYYY-MM")
+            endDate(formatString: "YYYY-MM")
+          }
+          accomplishments
+        }
+      }
+    }
+  `)
+
   const [isShowingMore, setIsShowingMore] = useState(false)
+
+  const experienceData = data.sanityHomepage?.experience
+  const orderedExperienceData = experienceData?.concat().reverse()
 
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
@@ -21,47 +43,49 @@ const Experience = () => {
         <div className="Timeline">
           <div className="Timeline__container">
             <div className="Timeline__Vertical-Line"></div>
-            <ol>
-              {EXPERIENCE.slice(0, 3).map((experience, index) => {
-                return (
-                  <ExperienceItem
-                    key={`${experience.website}-${index}`}
-                    experience={experience}
-                  />
-                )
-              })}
-              <li>
-                <SmoothCollapse
-                  expanded={isShowingMore}
-                  allowOverflowWhenOpen={true}
-                >
-                  <ol>
-                    {EXPERIENCE.slice(3, EXPERIENCE.length).map(
-                      (experience, index) => {
-                        return (
-                          <ExperienceItem
-                            key={`${experience.website}-${index}`}
-                            experience={experience}
-                          />
-                        )
-                      }
-                    )}
-                  </ol>
-                </SmoothCollapse>
-              </li>
-              <li>
-                <div className="w-full flex justify-center">
-                  <button
-                    className="AccentButton"
-                    onClick={() => setIsShowingMore(!isShowingMore)}
-                    data-testid="read-more-button"
-                    aria-expanded={isShowingMore}
+            {orderedExperienceData && (
+              <ol>
+                {orderedExperienceData.slice(0, 3).map((experience) => {
+                  return (
+                    <ExperienceItem
+                      key={experience?._key}
+                      experience={experience}
+                    />
+                  )
+                })}
+                <li>
+                  <SmoothCollapse
+                    expanded={isShowingMore}
+                    allowOverflowWhenOpen={true}
                   >
-                    {isShowingMore ? 'Read less' : 'Read more'}
-                  </button>
-                </div>
-              </li>
-            </ol>
+                    <ol>
+                      {orderedExperienceData
+                        .slice(3, orderedExperienceData.length)
+                        .map((experience, index) => {
+                          return (
+                            <ExperienceItem
+                              key={`${experience?.companyWebsite}-${index}`}
+                              experience={experience}
+                            />
+                          )
+                        })}
+                    </ol>
+                  </SmoothCollapse>
+                </li>
+                <li>
+                  <div className="w-full flex justify-center">
+                    <button
+                      className="AccentButton"
+                      onClick={() => setIsShowingMore(!isShowingMore)}
+                      data-testid="read-more-button"
+                      aria-expanded={isShowingMore}
+                    >
+                      {isShowingMore ? 'Read less' : 'Read more'}
+                    </button>
+                  </div>
+                </li>
+              </ol>
+            )}
           </div>
         </div>
       </div>

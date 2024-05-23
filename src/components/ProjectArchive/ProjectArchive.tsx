@@ -1,14 +1,31 @@
-import { PROJECTS } from '../../content/projects'
 import { FaTimes } from 'react-icons/fa'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import InfiniteScroll from 'react-infinite-scroller'
 import { useEffect, useState } from 'react'
 import ArchiveProject, { IProject } from '../ArchiveProject/ArchiveProject'
 import Loader from '../Loader/Loader'
+import { graphql, useStaticQuery } from 'gatsby'
+import { ProjectArchiveQuery } from '../../../graphql-types'
 
 const ProjectArchive = () => {
+  const data: ProjectArchiveQuery = useStaticQuery(graphql`
+    query ProjectArchive {
+      allSanityProject(sort: { order: DESC, fields: _createdAt }) {
+        nodes {
+          name
+          year
+          description
+          techStack
+          githubProjectLink
+          liveLink
+        }
+      }
+    }
+  `)
+
+  const projects = data.allSanityProject.nodes
   const itemsPerPage = 4
-  const [filteredProjects, setFilteredProjects] = useState<IProject[]>(PROJECTS)
+  const [filteredProjects, setFilteredProjects] = useState<IProject[]>(projects)
   const [searchValue, setSearchValue] = useState<string>('')
   const [hasMore, setHasMore] = useState<boolean>(true)
   const [records, setRecords] = useState<number>(itemsPerPage)
@@ -19,7 +36,7 @@ const ProjectArchive = () => {
       setIsLoadingSearch(true)
       const delayFn = setTimeout(() => {
         setFilteredProjects(
-          PROJECTS.filter((project) =>
+          projects.filter((project) =>
             JSON.stringify(project)
               .toLowerCase()
               .includes(searchValue.toLowerCase())
@@ -31,7 +48,7 @@ const ProjectArchive = () => {
     } else {
       setIsLoadingSearch(true)
       const delayFn = setTimeout(() => {
-        setFilteredProjects(PROJECTS)
+        setFilteredProjects(projects)
         setIsLoadingSearch(false)
       }, 1000)
       return () => clearTimeout(delayFn)
@@ -56,7 +73,7 @@ const ProjectArchive = () => {
       if (projects.length >= records) {
         items.push(
           <ArchiveProject
-            key={projects[i].github}
+            key={projects[i].githubProjectLink}
             project={projects[i]}
             index={i}
           />
@@ -75,8 +92,8 @@ const ProjectArchive = () => {
       >
         <h1>Project archive</h1>
         <h2 className="AccentFont">
-          Educational, freelance, and side projects I&apos;ve completed over the
-          years
+          {`Educational, freelance, and side projects I've completed over the
+          years.`}
         </h2>
         <div className="w-full flex justify-center mb-8">
           <form
@@ -94,6 +111,7 @@ const ProjectArchive = () => {
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
                 className="w-[300px]"
+                data-testid="archive-filter-input"
               />
               {searchValue.length > 0 && (
                 <div className="absolute text-gray-600 top-2.5 right-3">
@@ -116,7 +134,7 @@ const ProjectArchive = () => {
         ) : (
           <div className="mt-12 mb-10" id="project-count" aria-live="polite">
             <p className="AccentFont text-center text-accent-1">
-              Showing {filteredProjects.length} of {PROJECTS.length} projects
+              Showing {filteredProjects.length} of {projects.length} projects
             </p>
           </div>
         )}
@@ -141,7 +159,7 @@ const ProjectArchive = () => {
               {filteredProjects.map((project, index) => {
                 return (
                   <ArchiveProject
-                    key={project.github}
+                    key={project.githubProjectLink}
                     project={project}
                     index={index}
                   />

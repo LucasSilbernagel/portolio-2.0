@@ -2,12 +2,12 @@ import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 import './ArchiveProject.css'
 
 export interface IProject {
-  name: string
-  year: string
-  description: string
-  techStack: string[]
-  github: string
-  liveLink: string
+  name?: string | null
+  year?: number | null
+  description?: string | null
+  techStack?: (string | null)[] | null
+  githubProjectLink?: string | null
+  liveLink?: string | null
 }
 
 interface IArchiveProjectProps {
@@ -32,7 +32,7 @@ const ArchiveProject = (props: IArchiveProjectProps) => {
           <div className="flex gap-8 text-lg justify-end">
             <div>
               <a
-                href={project.github}
+                href={String(project.githubProjectLink)}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`GitHub repository for ${project.name}`}
@@ -44,7 +44,7 @@ const ArchiveProject = (props: IArchiveProjectProps) => {
             </div>
             <div>
               <a
-                href={project.liveLink}
+                href={String(project.liveLink)}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`live link for ${project.name}`}
@@ -58,7 +58,7 @@ const ArchiveProject = (props: IArchiveProjectProps) => {
         </div>
         <h4>
           <a
-            href={project.liveLink}
+            href={String(project.liveLink)}
             target="_blank"
             rel="noreferrer"
             aria-label={`live link for ${project.name}`}
@@ -72,10 +72,10 @@ const ArchiveProject = (props: IArchiveProjectProps) => {
         </div>
         <div className="text-slate-2 text-sm font-fira-code mb-6">
           <ul className="flex flex-wrap gap-x-4 gap-y-2">
-            {project.techStack.map((skill, skillIndex) => {
+            {project.techStack?.map((skill, skillIndex) => {
               return (
                 <li
-                  key={`${project.github}-${skill.replace(
+                  key={`${project.githubProjectLink}-${skill?.replace(
                     / /g,
                     ''
                   )}-${skillIndex}`}

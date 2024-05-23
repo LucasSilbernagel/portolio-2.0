@@ -1,8 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import { SiteMetadataQuery } from '../../graphql-types'
 
 export const useSiteMetadata = () => {
-  const data = useStaticQuery(graphql`
-    query {
+  const data: SiteMetadataQuery = useStaticQuery(graphql`
+    query SiteMetadata {
       site {
         pathPrefix
         siteMetadata {
@@ -14,5 +15,9 @@ export const useSiteMetadata = () => {
     }
   `)
 
-  return data.site.siteMetadata
+  return {
+    defaultTitle: data.site?.siteMetadata?.title,
+    defaultDescription: data.site?.siteMetadata?.description,
+    siteUrl: data.site?.siteMetadata?.siteUrl,
+  }
 }

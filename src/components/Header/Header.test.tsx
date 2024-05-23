@@ -4,11 +4,11 @@ import Header from './Header'
 describe('Header', () => {
   test('renders correctly on the homepage', () => {
     render(<Header />)
-    expect(screen.getByTestId('header')).toBeInTheDocument()
-    expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
-    expect(screen.getByText('Lucas Silbernagel')).toBeInTheDocument()
-    expect(screen.getByText('Software Developer')).toBeInTheDocument()
-    expect(screen.getByTestId('hero-contact-link')).toBeInTheDocument()
+    expect(screen.getByTestId('header')).toBeVisible()
+    expect(screen.getByTestId('nav-bar')).toBeVisible()
+    expect(screen.getByText('Lucas Silbernagel')).toBeVisible()
+    expect(screen.getByText('Software Developer')).toBeVisible()
+    expect(screen.getByTestId('hero-contact-link')).toBeVisible()
     expect(screen.getByTestId('hero-contact-link')).toHaveTextContent(
       'Say hello'
     )
@@ -16,7 +16,7 @@ describe('Header', () => {
       'href',
       '/contact'
     )
-    expect(screen.getByTestId('hero-image')).toBeInTheDocument()
+    expect(screen.getByTestId('hero-image')).toBeVisible()
   })
 
   test('renders correctly on a page other than the homepage', () => {
@@ -29,8 +29,8 @@ describe('Header', () => {
       writable: true,
     })
     render(<Header />)
-    expect(screen.getByTestId('header')).toBeInTheDocument()
-    expect(screen.getByTestId('nav-bar')).toBeInTheDocument()
+    expect(screen.getByTestId('header')).toBeVisible()
+    expect(screen.getByTestId('nav-bar')).toBeVisible()
     expect(screen.queryByText('Lucas Silbernagel')).toBeNull()
     expect(screen.queryByText('Software Developer')).toBeNull()
     expect(screen.queryByTestId('hero-contact-link')).toBeNull()

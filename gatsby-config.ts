@@ -19,6 +19,15 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `q20xjmol`,
+        dataset: `lucas-silbernagel-portfolio`,
+        graphqlTag: 'default',
+      },
+    },
+    `gatsby-plugin-graphql-codegen`,
     'gatsby-plugin-image',
     'gatsby-plugin-smoothscroll',
     {

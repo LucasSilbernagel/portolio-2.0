@@ -1,10 +1,19 @@
 import { StaticImage } from 'gatsby-plugin-image'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
-import { Link } from 'gatsby'
-import AboutContent from '../../content/about'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import './AboutSection.css'
+import { AboutMeQuery } from '../../../graphql-types'
+import { PortableText } from '@portabletext/react'
 
 const AboutSection = () => {
+  const data: AboutMeQuery = useStaticQuery(graphql`
+    query AboutMe {
+      sanityHomepage {
+        _rawAboutMe
+      }
+    }
+  `)
+
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" animateOnce={true}>
       <div
@@ -17,7 +26,9 @@ const AboutSection = () => {
         </h3>
         <div className="flex gap-12 flex-col xl:flex-row">
           <div>
-            <p data-testid="about-text">{AboutContent}</p>
+            <div data-testid="about-text">
+              <PortableText value={data.sanityHomepage?._rawAboutMe} />
+            </div>
             <div className="w-full flex justify-center">
               <Link to="/my-story" className="AccentButton">
                 Read my story

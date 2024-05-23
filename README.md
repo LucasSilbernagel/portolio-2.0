@@ -6,7 +6,7 @@ The second iteration of my software development portfolio.
 
 ## Live link
 
-https://lucassilbernagel.com/
+https://meek-cannoli-5408ac.netlify.app/
 
 ## Tech stack
 
@@ -24,6 +24,10 @@ https://lucassilbernagel.com/
 - [copy-to-clipboard](https://www.npmjs.com/package/copy-to-clipboard)
 - [react-responsive-carousel](https://www.npmjs.com/package/react-responsive-carousel)
 - [focus-trap-react](https://www.npmjs.com/package/focus-trap-react)
+
+### Content Management
+
+- [Sanity](https://www.sanity.io/)
 
 ### Linting & Formatting
 
@@ -56,7 +60,12 @@ To install all of the required dependencies, run `npm install`.
 
 ### Start up the app
 
-To start up the app locally, run `npm start` in your terminal. Your terminal should indicate a `localhost` URL at which you can view the app in your browser.
+- To start up the app locally, run `npm start` in your terminal. Your terminal should indicate a `localhost` URL at which you can view the app in your browser.
+- To add and edit content in Sanity Studio, `cd` into the `studio` folder, run `npm run dev`, and visit http://localhost:3333/content/desk/homepage.
+  - Note that you won't have access to sign into my Sanity studio, you will have to generate your own project ID:
+    - Visit https://www.sanity.io/ and create an account if you don't already have one.
+    - Follow the instructions to create a new project and make a note of the project ID.
+    - In your code editor, search for `projectId` and replace the value there with your own Sanity project ID. This should be done in three files: `sanity.cli.ts`, `sanity.config.ts`, and `gatsby-config.ts`.
 
 ## Testing
 
