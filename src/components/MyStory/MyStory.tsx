@@ -28,30 +28,32 @@ const MyStory = () => {
     <div data-testid="my-story" className="MyStory mb-36">
       <h1>My story</h1>
       <section className="mt-24">
-        <PortableText
-          value={data.sanityMyStory?._rawAboutMe}
-          components={{
-            marks: {
-              link: ({ value, children }) => {
-                const { href } = value
-                return href.includes('http') ? (
-                  <a
-                    className="MyStory__link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={href}
-                  >
-                    {children}
-                  </a>
-                ) : (
-                  <Link className="MyStory__link" to={href}>
-                    {children}
-                  </Link>
-                )
+        <div className="MyStory__body">
+          <PortableText
+            value={data.sanityMyStory?._rawAboutMe}
+            components={{
+              marks: {
+                link: ({ value, children }) => {
+                  const { href } = value
+                  return href.includes('http') ? (
+                    <a
+                      className="MyStory__link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={href}
+                    >
+                      {children}
+                    </a>
+                  ) : (
+                    <Link className="MyStory__link" to={href}>
+                      {children}
+                    </Link>
+                  )
+                },
               },
-            },
-          }}
-        />
+            }}
+          />
+        </div>
         <ImageCarousel imageCarouselItems={imageCarouselItems} />
         <p className="text-slate-2 mb-6 md:text-center">
           I’m always happy to make more connections, so feel free to reach out!
