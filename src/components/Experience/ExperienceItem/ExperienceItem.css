@@ -27,5 +27,5 @@
 }
 
 .ExperienceItem .Timeline__accomplishment:before {
-  @apply content-['\203A'] text-accent-1 text-lg font-bold mr-2 -ml-4;
+  @apply content-['\203A'] text-accent-1 text-lg font-bold mr-2;
 }

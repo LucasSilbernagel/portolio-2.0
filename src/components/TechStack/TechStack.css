@@ -3,7 +3,7 @@
 }
 
 .TechStack .SkillList a {
-  @apply text-accent-1 underline underline-offset-4 transition-all duration-300 hover:underline-offset-2 focus-visible:underline-offset-2;
+  @apply font-bold text-white-1 hover:underline focus-visible:underline transition-all duration-300;
 }
 
 .TechStack .SkillList li {
@@ -11,7 +11,7 @@
 }
 
 .TechStack .SkillList li:before {
-  @apply content-['\203A'] text-accent-1 text-lg font-bold mr-2 -ml-4;
+  @apply content-['\203A'] text-accent-1 text-lg font-bold mr-2;
 }
 
 .TechStack .SkillList li ul {
