@@ -2,6 +2,10 @@
   @apply mt-24 pt-2;
 }
 
+.TechStack .SkillList {
+  @apply max-w-screen-md;
+}
+
 .TechStack .SkillList a {
   @apply font-bold text-white-1 hover:underline focus-visible:underline transition-all duration-300;
 }

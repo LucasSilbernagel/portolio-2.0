@@ -24,18 +24,18 @@ const AboutSection = () => {
         <h3 className="SectionHeader" aria-label="About Me">
           About Me
         </h3>
-        <div className="flex gap-12 flex-col xl:flex-row">
+        <div className="flex xl:flex-row flex-col gap-12">
           <div>
-            <div data-testid="about-text">
+            <div data-testid="about-text" className="max-w-screen-sm">
               <PortableText value={data.sanityHomepage?._rawAboutMe} />
             </div>
-            <div className="w-full flex justify-center">
+            <div className="flex justify-center w-full">
               <Link to="/my-story" className="AccentButton">
                 Read my story
               </Link>
             </div>
           </div>
-          <div className="max-w-[300px] w-auto xl:w-max mx-auto xl:ml-0">
+          <div className="mx-auto xl:ml-0 w-auto xl:w-max max-w-[300px]">
             <div className="PhotoContainer">
               <div>
                 <StaticImage

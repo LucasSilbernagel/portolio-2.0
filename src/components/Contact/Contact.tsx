@@ -58,15 +58,15 @@ const Contact = () => {
   }
 
   return (
-    <div className="Contact mb-36">
+    <div className="mb-36 Contact">
       <h1>Contact me</h1>
-      <h2 className="AccentFont">
+      <h2 className="max-w-screen-md AccentFont">
         Get in touch with me through any of my social accounts, or by using the
         form below. You can also email me directly at
         hello@lucassilbernagel.com.
       </h2>
       {isSubmissionSuccessful ? (
-        <div className="text-center flex flex-col items-center py-24">
+        <div className="flex flex-col items-center py-24 text-center">
           <p aria-live="polite">
             Thanks for your message! I&apos;ll get back to you as soon as I can.
           </p>
@@ -126,7 +126,7 @@ const Contact = () => {
             }
             value={formSubmission.message}
           />
-          <div className="w-full flex flex-col items-center">
+          <div className="flex flex-col items-center w-full">
             {formError.length > 0 && <p aria-live="polite">{formError}</p>}
             {isLoading ? (
               <div className="mb-3">

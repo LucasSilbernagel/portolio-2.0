@@ -2,6 +2,10 @@
   @apply text-accent-1 underline underline-offset-4 transition-all duration-300 hover:underline-offset-2 focus-visible:underline-offset-2;
 }
 
+.MyStory__body {
+  @apply max-w-screen-sm mx-auto;
+}
+
 .MyStory__body p {
   @apply mb-6 text-slate-2;
 }

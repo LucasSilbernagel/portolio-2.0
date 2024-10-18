@@ -95,7 +95,7 @@ const ProjectArchive = () => {
           {`Educational, freelance, and side projects I've completed over the
           years.`}
         </h2>
-        <div className="w-full flex justify-center mb-8">
+        <div className="flex justify-center mb-8 w-full">
           <form
             aria-controls="project-count"
             onSubmit={(e) => e.preventDefault()}
@@ -114,7 +114,7 @@ const ProjectArchive = () => {
                 data-testid="archive-filter-input"
               />
               {searchValue.length > 0 && (
-                <div className="absolute text-gray-600 top-2.5 right-3">
+                <div className="top-2.5 right-3 absolute text-gray-600">
                   <button
                     onClick={() => setSearchValue('')}
                     aria-label="clear input"
@@ -128,50 +128,54 @@ const ProjectArchive = () => {
           </form>
         </div>
         {isLoadingSearch ? (
-          <div className="w-full flex justify-center" key="loader">
+          <div className="flex justify-center w-full" key="loader">
             <Loader />
           </div>
         ) : (
           <div className="mt-12 mb-10" id="project-count" aria-live="polite">
-            <p className="AccentFont text-center text-accent-1">
+            <p className="text-accent-1 text-center AccentFont">
               Showing {filteredProjects.length} of {projects.length} projects
             </p>
           </div>
         )}
 
-        {filteredProjects.length > 0 ? (
-          filteredProjects.length > itemsPerPage ? (
-            <InfiniteScroll
-              element="ul"
-              pageStart={0}
-              loadMore={loadMore}
-              hasMore={hasMore}
-              loader={
-                <li className="w-full flex justify-center" key="loader">
-                  <Loader />
-                </li>
-              }
-            >
-              {showProjects(filteredProjects)}
-            </InfiniteScroll>
+        <div className="mx-auto max-w-screen-sm">
+          {filteredProjects.length > 0 ? (
+            filteredProjects.length > itemsPerPage ? (
+              <InfiniteScroll
+                element="ul"
+                pageStart={0}
+                loadMore={loadMore}
+                hasMore={hasMore}
+                loader={
+                  <li className="flex justify-center w-full" key="loader">
+                    <Loader />
+                  </li>
+                }
+              >
+                {showProjects(filteredProjects)}
+              </InfiniteScroll>
+            ) : (
+              <ul>
+                {filteredProjects.map((project, index) => {
+                  return (
+                    <ArchiveProject
+                      key={project.githubProjectLink}
+                      project={project}
+                      index={index}
+                    />
+                  )
+                })}
+              </ul>
+            )
           ) : (
-            <ul>
-              {filteredProjects.map((project, index) => {
-                return (
-                  <ArchiveProject
-                    key={project.githubProjectLink}
-                    project={project}
-                    index={index}
-                  />
-                )
-              })}
-            </ul>
-          )
-        ) : (
-          <div className="mt-12 mb-24">
-            <p className="text-center text-2xl">No matching projects found!</p>
-          </div>
-        )}
+            <div className="mt-12 mb-24">
+              <p className="text-2xl text-center">
+                No matching projects found!
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     </AnimationOnScroll>
   )

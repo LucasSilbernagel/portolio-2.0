@@ -25,7 +25,7 @@ const MyStory = () => {
   const imageCarouselItems = data.sanityMyStory?.myStoryImageCarousel
 
   return (
-    <div data-testid="my-story" className="MyStory mb-36">
+    <div data-testid="my-story" className="mb-36 MyStory">
       <h1>My story</h1>
       <h2 className="AccentFont">
         Learn more about my background, my interests, and how I became a
@@ -59,11 +59,11 @@ const MyStory = () => {
           />
         </div>
         <ImageCarousel imageCarouselItems={imageCarouselItems} />
-        <p className="text-slate-2 mb-6 md:text-center">
+        <p className="mb-6 text-slate-2 md:text-center">
           I’m always happy to make more connections, so feel free to reach out!
         </p>
-        <div className="w-full flex justify-center">
-          <Link to="/contact" className="AccentButton relative z-10">
+        <div className="flex justify-center w-full">
+          <Link to="/contact" className="relative z-10 AccentButton">
             Say hello
           </Link>
         </div>
